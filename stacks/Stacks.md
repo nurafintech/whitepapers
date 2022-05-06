@@ -57,3 +57,21 @@ The Stacks 2.0 blockchain is written in Rust. Protocol details and the open-sour
 
 Proof of Transfer (PoX) is the first consensus algorithm between two blockchains. Specifically we present an implementation of PoX by using Bitcoin as the base chain and Stacks as the connected chain.<br/> In PoX, leader election happens on the Bitcoin blockchain. **Instead of burning electricity on proof of work, PoX reuses already minted bitcoins as “proof of computation” and miners represent their cost of mining in bitcoins directly.**<br/>
 For detail you could visit [“PoX, Proof of Transfer Mining with Bitcoin”](https://blockstack.org/pox.pdf)
+
+# Clarity Smart Contracts
+
+The Clarity language optimizes for predictability and security. Stacks 2.0 anchors clarity smart contracts to Bitcoin making it
+possible for smart contracts to operate based on actions seen on the bitcoin blockchain. <br/> With Clarity, we took the what you see is what you get approach.
+Clarity makes the behavior, cost, and performance of smart contracts transparent both for developers and for automated verification and introduces post-conditions for added safety. Developers can predict what a given Clarity program will do, and how much it will cost.
+
+# Solidity VS Clarity
+
+Solidity, the implementation language for contracts on Ethereum, is an undecidable language: it is impossible to know precisely how a contract will behave in certain situations without actually executing it in those situations. There are advantages to both types of programming languages. But when it comes to smart contracts that lock up billions of dollars in code, it’s critical to minimize risks.
+
+# Clarity has no compiler
+
+Clarity is interpreted. The contract source code itself is published and executed by blockchain nodes. Removing any intermediate, compiled representation (e.g., EVM byte code for Solidity) further minimizes the surface area for introducing bugs.
+
+# Stacks (STX) Cryptocurrency
+
+Stacks cryptocurrency (STX) is designed primarily to be used as “fuel” to execute Clarity smart contracts. Stacks are also used for other network functions like registering digital assets, paying for transaction fees, and to publish Clarity contracts on the blockchain.
