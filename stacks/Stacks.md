@@ -22,13 +22,9 @@ We enable this without modifying Bitcoin, a critical design requirement for enab
 
 Bitcoin’s fixed, limited supply and adoption as a hedge against inflation makes earning BTC attractive. Further, as smart contract usage increases on the Stacks blockchain, BTC earning rate also increases.
 
-# Proof of Transfer (PoX)
-
-we have built the first consensus algorithm between two blockchains, called Proof of Transfer (PoX), that connects the Bitcoin and the Stacks blockchains and extends the functionality of Bitcoin.
-
 # Stacks 2.0 Design
 
-Stacks 2.0 is a layer-1 blockchain that connects to Bitcoin for security and enables decentralized apps and predictable smart contracts. Stacks 2.0 implements PoX mining that anchors to Bitcoin security. <br/>
+Stacks 2.0 is a layer-1 blockchain that connects to Bitcoin for security and enables decentralized apps and predictable smart contracts. Stacks 2.0 implements PoX mining that anchors to Bitcoin security. (We'll talk about PoX further) <br/>
 With PoX there is no need to modify Bitcoin to enable smart contracts and apps around it.
 
 # STX miners
@@ -38,3 +34,25 @@ With PoX there is no need to modify Bitcoin to enable smart contracts and apps a
 STX miners get newly minted STX (coinbase rewards), transaction fees paid to them in STX, and Clarity contract execution fees of each block also paid in STX. <br/>
 
 STX miners express the cost of mining in BTC and spend BTC to participate in leader election. The STX miners can model the total value of a new Stacks block as a BTX/STX on-chain trading pair, and will participate in mining if they can get cheaper STX from mining than from outside exchanges.<br/>
+
+# STX Holders
+
+**STX holders** can participate in consensus and earn BTC rewards by participating in a process called Stacking.
+<br/>
+To participate, users lock their STX for a reward cycle (approx two weeks), run or support a full node, and send useful information on the network as STX transactions.<br/>
+STX holders who actively participate in Stacking earn the Bitcoin rewards of that cycle.
+_Unlike proof of stake, there is no risk of slashing (economic penalties by protocol) for STX holders._
+
+# Scalability of Transactions
+
+The Stacks blockchain transactions can scale independently of Bitcoin; they only depend on Bitcoin for finality. Thousands of Stacks transactions result in a single hash on Bitcoin; _Stacks transactions “settle” on Bitcoin automatically every Bitcoin block as part of consensus._<br/>
+
+# Microblocks
+
+**Stacks introduces the concept of _Microblocks_ that give initial confirmation in seconds.** Microblocks are a main venue for future scalability research, where theoretically faster consensus algorithms can run for microblocks that settle data on Bitcoin per Bitcoin block.<br/>
+Bitcoin is used as a settlement protocol by Stacks. It serves as the source of ultimate truth and archives hashes of Stacks block history. Finality of transactions is currently tied to Bitcoin and we believe that Bitcoin offers a strong notion of finality that our design benefits from.<br/>
+The Stacks 2.0 blockchain is written in Rust. Protocol details and the open-source code is available in the Stacks [GitHub repository.](https://github.com/blockstack/)
+
+# Proof of Transfer (PoX)
+
+We have built the first consensus algorithm between two blockchains, called Proof of Transfer (PoX), that connects the Bitcoin and the Stacks blockchains and extends the functionality of Bitcoin.
