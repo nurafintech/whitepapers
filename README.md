@@ -1,5 +1,4 @@
-# Welcome to Whitepapers investigation
+# Welcome to the whitepapers investigation
 
-In terms of increasing the demand for using cryptocurrencies and blockchain, this could be a crucial need to find out what is happening in this big demand project.
-Reading and investigating whitepapers could be the solution for getting the correct info so that we will extract the information from their whitepapers.
-We are going to start with STX.
+This project could be crucial to increasing demand for cryptocurrencies and blockchain. In fact, reading about and investigating whitepapers could be the solution for getting the right info. So, we're going to extract the information from their whitepapers.
+We're going to start with STX.
