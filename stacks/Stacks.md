@@ -55,4 +55,5 @@ The Stacks 2.0 blockchain is written in Rust. Protocol details and the open-sour
 
 # Proof of Transfer (PoX)
 
-We have built the first consensus algorithm between two blockchains, called Proof of Transfer (PoX), that connects the Bitcoin and the Stacks blockchains and extends the functionality of Bitcoin.
+Proof of Transfer (PoX) is the first consensus algorithm between two blockchains. Specifically we present an implementation of PoX by using Bitcoin as the base chain and Stacks as the connected chain.<br/> In PoX, leader election happens on the Bitcoin blockchain. **Instead of burning electricity on proof of work, PoX reuses already minted bitcoins as “proof of computation” and miners represent their cost of mining in bitcoins directly.**<br/>
+For detail you could visit [“PoX, Proof of Transfer Mining with Bitcoin”](https://blockstack.org/pox.pdf)
