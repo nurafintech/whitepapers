@@ -1,4 +1,4 @@
-# The Blockchain Trilemma
+# The Blockchain Trilemma *[Trylema]*
 Decentralized, Scalable, and Secure?<br/>
 
 Termed by Vitalik Buterin, The Blockchain Trilemma addresses the challenges developers face in creating a blockchain that is scalable, decentralized and secure — without compromising on any facet.
