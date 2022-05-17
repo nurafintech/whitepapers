@@ -29,5 +29,11 @@ With a barrage of high-profile hacks of exchanges and manipulated vulnerabilitie
 Due to the transparent nature of the source code and the potentially lucrative benefits one can receive from conducting a successful attack, blockchains have become prime targets for hackers.<br/>
 
 # Is It Really Actually a Trilemma?
-Firstly, it’s important to note that the Trilemma is just a model to conceptualize the various challenges facing blockchain technology. There is no law stating that the 3 aspects cannot be achieved. But to date, teams have worked on different approaches in an attempt to maximize decentralization, scalability, and security.
 
+Firstly, it’s important to note that the Trilemma is just a model to conceptualize the various challenges facing blockchain technology. There is no law stating that the 3 aspects cannot be achieved. But to date, teams have worked on different approaches in an attempt to maximize decentralization, scalability, and security.<br/>
+
+The CertiK Foundation believes that the Trilemma may actually be better conceptualized in a pyramid. The base layer is the fundamental layer that upholds all others: security. Without it, decentralization may be corrupted and scalability may be short-lived. 
+
+# Final Result
+
+Regardless of the shape of the Trilemma, it’s agreed that it’s difficult for any blockchain system to effectively achieve decentralization, scalability, and security. Blockchain technology is in its infancy, and the technology approaches should only improve. The CertiK Chain is unique in its prioritization of security above all else; by establishing a strong fundamental layer, the possibilities are endless
