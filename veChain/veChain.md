@@ -1,5 +1,5 @@
 # Brief history of VeChain
-VeChain was founded in 2015 by  electrical engineer sunny lou. VeChain  was created by vechain tech, a software  company based in china. Moreover  the development is coordinated by  the VeChain foundation, a non-profit  based in singapore.VeChain raised 20 million dollars in a  2017 ico and its main net went live in the summer of 2018.
+VeChain was founded in 2015 by electrical engineer Sunny Lu. VeChain  was created by vechain tech, a software  company based in china. Moreover  the development is coordinated by  the VeChain foundation, a non-profit  based in singapore.VeChain raised 20 million dollars in a  2017 ico and its main net went live in the summer of 2018.
 
 
 # VeChain's blockchain is called VeChainThor
@@ -58,6 +58,8 @@ The new consensus algorithm PoA 2.0-SURFACE, is characterized as a Secure, Use-c
 
 PoA enables our vision of building green technologies and business on a scale never before witnessed on blockchain. Global, next generation markets will come to rely on the trustless and automated nature afforded by public blockchain. For example, carbon markets arising from the drive towards decarbonisation require these traits to enable trustless international collaboration. We foresee many novel and revolutionary applications and look forward to sharing our future works in these exciting new areas.
 
+It consisted of three major  components. Firstly, it introduced verifiable  randomness as part of the process to  select which authority node produces a  block, secondly it modified the block producing  process to make it next to impossible for VeChainThor to fork, and thirdly it sped up block finality on  VeChainThor which apparently increased its transactions per second.
+
 # What did VeChain foundation do recently
 <li>
 The VeChain foundation launched a one million grant program to encourage the adoption of VeChain enterprise nfts or enfts. 
@@ -69,7 +71,7 @@ VeChain partnered with a chinese  hospital to track the process of in  vitro fer
 
 <li>
 VeChain partnered with the republic of san marino for a similarly spooky purpose and that was for a blockchain-based pandemic health  passport using VeChain's enfts  interestingly. 
-Sunny Lou explained in a  presentation that VeChain's pandemic health passports actually offer way more privacy than the ones being pushed by european governments which he claims are  violating european data protection laws.
+Sunny Lu explained in a  presentation that VeChain's pandemic health passports actually offer way more privacy than the ones being pushed by european governments which he claims are  violating european data protection laws.
 <br/></li>
 
 <li>
@@ -80,12 +82,31 @@ VeChain released a tool to  help Chinese companies track their  carbon emissions
 A Chinese arm of  price water house coopers revealed a tool  called airtrace which uses VeChainThor to track air quality in chinese cities.
 <br/></li>
 
+<li>
+VeChain partnered with the  government of inner mongolia to track  and trace agricultural products.
+<br/></li>
+
+<li>
+VeChain launched  the VeUSD stablecoin in conjunction with  a regulated fintech startup based in the  united states called Stably.VeUSD is  a centralized stablecoin like circles USDC or paxos's USDP meaning every VeUSD  in circulation is backed by US dollars  sitting in a bank associated with Stably.
+<br/></li>
+
+<li>
+The VeChain foundation set up a new headquarters in the republic of  san marino and will work with the  government there to achieve its mission  of making san marino the first carbon  neutral country.
+<br/></li>
+
+<li>
+VeChain revealed an upcoming platform called VeCarbon which will make it possible to track both individual and institutional carbon emissions and will eventually allow for carbon emissions and trading.
+<br/></li>
+
+<li>
+VeChain foundation  billionaire venture capitalist Tim Draper also partnered with VeChain to  launch the web3 accelerator program in association with draper university Tim's educational enterprise.
+<br/></li>
 
 
 
 # Refrences
 
-https://www.vechain.org/whitepaper
+https://www.vechain.org/whitepaper 
 
 https://medium.com/vechain-foundation/a-revolutionary-protocol-poa-2-0-worlds-greenest-consensus-to-drive-sustainable-mass-adoption-e33b1b6646b8
 
@@ -93,3 +114,6 @@ https://www.youtube.com/watch?v=uiDpgnhQXfw&list=PLk1ALX7IOH_nkmrxnYWrcI-EiFbkOs
 
 https://arxiv.org/pdf/2002.07565.pdf
 
+https://medium.com/vechain-foundation/announcing-the-veusd-stablecoin-launch-50k-usd-community-bonus-mint-event-500k-usd-x-node-66e2bf3f0f7f#:~:text=Today%2C%20we%20are%20excited%20to,for%20the%20VeChainThor%20public%20blockchain.
+
+https://www.coindesk.com/business/2022/03/22/draper-university-partners-with-vechain-to-train-web-3-founders/
