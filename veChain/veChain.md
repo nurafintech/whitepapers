@@ -43,7 +43,7 @@ VTho has no maximum supply.
 Its inflation schedule is periodically adjusted by the VeChain foundation with the consent of  stakeholders and **70% of any VTho used to  pay for transaction fees is burned.**
 
 # VeChain isn't too centralized but it's quite centralized
-To ensure that VeChain isn't too  centralized, most of the voting power for any changes to VeChain are held by  economic nodes and x nodes which do not  process transactions but can also earn VTho for staking VET.
+To ensure that VeChain isn't too  centralized, most of the voting power for any changes to VeChain are held by  economic nodes(EN) and Xnodes(XN) which do not  process transactions but can also earn VTho for staking VET.
 
 ![](https://github.com/AminMortezaie/whitepapers/blob/main/veChain/Stakeholder%20category%20and%20the%20voting%20authority%20model1.PNG?raw=true)
 <br/>
@@ -60,7 +60,7 @@ PoA enables our vision of building green technologies and business on a scale ne
 
 It consisted of three major  components. Firstly, it introduced verifiable  randomness as part of the process to  select which authority node produces a  block, secondly it modified the block producing  process to make it next to impossible for VeChainThor to fork, and thirdly it sped up block finality on  VeChainThor which apparently increased its transactions per second.
 
-# What did VeChain foundation do recently
+# VeChain Foundation Movements
 <li>
 The VeChain foundation launched a one million grant program to encourage the adoption of VeChain enterprise nfts or enfts. 
 <br/></li>
@@ -100,6 +100,19 @@ VeChain revealed an upcoming platform called VeCarbon which will make it possibl
 
 <li>
 VeChain foundation  billionaire venture capitalist Tim Draper also partnered with VeChain to  launch the web3 accelerator program in association with draper university Tim's educational enterprise.
+<br/></li>
+
+
+# Hard Time For VET Price Reasons
+<li>
+BTC is still recovering from its november crash and as VET is highly correlated to BTC. 
+<br/></li>
+<li>
+The may crash was caused by China's  crackdown on crypto mining and China's clampdown on the industry has only accelerated since then this is bad news for VeChain because china is where the project has secured most of its partnerships and it's also where the software company behind VeChain is based thought VeChain seems to be expanding its presence outside of  China. The VeChain foundation's new european headquarters and the VeUSD stablecoin supports this idea.
+<br/></li>
+
+<li>
+VeChain's adoption doesn't exactly translate to increased  demand for VET because it's only used for staking and governance of these two fundamental demand drivers. Staking is probably the most dominant and the bad news there is that the minimum stake to become an economic node(EN) or Xnode(XN) that earns a meaningful amount  of VTho isn't all that affordable for the average person.
 <br/></li>
 
 
