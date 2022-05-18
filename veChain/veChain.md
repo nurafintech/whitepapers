@@ -37,3 +37,59 @@ VeChain currently has 101 authority  nodes which process all transactions on its
 
 # VeChain Maximum Supply
 VET has a maximum supply of 86.7 billion all of which has technically vested, in exchange for staking VET and  processing transactions authority nodes earn VTho which is used to pay for  transaction fees on VeChain(up until today there are about 67 billion tokens are circulating).
+
+# VTho has no maximum supply
+VTho has no maximum supply.
+Its inflation schedule is periodically adjusted by the VeChain foundation with the consent of  stakeholders and **70% of any VTho used to  pay for transaction fees is burned.**
+
+# VeChain isn't too centralized but it's quite centralized
+To ensure that VeChain isn't too  centralized, most of the voting power for any changes to VeChain are held by  economic nodes and x nodes which do not  process transactions but can also earn VTho for staking VET.
+
+![](https://github.com/AminMortezaie/whitepapers/blob/main/veChain/Stakeholder%20category%20and%20the%20voting%20authority%20model1.PNG?raw=true)
+<br/>
+This quite centralized setup would allow VeChain to process around 10,000 transactions per second which is not too shabby and also it should be mentioned that this impressive statistic doesn't apply to smart contract transactions since VeChain leverages the EVM which tps is capped at around 300. 
+
+# VeChain thrive on making more decentralized 
+To ensure that the VeChainThor blockchain doesn't get too bloated all decentralized applications and tokens are approved by VET holders and the VeChain foundation.
+
+
+# What is PoA 2.0?
+The new consensus algorithm PoA 2.0-SURFACE, is characterized as a Secure, Use-case adaptive, and Relatively Fork-free Approach of Chain Extension.The mechanism is the first in the world to combine the strengths of the two main consensus types, Byzantine Fault Tolerance and Nakamoto Consensus while eliminating the weaknesses of each.<br/>
+
+PoA enables our vision of building green technologies and business on a scale never before witnessed on blockchain. Global, next generation markets will come to rely on the trustless and automated nature afforded by public blockchain. For example, carbon markets arising from the drive towards decarbonisation require these traits to enable trustless international collaboration. We foresee many novel and revolutionary applications and look forward to sharing our future works in these exciting new areas.
+
+# What did VeChain foundation do recently
+<li>
+The VeChain foundation launched a one million grant program to encourage the adoption of VeChain enterprise nfts or enfts. 
+<br/></li>
+
+<li>
+VeChain partnered with a chinese  hospital to track the process of in  vitro fertilizations.
+<br/></li>
+
+<li>
+VeChain partnered with the republic of san marino for a similarly spooky purpose and that was for a blockchain-based pandemic health  passport using VeChain's enfts  interestingly. 
+Sunny Lou explained in a  presentation that VeChain's pandemic health passports actually offer way more privacy than the ones being pushed by european governments which he claims are  violating european data protection laws.
+<br/></li>
+
+<li>
+VeChain released a tool to  help Chinese companies track their  carbon emissions in accordance with China's goal to become carbon neutral by  2060.
+<br/></li>
+
+<li>
+A Chinese arm of  price water house coopers revealed a tool  called airtrace which uses VeChainThor to track air quality in chinese cities.
+<br/></li>
+
+
+
+
+# Refrences
+
+https://www.vechain.org/whitepaper
+
+https://medium.com/vechain-foundation/a-revolutionary-protocol-poa-2-0-worlds-greenest-consensus-to-drive-sustainable-mass-adoption-e33b1b6646b8
+
+https://www.youtube.com/watch?v=uiDpgnhQXfw&list=PLk1ALX7IOH_nkmrxnYWrcI-EiFbkOsDRX
+
+https://arxiv.org/pdf/2002.07565.pdf
+
