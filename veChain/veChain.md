@@ -3,7 +3,9 @@ VeChain was founded in 2015 by  electrical engineer sunny lou. VeChain  was crea
 
 
 # VeChain's blockchain is called VeChainThor
-VeChain's blockchain is called VeChainThor and it's actually a modified fork of ethereum's blockchain that's been  optimized for supply chain solutions  in contrast to ethereum vechain doesn't  use proof of work or proof of stake  instead it uses a consensus algorithm called proof of authority whose creation  is credited to ethereum co-founder and  polkadot founder gavin wood.
+VeChain's blockchain is called VeChainThor and it's actually a modified fork of ethereum's blockchain that's been  optimized for supply chain solutions  in contrast to ethereum vechain doesn't  use proof of work or proof of stake  instead it uses a consensus algorithm called proof of authority whose creation  is credited to ethereum co-founder and polkadot founder gavin wood.
+
+
 
 # What's VeChain?
 VeChain’s vision of lowering the barrier and enabling established business with blockchain technology to create value and solve real world economic problems has been clear to us from the very beginning.<br/>
@@ -13,7 +15,9 @@ To achieve and fully harness this technology that will enable mass public adopti
 #  PoA
 The Proof-of-Authority consensus is a consensus algorithm that demands nodes to be authorized in order to participate in the blockchain consensus. Once authorized, nodes are given equal chances to publish new blocks and gain rewards. As a result, there is no need for nodes to spend vast amount of resources to compete with each other. In addition, richer nodes do not have more advantages than other nodes in the system.</br>
 
-Proof of Authority aims to make more transactions by using some previous authorities which is great but it's permissioned, furthermore it could provide high performance and fault tolerance.To gain this authority and a right to generate new blocks, a node must pass a preliminary authentication.
+Proof of Authority aims to make more transactions by using some previous authorities which is great but it's permissioned, furthermore it could provide high performance and fault tolerance.To gain this authority and a right to generate new blocks, a node must pass a preliminary authentication.<br/>
+**PoA chooses which network participant produces a block based on reputation.**
+
 
 # Advantages of PoA consensus
 
@@ -28,3 +32,8 @@ Proof of Authority aims to make more transactions by using some previous authori
 In PoA consensus, the 51% attack requires an attacker to obtain control over 51% of network nodes. This is different from the 51% attack for the Proof-of-Work consensus types where an attacker needs to obtain 51% of network computational power. Obtaining control of the nodes in a permissioned blockchain network is much harder than obtaining computational power.
 
 
+# VeChain Authority Nodes
+VeChain currently has 101 authority  nodes which process all transactions on its blockchain, and any prospective authority nodes must apply with and be approved by the vechain foundation. Furthermore, authority nodes must take a  minimum of 25 million vet which is used for staking and governance.
+
+# VeChain Maximum Supply
+VET has a maximum supply of 86.7 billion all of which has technically vested, in exchange for staking VET and  processing transactions authority nodes earn VTho which is used to pay for  transaction fees on VeChain(up until today there are about 67 billion tokens are circulating).
