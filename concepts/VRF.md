@@ -1,5 +1,9 @@
 # Verifiable Random Functions
 The name “Verifiable Random Function” may not align well with many folks’ natural intuition.
+In cryptography, a verifiable random function (VRF) is a public-key pseudorandom function that provides proofs that its outputs were calculated correctly. <br/>
+
+Obtaining a source of unpredictable auditable and tamper-proof randomness on the blockchain is difficult on-chain randomness solutions like block hashes are subject to block withholding attacks by miners and validators and therefore cannot be trusted on the other hand off-chain randomness solutions are opaque requiring a high degree of trust that the centralized data provider won't manipulate the results to their benefit.<br/>
+
 First, an ideal cryptographic hash function deterministically maps an arbitrary-sized message string to a fixed-size digest that is impossible to direct/predict without brute-force, essentially indistinguishable from a random oracle, and infeasible to run backwards (i.e. invert). <br/>
 The hash function makes it incredibly hard to find two input messages mapping to the same digest. The resulting digest is commonly associated with a message (over a safe channel) to support integrity checks.<br/>
 
@@ -12,15 +16,16 @@ More precisely, a VRF involves three primary functions and four data objects. Al
 
 **Regarding naming intuition, consider a Verifiable Random Function to be a function capable of producing deterministic and unique ‘randomness’ that can later be independently verified.** Note that typical digital signature algorithms may have aspects of non-determinism, malleability and insufficient randomness that can prevent their direct applicability for our purposes. Where these aspects are properly addressed, a hashed signature is a very comparable approach.
 
-# VRF Use Cases
+# VRF in Chainlink
+Chainlink VRF (verifiable random function) was created to provide smart contract developers with a source of cryptographically secure randomness invulnerable against manipulation. With every new request Chainlink VRF generates a random number and cryptographic proof of how that number was determined using a combination of unpredictable block data and in oracle's private key the cryptographic proof is published and verified on chain before the randomness is delivered to the application.
 
-<li>
 
-**Blind Auctions**
-<br/>
-Loosely speaking, VRFs are essentially an asymmetric keyed hash function. This can be quite useful in precommitment systems with low-entropy inputs that must be resistant to brute-force pre-image attacks. For example, imagine we would like to place the bid shown below into a blind (sealed envelope) auction [7] without initially revealing anything about the bid contents or our identity. However, later we may want to reveal the bid contents and claim our item, which will require some notion of integrity and authenticity and thus involve keys. The starting point is this alpha_string which contains our bid:
-</li>
+
 
 
 # References
 https://research.nccgroup.com/2020/02/24/reviewing-verifiable-random-functions/
+
+https://en.wikipedia.org/wiki/Verifiable_random_function#:~:text=In%20cryptography%2C%20a%20verifiable%20random,proof%20for%20any%20input%20value
+
+https://www.youtube.com/watch?v=eRzLNfn4LGc
