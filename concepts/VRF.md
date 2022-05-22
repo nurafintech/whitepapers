@@ -17,9 +17,9 @@ More precisely, a VRF involves three primary functions and four data objects. Al
 **Regarding naming intuition, consider a Verifiable Random Function to be a function capable of producing deterministic and unique ‘randomness’ that can later be independently verified.** Note that typical digital signature algorithms may have aspects of non-determinism, malleability and insufficient randomness that can prevent their direct applicability for our purposes. Where these aspects are properly addressed, a hashed signature is a very comparable approach.
 
 # VRF in Chainlink
-Chainlink VRF (verifiable random function) was created to provide smart contract developers with a source of cryptographically secure randomness invulnerable against manipulation. With every new request Chainlink VRF generates a random number and cryptographic proof of how that number was determined using a combination of unpredictable block data and in oracle's private key the cryptographic proof is published and verified on chain before the randomness is delivered to the application.
+Chainlink VRF (verifiable random function) was created to provide smart contract developers with a source of cryptographically secure randomness invulnerable against manipulation. With every new request Chainlink VRF generates a random number and cryptographic proof of how that number was determined using a combination of unpredictable block data and in oracle's private key the cryptographic proof is published and verified on chain before the randomness is delivered to the application.<br/>
 
-
+This process ensures that the results are provably fair verifiable and tamper proof chain link VRF unlocks a whole new set of blockchain and off-chain use cases across gaming where verifiably random character distribution and player matchmaking makes gameplay more unpredictable and exciting or NFTs or tamper-proof seating of specific collectible traits can be used to mint truly rare NFTs and even fair selection and ordering where the provably fair distribution of high demand items like token airdrops or the verifiably random selection of lucky draw winners can ensure unbiased outcomes.
 
 
 
