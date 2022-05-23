@@ -68,7 +68,7 @@ With ownership and decentralized identity (DID) details kept on the blockchain, 
 </li>
 
 # The importance of Tokenization in the real estate industry
-The tokenization of real estate assets can play a significant role in the real estate industry. The notary visit, the considerable transaction costs or the land transfer tax become technically obsolete through the use of tokenization. The result is an increase in efficiency through corresponding financial and time savings. In short, "tokens" are positioned on the same level as conventional securities. They benefit from the above-mentioned potential increases.
+The tokenization of real estate assets can play a significant role in the real estate industry. The notary visit, the considerable transaction costs or the land transfer tax become technically obsolete through the use of tokenization.**The result is an increase in efficiency through corresponding financial and time savings.** In short, "tokens" are positioned on the same level as conventional securities. They benefit from the above-mentioned potential increases.
 
 
 # The Future of Asset Tokenization
