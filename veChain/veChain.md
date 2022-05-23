@@ -117,7 +117,7 @@ VeChain's adoption doesn't exactly translate to increased  demand for VET becaus
 
 
 
-# Refrences
+# References
 
 https://www.vechain.org/whitepaper 
 
