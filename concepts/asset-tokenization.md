@@ -94,13 +94,22 @@ The tokenization of real estate assets can play a significant role in the real e
 Tokenization is poised to transform asset management as we know it today. It democratizes access to markets while ensuring fairness and security. **The only obstacle today being legal boundaries — to what extent this hurdle stands in the way depends on the type of asset you want to tokenize.** A network for exchanging Basketball cards will have small hurdles compared to a platform of expensive paintings.
 
 # References
-
+>What is asset tokenization?<br/>
 https://hedera.com/learning/what-is-asset-tokenization#:~:text=Asset%20tokenization%20is%20the%20process,either%20digital%20or%20physical%20assets.
 
+>Decentralized Identifiers (DIDs)<br/>
 https://www.w3.org/TR/did-core/
 
+>Tokenization – From illiquid to liquid real estate ownership
+<br/>
 https://www.ey.com/en_ch/real-estate-hospitality-construction/tokenization-from-illiquid-to-liquid-real-estate-ownership
 
+
+>Asset Tokenization From A to Z: Explanation, Benefits, Limitations, and Real-Life Use Cases<br/>
 https://pixelplex.io/blog/what-is-asset-tokenization/
 
+> We are the strategy and management consultancy for the financial and asset management industry, focusing on the securities business and its processes.<br/>
 https://www.plutoneo.com/en/
+
+>Guide: Real Estate Tokenization<br/>
+https://www.youtube.com/watch?v=YW-4Jo2zKAQ 
