@@ -54,7 +54,9 @@ The possibilities are endless as tokenization allows for both fractional ownersh
 
 # Benefits of Asset Tokenization From An Asset Owner’s Perspective
 
-**<li>Increased liquidity<br/>**
+**<li>Greater accessibility and liquidity of assets<br/>**
+Blockchain technology provides a decentralized system and allows anyone from anywhere in the world to tokenize their assets and sell them at any time. Moreover, the list of assets can be extremely broad and it even includes rather illiquid assets such as real estate, antiques, artworks, private company interests, cars, etc. Blockchain thus removes numerous barriers to investment and provides greater liquidity.<br/>
+
 Let’s use the example of an individual requiring $50,000 taken out of a condo valued at $500,000. This individual may have tokenized their condo into 500,000 security tokens, each worth 0.0002%. They might sell 50,000 tokens, instead of selling the entire property and losing its utility as a livable space, thus ensuring a more liquid asset.
 </li>
 
