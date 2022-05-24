@@ -101,8 +101,7 @@ https://hedera.com/learning/what-is-asset-tokenization#:~:text=Asset%20tokenizat
 https://www.w3.org/TR/did-core/
 
 >Tokenization – From illiquid to liquid real estate ownership
-<br/>
-https://www.ey.com/en_ch/real-estate-hospitality-construction/tokenization-from-illiquid-to-liquid-real-estate-ownership
+<br/>https://www.ey.com/en_ch/real-estate-hospitality-construction/tokenization-from-illiquid-to-liquid-real-estate-ownership
 
 
 >Asset Tokenization From A to Z: Explanation, Benefits, Limitations, and Real-Life Use Cases<br/>
