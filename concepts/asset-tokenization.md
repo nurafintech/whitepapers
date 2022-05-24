@@ -1,7 +1,24 @@
+# Brand-New Blockchain Phenomenon
+Few people believed in Bitcoin's success in 2009. In 2021, many people deeply regret not buying a few Bitcoins when the price had not yet sky-rocketed. Now, we witness another blockchain phenomenon that is about to transform the way we own and trade real things - **asset tokenization**.
+
+
 # What's Asset Tokenization?
 Blockchain will tend to the financial landscape and enable an asset to be easily broken down into smaller units, representing ownership, encouraging the democratization of investment in historically illiquid assets and bring about fairer markets. Whether it be paintings, digital media platforms, real-estate property, company shares, or collectibles, everything can be tokenized on a distributed ledger. This leads us to the question: What is asset tokenization?<br/>
 
-Asset tokenization is the process by which an issuer creates digital tokens on a distributed ledger or blockchain, which represent either digital or physical assets. Blockchain guarantees that once you buy tokens representing an asset, no single authority can erase or change your ownership — your ownership of that asset remains entirely immutable.
+Asset tokenization is the process by which an issuer creates digital tokens on a distributed ledger or blockchain, which represent either digital or physical assets. Blockchain guarantees that once you buy tokens representing an asset, no single authority can erase or change your ownership — your ownership of that asset remains entirely immutable.<br/>
+
+One asset is not generally equal to one token: assets are usually broken down into smaller parts, which form many tokens. Once the owner has tokenized their assets and they have entered the digital world, it becomes possible to store and trade them fractionally or completely, as well as transfer them to other owners.
+
+# What does STO stand for?
+Those who have heard about asset tokenization or searched for the term on Google before may have heard something about STO as well. Indeed, STO (short for Security Token Offering), has a lot to do with blockchain technology and tokenization.
+
+# How is Asset Tokenization Process?
+Everything starts with blockchain – the technology makes it possible to create and store tokens. Then an asset owner needs to choose a special STO platform that enables them to digitize their assets and turn them into the number of tokens they need. After that, they can launch their own STO campaign, and anyone in the world can buy those tokens, thereby investing in the asset holder’s business.
+
+# Asset Tokenization is Expanding Fast
+In recent years, more and more asset owners, startups, and investors are discovering tokenization opportunities. As the popularity of asset tokenization grows, so does the size of this market. According to **Plutoneo**, for example, in Europe alone, the size of the tokenized asset market is projected at €1.4 trillion in 2024.<br/>
+
+`Asset tokenization is obviously about to become the next global trend. Just like Bitcoin, which changed the financial world in the 2010s and made cryptocurrencies the new norm, asset tokenization has the potential to be a new transformative force in the 2020s.`
 
 # An Example For Asset Tokenization
 Suppose you have a property worth $500,000 in New York, NY. Asset tokenization could convert ownership of this property into 500,000 tokens — each one representing a tiny percentage (0.0002%) of the property. Let's say you need to borrow $50,000; it wouldn’t make sense to sell your property, because you need somewhere to live, but you still need the money. So instead, you issue tokens on a public distributed ledger like Hedera Hashgraph which allows people to freely buy and sell on different exchanges. When someone buys a token, they buy 0.0002% of the ownership in the asset. 500,000 tokens to become 100% owner of the property. Since distributed ledger technologies are immutable, no one can erase the ownership of the investor who has bought the tokens, or in this matter, shares of a property.
@@ -81,3 +98,7 @@ https://hedera.com/learning/what-is-asset-tokenization#:~:text=Asset%20tokenizat
 https://www.w3.org/TR/did-core/
 
 https://www.ey.com/en_ch/real-estate-hospitality-construction/tokenization-from-illiquid-to-liquid-real-estate-ownership
+
+https://pixelplex.io/blog/what-is-asset-tokenization/
+
+https://www.plutoneo.com/en/
