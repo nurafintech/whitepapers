@@ -18,7 +18,7 @@ Everything starts with blockchain – the technology makes it possible to create
 # Asset Tokenization is Expanding Fast
 In recent years, more and more asset owners, startups, and investors are discovering tokenization opportunities. As the popularity of asset tokenization grows, so does the size of this market. According to **Plutoneo**, for example, in Europe alone, the size of the tokenized asset market is projected at €1.4 trillion in 2024.<br/>
 
-`Asset tokenization is obviously about to become the next global trend. Just like Bitcoin, which changed the financial world in the 2010s and made cryptocurrencies the new norm, asset tokenization has the potential to be a new transformative force in the 2020s.`
+>Asset tokenization is obviously about to become the next global trend. Just like Bitcoin, which changed the financial world in the 2010s and made cryptocurrencies the new norm, asset tokenization has the potential to be a new transformative force in the 2020s.`
 
 # An Example For Asset Tokenization
 Suppose you have a property worth $500,000 in New York, NY. Asset tokenization could convert ownership of this property into 500,000 tokens — each one representing a tiny percentage (0.0002%) of the property. Let's say you need to borrow $50,000; it wouldn’t make sense to sell your property, because you need somewhere to live, but you still need the money. So instead, you issue tokens on a public distributed ledger like Hedera Hashgraph which allows people to freely buy and sell on different exchanges. When someone buys a token, they buy 0.0002% of the ownership in the asset. 500,000 tokens to become 100% owner of the property. Since distributed ledger technologies are immutable, no one can erase the ownership of the investor who has bought the tokens, or in this matter, shares of a property.
@@ -79,16 +79,29 @@ Lock-up periods restrict investors from selling their assets. Sometimes this is 
 </li>
 
 **<li>Transparent process**<br/>
-Since the underlying technology behind asset tokenization, blockchain, is **immutable**, owners are unable to change an assets' history to make it appear more attractive. This allows investors to see the history of a holding and make more informed decisions.
+Since the underlying technology behind asset tokenization, blockchain, is **immutable**, owners are unable to change an assets' history to make it appear more attractive. This allows investors to see the history of a holding and make more informed decisions.Anyone interested in creating, selling, or buying tokens can rest assured that the asset information and transaction records are accurate, as they are verified and cannot be changed once recorded onto the blockchain.
 </li>
 
 **<li>Secure identity**<br/>
 With ownership and decentralized identity (DID) details kept on the blockchain, a buyers' private-public key pair forms a digital signature ensuring it’s really them — this can be used for things like KYC / AML verification. Additionally, there are DID identifiers decided upon by standards organization, such as w3c, ensuring acceptance across many different networks and platforms.
 </li>
 
-# The importance of Tokenization in the real estate industry
+# The importance of Tokenization in the Real Estate industry
 The tokenization of real estate assets can play a significant role in the real estate industry. The notary visit, the considerable transaction costs or the land transfer tax become technically obsolete through the use of tokenization.**The result is an increase in efficiency through corresponding financial and time savings.** In short, "tokens" are positioned on the same level as conventional securities. They benefit from the above-mentioned potential increases.
 
+
+# Risks and Challenges Associated with Asset Tokenization
+Despite the ever-growing interest in blockchain asset tokenization, the world is still being slow to adapt to this phenomenon. Let’s consider in more detail what challenges and barriers stand in the way of tokenization and how they can be overcome in the future.
+
+## Regulatory issues
+Most of the obstacles are related to regulatory issues and current technology constraints. At the same time, countries haven’t yet developed common regulations that would apply in different jurisdictions.<br/>
+
+However, this is a completely normal situation faced by any new technology or global trend, and there is always a way out. Politicians, regulators, and even developers need to join forces and begin work on defining the legal framework and drafting global laws and regulations regarding tokenized assets and the activities associated with them.
+
+## Not Immune from Attacks
+Like any other technology, blockchain is unfortunately often targeted by hackers. For example, during 2020, hackers launched 122 cyberattacks and stole $3.78 billion.It is estimated that by 2025 $10.5 trillion will be spent to prevent and fight cybercrimes.<br/>
+
+As you can see, all the necessary measures are being taken in order to provide maximum security to blockchain processes. In the meantime, the benefits of blockchain technology and the opportunities offered by asset tokenization are still worth considering and exploiting in the near future.
 
 # The Future of Asset Tokenization
 Tokenization is poised to transform asset management as we know it today. It democratizes access to markets while ensuring fairness and security. **The only obstacle today being legal boundaries — to what extent this hurdle stands in the way depends on the type of asset you want to tokenize.** A network for exchanging Basketball cards will have small hurdles compared to a platform of expensive paintings.
