@@ -29,13 +29,6 @@ The beauty in NFTs is the blockchain **proof of ownership**, or **proof of authe
 
 NFT standards allow for the tokenization of just about anything on the blockchain. Plus, each piece of data on the blockchain becomes immutable upon entry. This means that other users cannot alter or adjust any data already present on the chain. In turn, this presents a cryptographic blockchain proof of ownership or authenticity of data, with mathematical verification of the validity of NFT transactions.    
 
-
-
-
-
-
-
-
 # How does it work in Cryptocurrencies?
 This has been a challenge facing Bitcoin, other cryptocurrencies, and other digital assets created with the blockchain and other distributed ledger technologies.<br/>
 
@@ -78,6 +71,32 @@ The proof of authenticity and digital ownership is securely transparent, display
 Further to the publicly transparent digital ownership, blockchain technology offers mathematically verifiable digital scarcity of an asset. Scarcity is a key value proposition for any currency or deflationary asset. In a free market, the scarcity (supply) and demand for an asset determine its value. Blockchain offers reliable, accurate, and trustless records of verifiable digital scarcity of an asset.<br/>
 
 >Also, blockchain is a permissionless, borderless, and censorship-resistant technology operating through a global network of computers called nodes. This means that anyone can take advantage of blockchain proof of ownership regardless of age, creed, status, or location. 
+
+# Industries using Blockchain Proof of Ownership
+
+## **Real Estate<br/>**
+Proof of ownership on the blockchain will eventually remove the need for realtors or estate agents. This is because all necessary information is immutably stored on the blockchain. With this cutting-edge technology, people can tokenize their houses as NFTs on the blockchain. As such, a peer-to-peer housing market is likely to emerge as digital ownership evolves with next-level technologies.<br/>
+
+Blockchain technology presents a novel opportunity for more accessible real estate purchases abroad. Also, first-time buyers could opt for property overseas without the stress and hassle of realtors or lawyers.<br/>
+
+Smart contracts can generate a decentralized escrow account that can only transfer ownership of land deeds upon receiving the total amount requested. Plus, introducing blockchain proof of ownership in the real estate industry makes it easier if one was to give or sell their house to a close relative or friend. 
+</li>
+
+## **Supply Chain Management <br/>**
+The supply chain management industry covers a variety of sectors within the work line. Also, supply chains are found across a range of different industries. The advantages of blockchain integration are apparent even from the beginning of the supply chain, offering blockchain proof of ownership of raw materials. This adds an extra layer of quality control right from the beginning of the work line. 
+**<li> Food <br/>**
+In the food industry, blockchain and internet of things (IoT) devices can provide reliable temperature control of food in transit. Plus, smart contracts can determine the inventory management of goods monitoring the “use by” and “sell by” dates and origin of food. Also, blockchain could offer transparent digital ownership of veg or meat farms for end consumers through QR codes.</li>
+
+**<li> Healthcare <br/>**
+In the future, the healthcare industry could offer medical records with blockchain proof of ownership. Patients could create and have true digital ownership of their medical history as a non-fungible token (NFT). As such, general practitioners (GPs), specialists, and surgeons could receive secure private keys to access the data. As a result, communication and efficiency between staff, departments, and hospitals will drastically increase.</li>
+
+
+**<li>Customer Service<br/>**
+The customer service industry could potentially indirectly benefit from cryptographic digital ownership. The increase in access and communications efficiency of multiple databases due to the blockchain proof of ownership throughout the supply chain makes it far easier to resolve customer concerns. Plus, customer service staff could have seamless, interoperable *[iner Aaper able]*, and secure access to various databases throughout the supply chain.
+</li> 
+
+
+
 
 
 # References
