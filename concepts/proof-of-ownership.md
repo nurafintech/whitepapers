@@ -1,9 +1,40 @@
+# Blockchain: Proof of Ownership Explained
+Blockchain is a cutting-edge technology with novel features, including decentralization, cryptographic security, and immutability. Accordingly, every transaction that occurs on a blockchain remains unalterable and unmodifiable.<br/>
+
+In addition, blockchain offers mathematically verifiable digital scarcity of assets. Further, blockchain offers proof of ownership with each transactional movement of an asset by its very nature.<br/>
+
+However, many different businesses are introducing blockchain proof of ownership using non-fungible tokens (NFTs). In turn, this presents a new opportunity for consumers to take digital ownership to the next level.
+
+
 # Owning A Property
 To own a property, you need specific real property documents to support your rights to the property. Real property includes any structures on the land, any person’s rights and interests related to the property, and natural parts of the land. As a property owner, it is important to understand what documents you need to verify your ownership.
 
 # Proof of Ownership
 Proof of ownership is how you claim the rights to a certain property.<br/>
 In the late 1800s, proof of ownership expanded from a local matter to a national one, when the federal government created specific regulations for the process. By making it national, the process became simpler, and gave property owners an easy way to prove their rights.
+
+![](https://academy.moralis.io/wp-content/uploads/2022/02/22_02_Blockchain-Proof-of-Ownership-Explained-2048x1275.jpg)
+
+
+# What is Blockchain Proof of Ownership?
+The ability for blockchain proof of ownership across a range of different assets is essentially thanks to the introduction of non-fungible tokens (NFTs). <br/>
+
+>“Yeah, I heard about NFTs; they’re basically like fancy JPEGs, aren’t they?” – well, no. Not really. <br/>
+
+Unlike fungible cryptocurrencies, non-fungible tokens (NFTs) represent unique pieces of data on the blockchain. Users can buy, trade, and invest in NFTs as assets rather than using them as a medium of exchange. Also, unlike cryptocurrencies that are divisible into smaller units, NFTs are whole assets sold in a single transaction **(there are, however, some exceptions with fractional ownership NFTs that we will need them!)**.  
+
+![](https://lh6.googleusercontent.com/v4JROEbf_lj99Juu3DLO9uCAJ81x2t23mQnG1kTusdLY1e-NUrhNwAL66aZaLpLv4Dux9MbUlIO_crK_Qs50OmKjD8N-aNb1L5ucKyHGLW2KQGDDzvJghRQSnQNWxAlt8CcYa57j)
+
+The beauty in NFTs is the blockchain **proof of ownership**, or **proof of authenticity**, with cryptographic backing and provable digital scarcity. <br/>
+
+NFT standards allow for the tokenization of just about anything on the blockchain. Plus, each piece of data on the blockchain becomes immutable upon entry. This means that other users cannot alter or adjust any data already present on the chain. In turn, this presents a cryptographic blockchain proof of ownership or authenticity of data, with mathematical verification of the validity of NFT transactions.    
+
+
+
+
+
+
+
 
 # How does it work in Cryptocurrencies?
 This has been a challenge facing Bitcoin, other cryptocurrencies, and other digital assets created with the blockchain and other distributed ledger technologies.<br/>
@@ -33,8 +64,20 @@ The message can be as simple as, “I own this address,” a show of the public 
 # Bearer *[berer]* Assets and Proving Ownership
 A bearer asset, instrument or security is one in which no ownership information is recorded and the asset is issued in physical form to the individual who purchases it. The holder of a bearer instrument is the owner and whoever is in possession of the document or certificate authorizing ownership is the rightful owner.<br/>
 
-Issuers of a bearer asset keep no record of ownership. This means that that asset is traded without a formal record or system demonstrating ownership. Ownership is transferred by simply transferring the document or certificate from one individual to another. Further, there is no requirement for reporting the transfer.
+Issuers of a bearer asset keep no record of ownership. This means that that asset is traded without a formal record or system demonstrating ownership. Ownership is transferred by simply transferring the document or certificate from one individual to another. Further, there is no requirement for reporting the transfer.<br/>
 
+A discussion of bearer instruments or assets is applicable when evaluating the security of Bitcoin and other cryptocurrencies because cryptocurrency is a bearer asset: Whoever holds the private key is considered the owner.<br/>
+
+The blockchain enables self-custody of digital assets: the owner of crypto assets is free to choose from various wallet solutions, and the regulatory environment continues to shift. In some ways, every digital asset owner needs to become their own custodian, which can be frustrating when considering the security of those assets.<br/>
+
+>This can make it extremely hard to demonstrate proof of ownership should a private key be stolen or lost. This security and custody issue is perhaps one of the biggest reasons why institutional players have been slow to accept cryptocurrency. 
+
+# Features of Blockchain Technology 
+The proof of authenticity and digital ownership is securely transparent, displaying cryptographic hashes representing users’ wallet addresses. These are known as public keys. Only people who have access to the corresponding private keys can access the hashed data, making blockchain one of the most secure data-sharing technologies. <br/>
+
+Further to the publicly transparent digital ownership, blockchain technology offers mathematically verifiable digital scarcity of an asset. Scarcity is a key value proposition for any currency or deflationary asset. In a free market, the scarcity (supply) and demand for an asset determine its value. Blockchain offers reliable, accurate, and trustless records of verifiable digital scarcity of an asset.<br/>
+
+>Also, blockchain is a permissionless, borderless, and censorship-resistant technology operating through a global network of computers called nodes. This means that anyone can take advantage of blockchain proof of ownership regardless of age, creed, status, or location. 
 
 
 # References
@@ -46,3 +89,6 @@ https://big-swiss.com/compliance-proving-ownership-of-cryptocurrencies/#:~:text=
 
 >Can You Prove that You Own Your Crypto Assets?<br/>
 https://transitnet.io/blog/can-you-prove-that-you-own-your-crypto-assets/
+
+>Blockchain: Proof of Ownership Explained<br/>
+https://academy.moralis.io/blog/blockchain-proof-of-ownership-explained
