@@ -39,7 +39,7 @@ This means that their protocol can be applied to any blockchain (including priva
 ## OringinTrail Decentralized Network
 At the core is a decentralized network of data providers, data creators, data holders, and data viewers:
 
-![](https://miro.medium.com/max/1400/1*F_izA26JNTEcxJGzVVdo1w.jpeg) <br><br/>
+![](https://miro.medium.com/max/1400/1*F_izA26JNTEcxJGzVVdo1w.jpeg) <br><br>
 در حال حاضر از بلاکچین های Etherum و Gnosis و Polygon استفاده شده و از NEO و IOTA استفاده نمیشود.
 
   Data enters the OriginTrail Decentralized Network through a Data Creator node. This data source could be from any number of business functions, including existing ERPs, blockchains (permissioned and permissionless), etc. A cryptographic data hash of the data is first fingerprinted to a blockchain to ensure data immutability. This data is then passed (via a bidding process) to 3+ Data Holder nodes that agree to hold the data for the terms of a contract. Data holder nodes are essentially decentralized, interconnected servers and provide that data upon demand to relevant parties.<br>
@@ -47,3 +47,6 @@ At the core is a decentralized network of data providers, data creators, data ho
 The data can be treated exactly how the data creator wants. Data creators can set the data to be public or private, have the data expire after a certain number of weeks/years, or have that data (or parts of data) shared only with appropriate parties. Sensitive data is protected using zero-knowledge methods in a privacy-by-design approach. These data holding nodes also function as a vast, decentralized knowledge graph to connect data sets across companies and/or supply chain partners quickly and efficiently. This core feature of the ODN is one of the major selling points for protocol adoption, as searching for inter-related data between partners has not been possible before. This writeup on the decentralized knowledge graph is highly recommended to learn more.<br>
 
 Data holding nodes were designed to be very decentralized. They are open to anyone with 3000+ TRAC, and if the data job meets your criteria (job length, data size, etc.) then your node could be randomly assigned the job. All data holding nodes are equal; having more TRAC per node only means you can accept additional jobs compared to others.<br>
+ 
+ ![](https://miro.medium.com/max/1400/0*6vELJQpYp6K56ALx)
+ 
