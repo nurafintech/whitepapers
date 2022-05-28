@@ -49,4 +49,67 @@ The data can be treated exactly how the data creator wants. Data creators can se
 Data holding nodes were designed to be very decentralized. They are open to anyone with 3000+ TRAC, and if the data job meets your criteria (job length, data size, etc.) then your node could be randomly assigned the job. All data holding nodes are equal; having more TRAC per node only means you can accept additional jobs compared to others.<br>
  
  ![](https://miro.medium.com/max/1400/0*6vELJQpYp6K56ALx)
- 
+
+ <br>
+
+ 1. Data Provider (DP)
+The Data Provider (DP) is an entity that publishes supply chain data to the network. A typical scenario would be a company that would like to publish and share its data from their ERP system about products that are part of their supply chain. Data Providers can also be consumers interacting with the network through applications, or devices, such as sensors that provide information about significant events in the supply chain. <br>
+The interest of the Data Provider is to be able to safely store data on the network, as well as to be able to connect it and cross-check with the data of other DPs within the network. Depending on the use case, providing data to the network can be incentivised with the Trace token.
+
+2. Data Creator Node (DC)
+The Data Creator node (DC) is an entity representing a node that will be responsible for importing the data provided by the DP, making sure that all the criteria of DP are met (e.g. the availability of the data on the network for a desired time or a factor of replication). While we typically expect that Data Providers will run their own Data Creator nodes, it is not a requirement. Third party DC nodes may provide the service for one or several Data Providers. The DC node is an entry point for information to the network and the relationship between the DPs and the DCs is not regulated by the protocol.<br>
+The responsibility of the DC node is to negotiate, establish and maintain the service requested by the DP in relationship with its associated Data Holder (DH) nodes. Furthermore, DC nodes are responsible to check if data is available on the network during the time of service and initiate the litigation process in case of any disputes.
+
+3. 3 Data Holder Node (DH)
+The Data Holder (DH) is a node that has committed itself to storing the data provided by a DC node for a requested period of time and making it available for the interested parties (which could also be the DC node itself). For this service, the Data Holder will be compensated in TRAC tokens. The DH node has the responsibility to preserve the data intact in its unaltered, original form, as well as to provide high availability of the data in terms of bandwidth and uptime.
+<br>It is important to note that the DH node can be a DC node at the same time, in the context of the data that it has introduced to the network. As noted, the same software runs on all the nodes in the network, providing for symmetrical relations and thus not limiting scalability.
+<br>The Data Holder may also wish to find data that is not directly delivered by DCs but is popular, and offer it to interested parties. Therefore, it is probable that Data Holders will listen to the network, search for data that is frequently requested, and replicate it from other Data Holders to also store, process and offer it to the Data Viewers. However, since such Data Holders are not bound by the smart contract to provide the service, there is a certain risk that these Data Holders may offer false data or tamper with the data, or even pretend to have data that they don’t have.<br>
+To mitigate this risk, a node will be required to deposit a stake for executing an agreement. This stake will be stored in case it is proven that the Data Holder tried to sell altered data while Data Viewers will have a mechanism to check if all the chunks of data are valid and initiate a litigation procedure in case of any inconsistencies.<br>
+The amount of stake is set per agreement within each node. The DC node may require a minimum amount of stake to form an agreement with DH nodes, informing them of these amounts by publishing this information when they create an “Offer” on the blockchain. The stake settings can be setup either directly in the node configuration files or through a UI application (Houston).
+<br>
+پس به طور خلاصه، با استفاده از قرارداد های هوشمند و توکن هایی که به عنوان وثیقه قفل میشن، مکانیسم نگهداری از داده ها رو ایجاد میکنیم.
+نکته مهم اینجاست که اگرچه یک نود نگهدارنده داده، میتواند مبلغ خیلی زیادی توکن رو به عنوان وثیقه گرو بگذارد تا به نوعی پرستیژ خود را بالا برده و با این کار برای کیفیت کاری که انجام میدهد تبلیغ کند، اما لزوما این معیار، تنها معیار بررسی میزان اعتبار یک نود برای نگهداری داده ها نمیباشد.
+
+4. Data Viewer
+The Data Viewer (DV) is an entity that requests data from any network node able to provide that data. The Data Viewer will be able to send two types of queries to the network. The first type is a request for listing data on the network for a specific set of batch identifiers of the product supply chain they are interested in, where they will be able to retrieve the all connected data of the product trail. The second type is a retrieval query for the specific data set from the listed one in the first request. In both cases, the Data Viewer will receive the offers from all the nodes that have the data, together with their compensation requests for retrieving of the data that will be sent. The Data Viewer can decide which offers it will accept and deposit the requested compensation funds on the escrow smart contract. The providing node then sends the encrypted data in order for the Data Viewer to test the validity of the data. Once the validity of the data is confirmed, the Data Viewer will get the key to decrypt the data while the smart contract will unlock the funds for the party that provided the data. <br>
+The interest of the Data Viewer is to get the data for as affordable as possible, but also to be sure that the provided data is genuine. Therefore, the Data Viewer also has an opportunity to initiate the litigation procedure in case the data received is not valid. If that happens, and it is proven that Data Viewer received false data, the stake of the corresponding DH node is lost.<br>
+در واقع همان مکانیسم اسلشینگ، نیز در اینجا صادق میباشد و اگر نودهای نگهداری داده، وظیفه خود را در حفظ داده به خوبی انجام ندهند، مبلغ وثیقه گذاشته خود را از دست خواهند داد.
+
+## Service Initiation Process: The Bidding Mechanism
+To get data onto the OriginTrail network, **the Data Provider sends tokens and data to a chosen DC node. The Data Creator sends tokens to the smart contract with tailored escrow functionalities and broadcasts a data holding request (Offer) with the required terms of cooperation.** All interested DH node candidates then automatically respond with their bids to the smart contract, which will include the price for the service per data unit, the stake amount and minimum time for providing the service.
+
+The minimum factor of replication is 2N+1, where the minimum value for N is is the amount of stakeholders involved in the supply chain observation, while the actual factor may be larger. To mitigate the possibility for fixing the results of the public offering, the smart contract will close the application procedure only after a certain number of Data Holders — greater than the replication factor — answer the call. Once the application procedure is finished, the smart contract selects the required number of Data Holders based on the parameters in the DH bids. **The selection process operates on the principle of the closest data hash address, preferring DH nodes which have IDs that are ‘closer’ to the replicated data hash address, so a potential malicious Data Creator, who may own several DH nodes, can’t influence the process and pick its own nodes.**
+
+The Data Creator will deposit the compensations in tokens for the Data Holders on an escrow smart contract that Data Holders will be able to progressively withdraw from as time passes, and up to the full amount once the period of service is successfully finished. The smart contract will take care that funds are unlocked incrementally. It is up to the Data Holder to decide how often it will withdraw the funds for the part of the service that is already delivered, as each withdrawal is a transaction on the blockchain. Ideally, the DH node will withdraw their funds at the end of successfully providing the service to minimize transaction costs.
+
+In order **to participate in the service, the Data Holder will also have to deposit a stake in the amount proportional to the amount of the job value.** This stake is necessary as a measure of security, ensuring that data will not be deleted or tampered in any way, and that it will be provided to third parties according to the requirements. The stake is set via a “stake factor” which presents a multiplier of the bid value (i.e. a stake factor of 1 means that the staked amount is equal to the amount of tokens agreed for the service).
+
+![](https://miro.medium.com/max/1400/0*6ws7e8gyQLH68qoS)
+
+<br>
+
+## Token Utility
+1. Engaging in the OriginTrail Ecosystem. Data creators and data holders must have TRAC staked in their nodes to take part in the ODN. More TRAC staked in nodes means more data jobs can be published or held.
+
+2. Publishing data to the ODN. Data creators publish data jobs on the ODN using TRAC to compensate 3+ data holding nodes for their time and resources. The exact value of TRAC for each data job is dependent on market forces, but parameters like job length and data size affect it. This TRAC is locked in a smart contract until the job’s completion.
+
+3. Collateralization by Data Holders. To prevent data tampering and as a promise to hold data for a set period of time, TRAC from a data holder’s stake is also locked via smart contract for the length of the data job. Failure to provide data on-demand leads to loss of this staked TRAC to the data creator. Upon completion of the terms of the job, the data holder earns back their original stake and the TRAC staked by the data creator. <br>
+Note that data holding node is not like a typical crypto “masternode.” They actively accept and provide data and are more akin to servers; most (all?) people run them on VPS providers due to the potential to lose TRAC staked (by failing to provide data if there is downtime). Some knowledge of a Linux environment is essential.
+
+4. Staking TRAC. Individuals will soon be able to stake their TRAC on Version 6.0 of the ODN. Stakers will be able to get a share in the profits of the data job. This locks TRAC into the network for months and years, constricting supply. More information is coming soon.
+
+5. Knowledge Incentivization. The final usecase for TRAC is through a data ecosystem that allows data creators to sell their data on the open market. For example, the recently announced EU-sponsored Food Safety Market aims to develop an industrial data platform for food certification in Europe by 2023. There are also Data Markets being built for both pharmaceuticals and satellite imagery; this has the potential to unlock valuable proprietary siloed data previously thought unsellable.
+
+The OriginTrail Parachain super-charges these data marketplaces with the addition of knowledge tokens, knowledge wallets, the knowledge marketplace, and knowledge tenders. They allow individuals to buy and sell data in a trusted, private way; the developers say this will increase TRAC’s utility by orders of magnitude. Because this is tied into to the Polkadot ecosystem, all Polkadot/Kusama projects will be able to utilize this feature.
+
+![](https://miro.medium.com/max/560/0*KKudihKKLiamQUdg) <br>
+![](https://miro.medium.com/max/560/0*yqj_ThJCfFELvCSy) <br>
+
+شاید جذاب ترین بخش شبکه اوریجین تریل گراف دانش غیرمتمرکز آن باشد که تا کنون حدودا هشتصد هزار دارایی مختلف در آن ثبت شده و معنادهی شده است.
+
+گراف دانش، همان سیستمی است که گوگل و ناسا و آمازون و دیگر شرکت های بزرگ دیگر، برای طبقه بندی مفهومی داد ها از آن استفاده میکنند.
+
+پس یعنی در وهله اول شبکه غیرمتمرکز اورجین تریل محفلی برای شرکت ها و افراد به منظور بستری من باب زنجیره تامین بوده که در با چندین بلاکچین مختلف میتواند، کار کند.
+در وهله دوم، این شبکه یک گراف دانش غیرمتمرکز بوده که دارایی ها را به یکدیگر متصل کرده و معنا میدهد.
+
+در وهله سوم، بحث پاراچین اورجین تریل و همکاری آن با پولکدات پیش میاید که سعی میکنند، با داشتن شبکه ای بلاکچین محور، تبدیل کردن دارایی ها به توکن و قرار دادن آن در شبکه و گراف اوریجین تریل را تسهیل و تسریع کند. در این باره در داکیومنتی جداگانه توضیح خواهیم داد.
