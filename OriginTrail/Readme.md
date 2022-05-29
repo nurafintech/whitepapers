@@ -73,16 +73,19 @@ The Data Holder (DH) is a node that has committed itself to storing the data pro
 To mitigate this risk, a node will be required to deposit a stake for executing an agreement. This stake will be stored in case it is proven that the Data Holder tried to sell altered data while Data Viewers will have a mechanism to check if all the chunks of data are valid and initiate a litigation procedure in case of any inconsistencies.<br>
 The amount of stake is set per agreement within each node. The DC node may require a minimum amount of stake to form an agreement with DH nodes, informing them of these amounts by publishing this information when they create an “Offer” on the blockchain. The stake settings can be setup either directly in the node configuration files or through a UI application (Houston).
 <br>
+
 #
 پس به طور خلاصه، با استفاده از قرارداد های هوشمند و توکن هایی که به عنوان وثیقه قفل میشن، مکانیسم نگهداری از داده ها رو ایجاد میکنیم.
 نکته مهم اینجاست که اگرچه یک نود نگهدارنده داده، میتواند مبلغ خیلی زیادی توکن رو به عنوان وثیقه گرو بگذارد تا به نوعی پرستیژ خود را بالا برده و با این کار برای کیفیت کاری که انجام میدهد تبلیغ کند، اما لزوما این معیار، تنها معیار بررسی میزان اعتبار یک نود برای نگهداری داده ها نمیباشد.
-</br>
 #
 
 4. Data Viewer
 The Data Viewer (DV) is an entity that requests data from any network node able to provide that data. The Data Viewer will be able to send two types of queries to the network. The first type is a request for listing data on the network for a specific set of batch identifiers of the product supply chain they are interested in, where they will be able to retrieve the all connected data of the product trail. The second type is a retrieval query for the specific data set from the listed one in the first request. In both cases, the Data Viewer will receive the offers from all the nodes that have the data, together with their compensation requests for retrieving of the data that will be sent. The Data Viewer can decide which offers it will accept and deposit the requested compensation funds on the escrow smart contract. The providing node then sends the encrypted data in order for the Data Viewer to test the validity of the data. Once the validity of the data is confirmed, the Data Viewer will get the key to decrypt the data while the smart contract will unlock the funds for the party that provided the data. <br>
 The interest of the Data Viewer is to get the data for as affordable as possible, but also to be sure that the provided data is genuine. Therefore, the Data Viewer also has an opportunity to initiate the litigation procedure in case the data received is not valid. If that happens, and it is proven that Data Viewer received false data, the stake of the corresponding DH node is lost.<br>
+
+#
 در واقع همان مکانیسم اسلشینگ، نیز در اینجا صادق میباشد و اگر نودهای نگهداری داده، وظیفه خود را در حفظ داده به خوبی انجام ندهند، مبلغ وثیقه گذاشته خود را از دست خواهند داد.
+#
 
 ## Service Initiation Process: The Bidding Mechanism
 To get data onto the OriginTrail network, **the Data Provider sends tokens and data to a chosen DC node. The Data Creator sends tokens to the smart contract with tailored escrow functionalities and broadcasts a data holding request (Offer) with the required terms of cooperation.** All interested DH node candidates then automatically respond with their bids to the smart contract, which will include the price for the service per data unit, the stake amount and minimum time for providing the service.
