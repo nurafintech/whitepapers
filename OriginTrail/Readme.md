@@ -1,3 +1,6 @@
+**Part 1 ~ Scratching the Surface**
+
+
 # The OriginTrail Decentralized Network (ODN)
 OriginTrail is a neutral, open-source protocol enabling data sharing between companies and organizations. It utilizes decentralized nodes and an off-chain technology stack to interface with legacy systems as well as other blockchains (permissioned and permissionless). OriginTrail allows businesses to improve interoperability among systems and facilitate trusted data exchange. <br/> <br/>
 ## The Idea's Origin
@@ -101,6 +104,10 @@ In order **to participate in the service, the Data Holder will also have to depo
 <br>
 
 ## Token Utility
+
+Serving as the glue for OriginTrail’s network is its native token, TRAC, which is used as collateral to ensure the appropriate
+behavior of data holders and creators and to compensate node operators for their time and resources. The network is monitored by oracles – off-chain sensors that have the ability to communicate data to and from the network – and it leverages
+artificial intelligence both to monitor data and to help users find information.
 1. Engaging in the OriginTrail Ecosystem. Data creators and data holders must have TRAC staked in their nodes to take part in the ODN. More TRAC staked in nodes means more data jobs can be published or held.
 
 2. Publishing data to the ODN. Data creators publish data jobs on the ODN using TRAC to compensate 3+ data holding nodes for their time and resources. The exact value of TRAC for each data job is dependent on market forces, but parameters like job length and data size affect it. This TRAC is locked in a smart contract until the job’s completion.
@@ -155,9 +162,22 @@ https://miro.medium.com/max/1400/0*gtmGSHbJxYnW5e0x
 
 همانطور که ملاحظه میکنید به خوبی درباره توجیه اقتصادی توکن مربوطه فکر شده است و در دو سال سه سال گذشته، تعداد دیتاجاب  ها نیز به صورت نمایی رشد داشته است.
 
+One of the core metrics used to measure the growth of OriginTrail’s network is total graph size (TGS), a measurement of the
+size of knowledge supported by the DKG. TGS combinestwo key elements of a knowledge graph: data objects and connections
+between data objects. More specifically, TGS combines the total number of vertices and the total number of edges of a
+decentralized graph, with verticesrepresenting all of the different objects added to it and edgesrepresenting the connections
+between them. Vertices include identifiers or specific information for supply chain events, products, attestations, locations,
+and certificates.
+
+
 ![](https://miro.medium.com/max/1400/1*U8RZPCFjuvfY2iVkhM0Yxg.jpeg)
 
 ![](https://miro.medium.com/max/1400/1*AGrwu12GUrB2wY2H_ipmXA.jpeg)
+
+Another metric used to track OriginTrail’s growth isthe number of published datasets on ODN. With the number of publishings
+increasing and reaching as high as 70K in a single day, the network began to run into capacity thresholds during 2H21, with
+such issues set to be addressed by the much higher throughput capacity of OriginTrail v6.
+
 
  حتی در گزارش مفصل بانک آمریکا درباره حوزه کریپتو در آگوست 2021 منتشر شد و وبسایت سی بی اینسایتس نیز این گزارش را مورد تحلیل قرار داده، اکوسیستم اوریجین تریل را جز پلتفرم هایی که در رادار این بانک بزرگ آمریکایی قرار دارد:
 
