@@ -126,3 +126,42 @@ The OriginTrail Parachain super-charges these data marketplaces with the additio
 
 در وهله سوم، بحث پاراچین اورجین تریل و همکاری آن با پولکدات پیش میاید که سعی میکنند، با داشتن شبکه ای بلاکچین محور، تبدیل کردن دارایی ها به توکن و قرار دادن آن در شبکه و گراف اوریجین تریل را تسهیل و تسریع کند. در این باره در داکیومنتی جداگانه توضیح خواهیم داد.
 #
+
+TRAC tokenomics
+The Trace token (TRAC) is used for DKG operation and incentivising protocol behavior. It is needed to perform the operations such as publishing on the network, and is a utility token that drives the entire DKG. TRAC was launched in 2018 as an ERC-20 token on the Ethereum network with a fixed supply of 500,000,000 tokens. The core utility of TRAC is:
+
+<li> Publishing and updating assets - Asset publishers are using TRAC to compensate OriginTrail DKG node runners which ensure data replication required for discoverability of assets and verifiability of published data. The exact value of TRAC required for each data upload is dependent on market forces, but parameters like data longevity and size affect it. </li>
+<li> Collateral on DKG nodes - locking TRAC by network participants running DKG network nodes acts as a collateral that increases their stake in the network, increasing the node’s chances of receiving fees for hosting a particular segment of the DKG. </li>
+<li>Delegating to DKG nodes - token holders can delegate their TRAC tokens to those nodes that allow their stake to be increased by third parties. In return they are able to earn part of the rewards that the node is receiving. </li>
+<li> Staking on keywords - Assets owners can lock-up their TRAC to have their assets show up higher in search results of a particular keyword (similar to how Google AdSense impacts discoverability of webpages in Google search). </li>
+<li>TRAC as a fungible token - since TRAC is a fungible token created under ERC-20 standard it is transferable and usable in any way ERC-20 assets are. This includes TRAC being included in smart contracts mechanisms created on any of the networks TRAC is operating in and is bridged to (at the time of writing Ethereum, Gnosis and Polygon). One such example are data marketplace smart contracts which allow TRAC to be used as a compensation token for selling and purchasing Assets.
+
+#
+
+تا اینجا میبینیم که چقدر مورد کاربری برای این توکن درنظر گرفته شده که اگر تعداد دیتاجاب ها به مرور زمان زیاد شود، برای هر کاری به این توکن نیاز خواهیم داشت، در نتیجه هر کسی که به نحوی در این اکوسیستم درگیر شود، باید توکن را خریداری کند؛ همه این ها در کنار هم فشار های خریدی را روی توکن اعمال کرده ک چون تعداد توکن ها از قبل مشخص بوده و به آن ها زیاد نخواهد شد، قیمت این توکن نیز به مرور بالا خواهد رفت.
+<br>
+![رشد نمایی دیتاجاب های شبکه اوریجین تریل](https://miro.medium.com/max/1400/0*m3Y2lZ-3fDhLUi35)
+
+![](https://github.com/nurafintech/whitepapers/blob/main/OriginTrail/OriginTrail%20Data%20Jobs.png)
+
+<br>
+نحوه توضیح توکن های از قبل ماین شده و آماده در سال 2019 و 2020:
+
+![](https://miro.medium.com/max/1400/0*fAFMmAX3vKKIxxnl)
+
+All of the TRAC available in the “soft lock” column will be used in the protocol development fund for future improvements (132.5 million total)
+
+https://miro.medium.com/max/1400/0*gtmGSHbJxYnW5e0x
+
+همانطور که ملاحظه میکنید به خوبی درباره توجیه اقتصادی توکن مربوطه فکر شده است و در دو سال سه سال گذشته، تعداد دیتاجاب  ها نیز به صورت نمایی رشد داشته است.
+
+![](https://miro.medium.com/max/1400/1*U8RZPCFjuvfY2iVkhM0Yxg.jpeg)
+
+![](https://miro.medium.com/max/1400/1*AGrwu12GUrB2wY2H_ipmXA.jpeg)
+
+ حتی در گزارش مفصل بانک آمریکا درباره حوزه کریپتو در آگوست 2021 منتشر شد و وبسایت سی بی اینسایتس نیز این گزارش را مورد تحلیل قرار داده، اکوسیستم اوریجین تریل را جز پلتفرم هایی که در رادار این بانک بزرگ آمریکایی قرار دارد:
+
+![](https://pbs.twimg.com/media/FA-uZ_UUYAQiK1S?format=png)
+
+<br>
+
