@@ -2,19 +2,24 @@
 OriginTrail is a neutral, open-source protocol enabling data sharing between companies and organizations. It utilizes decentralized nodes and an off-chain technology stack to interface with legacy systems as well as other blockchains (permissioned and permissionless). OriginTrail allows businesses to improve interoperability among systems and facilitate trusted data exchange. <br/> <br/>
 ## The Idea's Origin
 Over the years’ there have been a number of scandals involving food. There was the horse meat scandal (which was found in beef products), and then the baby milk scandal in China. There are many counterfeit wines and tobacco products on the market too. Medical supplies (one of GS1’s areas of expertise) can also potentially suffer.
-
+#
 ایده اولیه این پروژه برای هنگامی بود که سازندگان میخواستند روشی داشته باشند تا بتوانند محصولات با کیفیت کشاورزی یا لبنی را در شبکه ای قرار داده و خریدار با اطمینان از اصل بودن و با کیفیت بودن محصول، آن را خریداری کند. بنابراین به دنبال مکانیسمی هستیم که عده ای را تشویق کند داده ها را وارد کرده و عده ای دیگر در این شبکه، آن داده ها را طبق قول و قراری نگهداری کنند و در زمان نیاز، آن ها را تحویل دهند.
-<br/> <br/>
+#
+
 ## How does blockchain come in to play?
 Firstly, utilising a blockchain ledger to store the logistics data (and any other data necessary), there is the possibility to have an un-editable, and therefor more accountable system in place. <br>
 **Tamper proof RFID tags are one such solution**, enabling a consumer brand to attach a coded RFID tag to each product, box or pallet of product they put through the supply chain. If that product is then tampered with during the supply process there then should be the opportunity to understand where that likely happened. From a consumer perspective, if there is no RFID tag present on a product they were expecting to have one (such as an expensive luxury good), it will automatically raise alarm bells, hopefully cutting out a large % of counterfeit goods as they will be shunned by the consumer, or more ideally removed from the chain earlier.
 <br>
 There are a number of blockchain companies working with these RFID tags already, including VeChain, Waltonchain, and Wabi (I may have unintentionally missed some out). All have various key partners in place already on a global scale, and some are currently being used in real-world uses. RFID can be specific to usage requirements, so for instance they can have temperature monitoring for chilled/frozen goods, be tamper proof for products that need to remain sealed, or just be more simple like a QR code.
-<br>
-این پروژه ها اگر چه جذاب به نظر میرسند، اما هر کدام به دنبال پیاده سازی استاندارد های مخصوص خود بوده و در نتیجه اگر بخواهیم بخواهیم از تگ های مخصوص وی چین استفاده کنیم، دیگر به شبکه وی چین محدود خواهیم شد. خود شبکه وی چین به طور کامل غیرمتمرکز نیست.  <br>  
+<br/>
+#
+این پروژه ها اگر چه جذاب به نظر میرسند، اما هر کدام به دنبال پیاده سازی استاندارد های مخصوص خود بوده و در نتیجه اگر بخواهیم بخواهیم از تگ های مخصوص وی چین استفاده کنیم، دیگر به شبکه وی چین محدود خواهیم شد. خود شبکه وی چین به طور کامل غیرمتمرکز نیست. 
+<br/>
+
 **!شاید باید به جای اینکه از یک بلاکچینی که به بقیه برتری دارد، باید از چند بلاکچین استفاده کنیم**
 <br> <br>
 اینجاست که با در نظر گرفتن چهار ویژگی بنیادی، شبکه ای ایجاد کرده که در آن بتوان از بلاکچین های مختلف نیز یاری گرفت؛ در ادامه توضیح خواهیم داد.
+#
 
 ## Network Features
 The ODN Mainnet has been operating since December 2018 with actual enterprise “data jobs” being posted by data creator nodes and stored by data holding nodes (continue reading for examples). The OriginTrail protocol and the ODN has been built from the ground up with four core features:
@@ -26,6 +31,7 @@ This means that their protocol can be applied to any blockchain (including priva
 2. **Data Immutability:** A tamper-proof fingerprint (cryptographic hash) of the data is generated and placed on the a blockchain when first published to the ODN; this is then used to verify that data has not been modified in any way.
 3. **Stability & Cost Efficiency:** As the “heavy lifting” of interoperability and data integrity takes place off-chain, the OriginTrail graph database operates cheaply and efficiently. Its open-sourced nature enables easy deployment and does not “rip and replace” legacy systems as other blockchain-based supply chain solutions do.
 4. **Network Incentivization via Token Staking:** As detailed in the section below, the TRAC token is the means of compensation between data creators, data holders, and data consumers. It uses an innovative staking system to keep all parties honest; nodes are therefore incentivized for performing consensus checks and delivering data on demand.
+#
 
 برای ساخت این شبکه، چهار ویژگی بنیادی اصلی را در نظر میگیریم. <br/>
 اول اینکه داده ها باید استاندارد و اصولی باشند به نحوی که هم بتوانیم داده های سیستم های قدیمی را وارد شبکه کنیم و هم داده های سیستم های جدیدتر مثل داده های بلاکچین های نوظهور. تیم سازنده برای اینکار با دو سازمان جهانی تعیین استاندارد های وب، یعنی GS1 و W3C شروع به همکاری کرده و به عضویت آن ها درآمده است. در داکیومنتی مجزا در مورد استاندارد های Uniform Asset Identifier  و Uniform Asset Loacators که مخصوص وب 3 طراحی شده اند و مانند URI , UAI های وب 1 میباشند. <br/>
@@ -35,7 +41,7 @@ This means that their protocol can be applied to any blockchain (including priva
 این چهار ویژگی بنیادی در کنار هم هستند که اوریجین تریل را از بلاکچین های private ای مثل بلاکچین IBM و راه حل زنجیره تامین بر پایه آن یعنی TradeLens مجزا میکند.
 تریدلنز پلتفرمی است که با استفاده از بلاکچین غیرمتمرکز ساخته شده توسط IBM، روش هایی برای بهینه کردن ورد و خروج و ردیابی کانتینرها در گمرک ها و خلیج ها و کشتی ها ارائه دهد که البته شاید برای افرادی خاص یا دولت چین که میخواهند اجناسی خاص را سوار بر کشتی کنند، خیلی جذاب باشد اما به آن صورت نتوانست مورد استقبال عموم قرار گیرد.
 <br/><br/>
-
+#
 ## OringinTrail Decentralized Network
 At the core is a decentralized network of data providers, data creators, data holders, and data viewers:
 
@@ -67,8 +73,11 @@ The Data Holder (DH) is a node that has committed itself to storing the data pro
 To mitigate this risk, a node will be required to deposit a stake for executing an agreement. This stake will be stored in case it is proven that the Data Holder tried to sell altered data while Data Viewers will have a mechanism to check if all the chunks of data are valid and initiate a litigation procedure in case of any inconsistencies.<br>
 The amount of stake is set per agreement within each node. The DC node may require a minimum amount of stake to form an agreement with DH nodes, informing them of these amounts by publishing this information when they create an “Offer” on the blockchain. The stake settings can be setup either directly in the node configuration files or through a UI application (Houston).
 <br>
+#
 پس به طور خلاصه، با استفاده از قرارداد های هوشمند و توکن هایی که به عنوان وثیقه قفل میشن، مکانیسم نگهداری از داده ها رو ایجاد میکنیم.
 نکته مهم اینجاست که اگرچه یک نود نگهدارنده داده، میتواند مبلغ خیلی زیادی توکن رو به عنوان وثیقه گرو بگذارد تا به نوعی پرستیژ خود را بالا برده و با این کار برای کیفیت کاری که انجام میدهد تبلیغ کند، اما لزوما این معیار، تنها معیار بررسی میزان اعتبار یک نود برای نگهداری داده ها نمیباشد.
+</br>
+#
 
 4. Data Viewer
 The Data Viewer (DV) is an entity that requests data from any network node able to provide that data. The Data Viewer will be able to send two types of queries to the network. The first type is a request for listing data on the network for a specific set of batch identifiers of the product supply chain they are interested in, where they will be able to retrieve the all connected data of the product trail. The second type is a retrieval query for the specific data set from the listed one in the first request. In both cases, the Data Viewer will receive the offers from all the nodes that have the data, together with their compensation requests for retrieving of the data that will be sent. The Data Viewer can decide which offers it will accept and deposit the requested compensation funds on the escrow smart contract. The providing node then sends the encrypted data in order for the Data Viewer to test the validity of the data. Once the validity of the data is confirmed, the Data Viewer will get the key to decrypt the data while the smart contract will unlock the funds for the party that provided the data. <br>
@@ -104,7 +113,7 @@ The OriginTrail Parachain super-charges these data marketplaces with the additio
 
 ![](https://miro.medium.com/max/560/0*KKudihKKLiamQUdg) <br>
 ![](https://miro.medium.com/max/560/0*yqj_ThJCfFELvCSy) <br>
-
+#
 شاید جذاب ترین بخش شبکه اوریجین تریل گراف دانش غیرمتمرکز آن باشد که تا کنون حدودا هشتصد هزار دارایی مختلف در آن ثبت شده و معنادهی شده است.
 
 گراف دانش، همان سیستمی است که گوگل و ناسا و آمازون و دیگر شرکت های بزرگ دیگر، برای طبقه بندی مفهومی داد ها از آن استفاده میکنند.
@@ -113,3 +122,4 @@ The OriginTrail Parachain super-charges these data marketplaces with the additio
 در وهله دوم، این شبکه یک گراف دانش غیرمتمرکز بوده که دارایی ها را به یکدیگر متصل کرده و معنا میدهد.
 
 در وهله سوم، بحث پاراچین اورجین تریل و همکاری آن با پولکدات پیش میاید که سعی میکنند، با داشتن شبکه ای بلاکچین محور، تبدیل کردن دارایی ها به توکن و قرار دادن آن در شبکه و گراف اوریجین تریل را تسهیل و تسریع کند. در این باره در داکیومنتی جداگانه توضیح خواهیم داد.
+#
