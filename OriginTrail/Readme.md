@@ -44,7 +44,9 @@ This means that their protocol can be applied to any blockchain (including priva
 این چهار ویژگی بنیادی در کنار هم هستند که اوریجین تریل را از بلاکچین های private ای مثل بلاکچین IBM و راه حل زنجیره تامین بر پایه آن یعنی TradeLens مجزا میکند.
 تریدلنز پلتفرمی است که با استفاده از بلاکچین غیرمتمرکز ساخته شده توسط IBM، روش هایی برای بهینه کردن ورد و خروج و ردیابی کانتینرها در گمرک ها و خلیج ها و کشتی ها ارائه دهد که البته شاید برای افرادی خاص یا دولت چین که میخواهند اجناسی خاص را سوار بر کشتی کنند، خیلی جذاب باشد اما به آن صورت نتوانست مورد استقبال عموم قرار گیرد.
 <br/><br/>
+
 #
+
 ## OringinTrail Decentralized Network
 At the core is a decentralized network of data providers, data creators, data holders, and data viewers:
 
@@ -120,9 +122,13 @@ Note that data holding node is not like a typical crypto “masternode.” They 
 5. Knowledge Incentivization. The final usecase for TRAC is through a data ecosystem that allows data creators to sell their data on the open market. For example, the recently announced EU-sponsored Food Safety Market aims to develop an industrial data platform for food certification in Europe by 2023. There are also Data Markets being built for both pharmaceuticals and satellite imagery; this has the potential to unlock valuable proprietary siloed data previously thought unsellable.
 
 The OriginTrail Parachain super-charges these data marketplaces with the addition of knowledge tokens, knowledge wallets, the knowledge marketplace, and knowledge tenders. They allow individuals to buy and sell data in a trusted, private way; the developers say this will increase TRAC’s utility by orders of magnitude. Because this is tied into to the Polkadot ecosystem, all Polkadot/Kusama projects will be able to utilize this feature.
+<br/>
 
+#
 ![](https://miro.medium.com/max/560/0*KKudihKKLiamQUdg) <br>
 ![](https://miro.medium.com/max/560/0*yqj_ThJCfFELvCSy) <br>
+
+
 #
 شاید جذاب ترین بخش شبکه اوریجین تریل گراف دانش غیرمتمرکز آن باشد که تا کنون حدودا هشتصد هزار دارایی مختلف در آن ثبت شده و معنادهی شده است.
 
@@ -148,7 +154,9 @@ The Trace token (TRAC) is used for DKG operation and incentivising protocol beha
 تا اینجا میبینیم که چقدر مورد کاربری برای این توکن درنظر گرفته شده که اگر تعداد دیتاجاب ها به مرور زمان زیاد شود، برای هر کاری به این توکن نیاز خواهیم داشت، در نتیجه هر کسی که به نحوی در این اکوسیستم درگیر شود، باید توکن را خریداری کند؛ همه این ها در کنار هم فشار های خریدی را روی توکن اعمال کرده ک چون تعداد توکن ها از قبل مشخص بوده و به آن ها زیاد نخواهد شد، قیمت این توکن نیز به مرور بالا خواهد رفت.
 <br>
 <br>
+
 ![رشد نمایی دیتاجاب های شبکه اوریجین تریل](https://miro.medium.com/max/1400/0*m3Y2lZ-3fDhLUi35)
+
 
 ![](https://github.com/nurafintech/whitepapers/blob/main/OriginTrail/OriginTrail%20Data%20Jobs.png)
 
