@@ -22,7 +22,6 @@ There are a number of blockchain companies working with these RFID tags already,
 **!شاید باید به جای اینکه از یک بلاکچینی که به بقیه برتری دارد، باید از چند بلاکچین استفاده کنیم**
 <br> <br>
 اینجاست که با در نظر گرفتن چهار ویژگی بنیادی، شبکه ای ایجاد کرده که در آن بتوان از بلاکچین های مختلف نیز یاری گرفت؛ در ادامه توضیح خواهیم داد.
-#
 
 ## Network Features
 The ODN Mainnet has been operating since December 2018 with actual enterprise “data jobs” being posted by data creator nodes and stored by data holding nodes (continue reading for examples). The OriginTrail protocol and the ODN has been built from the ground up with four core features:
@@ -44,7 +43,8 @@ This means that their protocol can be applied to any blockchain (including priva
 این چهار ویژگی بنیادی در کنار هم هستند که اوریجین تریل را از بلاکچین های private ای مثل بلاکچین IBM و راه حل زنجیره تامین بر پایه آن یعنی TradeLens مجزا میکند.
 تریدلنز پلتفرمی است که با استفاده از بلاکچین غیرمتمرکز ساخته شده توسط IBM، روش هایی برای بهینه کردن ورد و خروج و ردیابی کانتینرها در گمرک ها و خلیج ها و کشتی ها ارائه دهد که البته شاید برای افرادی خاص یا دولت چین که میخواهند اجناسی خاص را سوار بر کشتی کنند، خیلی جذاب باشد اما به آن صورت نتوانست مورد استقبال عموم قرار گیرد.
 <br/><br/>
-#
+
+
 ## OringinTrail Decentralized Network
 At the core is a decentralized network of data providers, data creators, data holders, and data viewers:
 
@@ -55,22 +55,25 @@ At the core is a decentralized network of data providers, data creators, data ho
 
 The data can be treated exactly how the data creator wants. Data creators can set the data to be public or private, have the data expire after a certain number of weeks/years, or have that data (or parts of data) shared only with appropriate parties. Sensitive data is protected using zero-knowledge methods in a privacy-by-design approach. These data holding nodes also function as a vast, decentralized knowledge graph to connect data sets across companies and/or supply chain partners quickly and efficiently. This core feature of the ODN is one of the major selling points for protocol adoption, as searching for inter-related data between partners has not been possible before. This writeup on the decentralized knowledge graph is highly recommended to learn more.<br>
 
-Data holding nodes were designed to be very decentralized. They are open to anyone with 3000+ TRAC, and if the data job meets your criteria (job length, data size, etc.) then your node could be randomly assigned the job. All data holding nodes are equal; having more TRAC per node only means you can accept additional jobs compared to others.<br>
+Data holding nodes were designed to be very decentralized. 
+
+>They are open to anyone with 3000+ TRAC, and if the data job meets your criteria (job length, data size, etc.) then your node could be randomly assigned the job.
+All data holding nodes are equal; having more TRAC per node only means you can accept additional jobs compared to others.<br>
  
  ![](https://miro.medium.com/max/1400/0*6vELJQpYp6K56ALx)
 
  <br>
 
- 1. Data Provider (DP)
+ 1. Data Provider (DP)<br/>
 The Data Provider (DP) is an entity that publishes supply chain data to the network. A typical scenario would be a company that would like to publish and share its data from their ERP system about products that are part of their supply chain. Data Providers can also be consumers interacting with the network through applications, or devices, such as sensors that provide information about significant events in the supply chain. <br>
 The interest of the Data Provider is to be able to safely store data on the network, as well as to be able to connect it and cross-check with the data of other DPs within the network. Depending on the use case, providing data to the network can be incentivised with the Trace token.
 
-2. Data Creator Node (DC)
+2. Data Creator Node (DC)<br/>
 The Data Creator node (DC) is an entity representing a node that will be responsible for importing the data provided by the DP, making sure that all the criteria of DP are met (e.g. the availability of the data on the network for a desired time or a factor of replication). While we typically expect that Data Providers will run their own Data Creator nodes, it is not a requirement. Third party DC nodes may provide the service for one or several Data Providers. The DC node is an entry point for information to the network and the relationship between the DPs and the DCs is not regulated by the protocol.<br>
 The responsibility of the DC node is to negotiate, establish and maintain the service requested by the DP in relationship with its associated Data Holder (DH) nodes. Furthermore, DC nodes are responsible to check if data is available on the network during the time of service and initiate the litigation process in case of any disputes.
 
-3. 3 Data Holder Node (DH)
-The Data Holder (DH) is a node that has committed itself to storing the data provided by a DC node for a requested period of time and making it available for the interested parties (which could also be the DC node itself). For this service, the Data Holder will be compensated in TRAC tokens. The DH node has the responsibility to preserve the data intact in its unaltered, original form, as well as to provide high availability of the data in terms of bandwidth and uptime.
+3. Data Holder Node (DH)<br/>
+The Data Holder (DH) is a node that **has committed itself to storing the data provided by a DC node for a requested period of time and making it available for the interested parties (which could also be the DC node itself).** For this service, the Data Holder will be compensated in TRAC tokens. The DH node has the responsibility to preserve the data intact in its unaltered, original form, as well as to provide high availability of the data in terms of bandwidth and uptime.
 <br>It is important to note that the DH node can be a DC node at the same time, in the context of the data that it has introduced to the network. As noted, the same software runs on all the nodes in the network, providing for symmetrical relations and thus not limiting scalability.
 <br>The Data Holder may also wish to find data that is not directly delivered by DCs but is popular, and offer it to interested parties. Therefore, it is probable that Data Holders will listen to the network, search for data that is frequently requested, and replicate it from other Data Holders to also store, process and offer it to the Data Viewers. However, since such Data Holders are not bound by the smart contract to provide the service, there is a certain risk that these Data Holders may offer false data or tamper with the data, or even pretend to have data that they don’t have.<br>
 To mitigate this risk, a node will be required to deposit a stake for executing an agreement. This stake will be stored in case it is proven that the Data Holder tried to sell altered data while Data Viewers will have a mechanism to check if all the chunks of data are valid and initiate a litigation procedure in case of any inconsistencies.<br>
@@ -120,9 +123,13 @@ Note that data holding node is not like a typical crypto “masternode.” They 
 5. Knowledge Incentivization. The final usecase for TRAC is through a data ecosystem that allows data creators to sell their data on the open market. For example, the recently announced EU-sponsored Food Safety Market aims to develop an industrial data platform for food certification in Europe by 2023. There are also Data Markets being built for both pharmaceuticals and satellite imagery; this has the potential to unlock valuable proprietary siloed data previously thought unsellable.
 
 The OriginTrail Parachain super-charges these data marketplaces with the addition of knowledge tokens, knowledge wallets, the knowledge marketplace, and knowledge tenders. They allow individuals to buy and sell data in a trusted, private way; the developers say this will increase TRAC’s utility by orders of magnitude. Because this is tied into to the Polkadot ecosystem, all Polkadot/Kusama projects will be able to utilize this feature.
+<br/>
 
+#
 ![](https://miro.medium.com/max/560/0*KKudihKKLiamQUdg) <br>
 ![](https://miro.medium.com/max/560/0*yqj_ThJCfFELvCSy) <br>
+
+
 #
 شاید جذاب ترین بخش شبکه اوریجین تریل گراف دانش غیرمتمرکز آن باشد که تا کنون حدودا هشتصد هزار دارایی مختلف در آن ثبت شده و معنادهی شده است.
 
@@ -148,7 +155,9 @@ The Trace token (TRAC) is used for DKG operation and incentivising protocol beha
 تا اینجا میبینیم که چقدر مورد کاربری برای این توکن درنظر گرفته شده که اگر تعداد دیتاجاب ها به مرور زمان زیاد شود، برای هر کاری به این توکن نیاز خواهیم داشت، در نتیجه هر کسی که به نحوی در این اکوسیستم درگیر شود، باید توکن را خریداری کند؛ همه این ها در کنار هم فشار های خریدی را روی توکن اعمال کرده ک چون تعداد توکن ها از قبل مشخص بوده و به آن ها زیاد نخواهد شد، قیمت این توکن نیز به مرور بالا خواهد رفت.
 <br>
 <br>
+
 ![رشد نمایی دیتاجاب های شبکه اوریجین تریل](https://miro.medium.com/max/1400/0*m3Y2lZ-3fDhLUi35)
+
 
 ![](https://github.com/nurafintech/whitepapers/blob/main/OriginTrail/OriginTrail%20Data%20Jobs.png)
 
