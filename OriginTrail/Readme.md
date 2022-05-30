@@ -55,22 +55,25 @@ At the core is a decentralized network of data providers, data creators, data ho
 
 The data can be treated exactly how the data creator wants. Data creators can set the data to be public or private, have the data expire after a certain number of weeks/years, or have that data (or parts of data) shared only with appropriate parties. Sensitive data is protected using zero-knowledge methods in a privacy-by-design approach. These data holding nodes also function as a vast, decentralized knowledge graph to connect data sets across companies and/or supply chain partners quickly and efficiently. This core feature of the ODN is one of the major selling points for protocol adoption, as searching for inter-related data between partners has not been possible before. This writeup on the decentralized knowledge graph is highly recommended to learn more.<br>
 
-Data holding nodes were designed to be very decentralized. They are open to anyone with 3000+ TRAC, and if the data job meets your criteria (job length, data size, etc.) then your node could be randomly assigned the job. All data holding nodes are equal; having more TRAC per node only means you can accept additional jobs compared to others.<br>
+Data holding nodes were designed to be very decentralized. 
+
+>They are open to anyone with 3000+ TRAC, and if the data job meets your criteria (job length, data size, etc.) then your node could be randomly assigned the job.
+All data holding nodes are equal; having more TRAC per node only means you can accept additional jobs compared to others.<br>
  
  ![](https://miro.medium.com/max/1400/0*6vELJQpYp6K56ALx)
 
  <br>
 
- 1. Data Provider (DP)
+ 1. Data Provider (DP)<br/>
 The Data Provider (DP) is an entity that publishes supply chain data to the network. A typical scenario would be a company that would like to publish and share its data from their ERP system about products that are part of their supply chain. Data Providers can also be consumers interacting with the network through applications, or devices, such as sensors that provide information about significant events in the supply chain. <br>
 The interest of the Data Provider is to be able to safely store data on the network, as well as to be able to connect it and cross-check with the data of other DPs within the network. Depending on the use case, providing data to the network can be incentivised with the Trace token.
 
-2. Data Creator Node (DC)
+2. Data Creator Node (DC)<br/>
 The Data Creator node (DC) is an entity representing a node that will be responsible for importing the data provided by the DP, making sure that all the criteria of DP are met (e.g. the availability of the data on the network for a desired time or a factor of replication). While we typically expect that Data Providers will run their own Data Creator nodes, it is not a requirement. Third party DC nodes may provide the service for one or several Data Providers. The DC node is an entry point for information to the network and the relationship between the DPs and the DCs is not regulated by the protocol.<br>
 The responsibility of the DC node is to negotiate, establish and maintain the service requested by the DP in relationship with its associated Data Holder (DH) nodes. Furthermore, DC nodes are responsible to check if data is available on the network during the time of service and initiate the litigation process in case of any disputes.
 
-3. 3 Data Holder Node (DH)
-The Data Holder (DH) is a node that has committed itself to storing the data provided by a DC node for a requested period of time and making it available for the interested parties (which could also be the DC node itself). For this service, the Data Holder will be compensated in TRAC tokens. The DH node has the responsibility to preserve the data intact in its unaltered, original form, as well as to provide high availability of the data in terms of bandwidth and uptime.
+3. Data Holder Node (DH)<br/>
+The Data Holder (DH) is a node that **has committed itself to storing the data provided by a DC node for a requested period of time and making it available for the interested parties (which could also be the DC node itself).** For this service, the Data Holder will be compensated in TRAC tokens. The DH node has the responsibility to preserve the data intact in its unaltered, original form, as well as to provide high availability of the data in terms of bandwidth and uptime.
 <br>It is important to note that the DH node can be a DC node at the same time, in the context of the data that it has introduced to the network. As noted, the same software runs on all the nodes in the network, providing for symmetrical relations and thus not limiting scalability.
 <br>The Data Holder may also wish to find data that is not directly delivered by DCs but is popular, and offer it to interested parties. Therefore, it is probable that Data Holders will listen to the network, search for data that is frequently requested, and replicate it from other Data Holders to also store, process and offer it to the Data Viewers. However, since such Data Holders are not bound by the smart contract to provide the service, there is a certain risk that these Data Holders may offer false data or tamper with the data, or even pretend to have data that they don’t have.<br>
 To mitigate this risk, a node will be required to deposit a stake for executing an agreement. This stake will be stored in case it is proven that the Data Holder tried to sell altered data while Data Viewers will have a mechanism to check if all the chunks of data are valid and initiate a litigation procedure in case of any inconsistencies.<br>
