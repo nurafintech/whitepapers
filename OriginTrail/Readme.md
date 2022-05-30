@@ -10,7 +10,7 @@ Over the years’ there have been a number of scandals involving food. There was
 #
 
 ## How does blockchain come in to play?
-Firstly, utilising a blockchain ledger to store the logistics data (and any other data necessary), there is the possibility to have an un-editable, and therefor more accountable system in place. <br>
+Firstly, utilizing a blockchain ledger to store the logistics data (and any other data necessary), there is the possibility to have an un-editable, and therefor more accountable system in place. <br>
 **Tamper proof RFID tags are one such solution**, enabling a consumer brand to attach a coded RFID tag to each product, box or pallet of product they put through the supply chain. If that product is then tampered with during the supply process there then should be the opportunity to understand where that likely happened. From a consumer perspective, if there is no RFID tag present on a product they were expecting to have one (such as an expensive luxury good), it will automatically raise alarm bells, hopefully cutting out a large % of counterfeit goods as they will be shunned by the consumer, or more ideally removed from the chain earlier.
 <br>
 There are a number of blockchain companies working with these RFID tags already, including VeChain, Waltonchain, and Wabi (I may have unintentionally missed some out). All have various key partners in place already on a global scale, and some are currently being used in real-world uses. RFID can be specific to usage requirements, so for instance they can have temperature monitoring for chilled/frozen goods, be tamper proof for products that need to remain sealed, or just be more simple like a QR code.
@@ -208,5 +208,119 @@ such issues set to be addressed by the much higher throughput capacity of Origin
 
 مهم ترین جنبه ای که در هر پروژه ی جدیدی باید در نظر گرفت،  بحث مقیولیت و میزان استفاده از آن پروژه در حوزه ای است که آن پروژه خود را معرفی میکند. هر چقدر از آن پروژه در آن فیلد بیشتر استفاده شود و با استقبال مواجه شود، بیشتر میتوان به آن پروژه و نقشه ی راه آن، اعتماد کرد.
 
-ادامه دارد.
+وقتی ایده اولیه OT با زنجیره تامین و شبکه ای که از تقلب و جعل کالاها و محصولات شروع میشود و تا توکنیزه کردن دارایی ها و گراف دانش به پیش میرود، باید به سازمان ها و کارخانه هایی که این محصولات را تولید میکنند، فکر کنیم. از طرفی چون وِیژگی کلیدی شبکه OT غیرمتمرکز بودن آن میباشد، طبیعی است که سازمان ها از این فرض که شاید کنترل کافی روی محصولات خود و شبکه نداشته باشند، احساس خطر کنند. بسیاری از آن ها که تحقیق کافی ندارند یا کلا به سراغ تکنولوژی های بر پایه بلاکچین نیامده یا سعی می¬کنند از راه حل هایی مانند بلاکچین های private استفاده کنند.
+برای جذب اینگونه سازمان ها، تیم سازندگان OT شرکت tracelabs را بنا نهاده و در تلاش هستند با استفاده از شبکه OT، راه حل های مناسب شرکت ها را طراحی کنند و همان بحث استفاده روزمره و مقبولیت شبکه را گسترش دهند.
 
+
+The team has a number of high profile advisors; these include Coinbase/Twitter venture capitalist Greg Kidd, Electronic Arts (EA) games knowledge graph strategist Aaron Bradley, and internet pioneer Bob Metcalfe.
+
+در زیر خلاصه وار، برخی از مهم ترین قرارداد ها و پروژه های OT را تشریح میکنیم:
+
+### Trace Labs Network Operating System (nOS)
+The TraceLabs-built Network Operating System (nOS) is a custom software solution for businesses that directly connects the OriginTrail Decentralized Network to their legacy system and other permissionless and permissioned blockchains (including HyperLedger). It easily allows for existing ERP integrations, consensus checks for data discrepancies among partners, supply chain/track-and-trace applications, and data/sourcing provenance. TraceLabs estimates that nOS decreases implementation time and deployment costs by 10-fold.
+Further, and perhaps most importantly for adoption, nOS enables the spending of credits purchased with company fiat to directly purchase TRAC via Uniswap and other exchanges; TRAC is only utilized in the background, is directly purchased when needed, and used in nodes immediately. As cryptocurrency never touches the company’s accounting books, it solves the problem of mainstream companies needing to purchase and hold cryptocurrency to use the protocol.
+
+![](https://miro.medium.com/max/1400/0*pv5h9-J5btYrWmXG)
+**nOS is already integrated into several legacy enterprise suites, including Oracle Cloud, Salesforce, SAP, and Microsoft Navision.**
+
+## Open Standards (GS1 EPCIS/CBV and W3C integration)
+The entire global supply chain runs on standards developed by the GS1 organization. Systems to identify, capture, and share information among supply chain partners (including the ubiquitous bar code), were all developed over the past 45 years by GS1. These standards allow for interoperability between different systems and supply chain architectures across the globe. Any blockchain-based solution to improve traceability should integrate with these legacy systems, and the OriginTrail protocol was designed from the ground up to do this. <br>
+The OriginTrail protocol fully supports the GS1 EPCIS 1.2 and CBV standards in the protocol data structure. This ensures full compliance and integration with legacy systems. In July 2020, TraceLabs confirmed that they joined the 54 company working group to develop the next generation EPCIS/CBV 2.0 standards, to be ratified soon. This puts OriginTrail in an incredible position to shape next-generation intelligent supply chain interactions.<br>
+**OriginTrail’s standards-based approach also caught the attention of the World Economic Forum (WEF), who detailed OriginTrail as one of the top blockchain-based supply chain solutions in their 2020 Blockchain Deployment Toolkit report. They also published an article on OriginTrail’s Essential COVID-19 Supplies Repository as an effective use of blockchain technology.**
+Lastly, the German Federal Office for Information Security praised OriginTrail as one of two future leaders in blockchain-assisted supply chain management.
+
+درباره نقش World Economic Forum و سازمان ملل در هدایت نقشه راه شرکت های جهانی در مقاله ای که درباره VeChain و چرایی عوض شدن حوزه کاری شان کمی صحبت کردیم.
+
+### Trace Alliance
+The Trace Alliance is a global network of 100+ business enterprises, service providers, developers, and research institutions that share knowledge gained using the OriginTrail protocol. They have direct access to OriginTrail knowledge resources, use cases, and the latest technology releases/solutions. The goal is to aid in the adoption of the OriginTrail protocol for the benefit of all members. Members include Deloitte, OneAgrix, TE-Foods, Oregon Tilth, and TMA Solutions. A full list can be seen here.
+
+In September 2020, Parity (core developers of Polkadot) partnered with TraceLabs and will be part of a working group on decentralization and tokenomics.
+
+### BSI (British Standards Institution)
+![](https://miro.medium.com/max/1400/0*jWMMph-lT2OftLz0)
+The British Standards Institution (BSI) is the national standards body of the United Kingdom and has 86,000 clients in 190 countries. They produce and update hundreds of thousands of standards and certifications per year. OriginTrail and BSI have had a partnership since January 2019, and certification data from BSI is already flowing over the OriginTrail Decentralized Network.
+In June 2020, BSI released a whitepaper detailing how the SCAN initiative (led by BSI) will utilize the OriginTrail Decentralized Network to monitor and audit factories servicing major United States brands in their Trusted Factory Blockchain Program. **SCAN members (including Walmart, Target, Home Depot, Lowes, and Walt Disney) have over 18,000 factories that will be part of this initiative.**<br>
+**SCAN Members:**
+![](https://miro.medium.com/max/1400/0*BrsYRbApR3mD4y9z)
+
+One of the introduced solutions is the Supplier Compliance Audit Network (SCAN) Trusted Factory Blockchain Program designed for US importers to ensure the authenticity of a factory’s certification and factory credentials. SCAN is an association of importers that was formed to eliminate foreign factory audit fatigue associated with supply chain security importing criteria within the US Customs Trade Partnership Against Terrorism program (CTPAT). SCAN importing members have combined annual sales of USD 1.25 trillion and source from factories around the world. More than 50 percent of these factories are shared by multiple SCAN members, which, prior to SCAN, would have resulted in the facilities having regular audits by independent importers. Today, SCAN has more than 18,000 factories in the SCAN database and the program’s popularity has grown internationally, with several hundred audits conducted monthly. The solution secures permissioned audit data and factory credentials on the ODN, based on the public Ethereum blockchain, and makes them accessible to SCAN members and interested government agencies such as CTPAT for viewing. The implementation utilizes the global W3C Verifiable Credentials data model to ensure interoperability and compatibility with novel frameworks such as the Self Sovereign Identity (SSI) framework.
+
+شاید نقطه عطف تیم سازنده OT شروع همکاری آن ها با BSI بود. این موسسه تعیین استاندارد بریتانیایی دریچه های بسیار بزرگی را به روی پروژه OT باز کرد.
+
+
+## AidTrust - visibility and trust in medicine supply chains
+Produced in partnership by BSI and Trace Labs, **AidTrust brings visibility and trust to the distribution of donated medicines.** Bringing together BSI’s global footprint, expertise in management systems and supply chain risk management best practice, with the OriginTrail Decentralized Knowledge Graph developed by our technology partner Trace Labs, AidTrust enables visibility, risk flags, real-time decision-making, while maintaining data integrity, security and privacy, on all medicines at all stages of the supply chain.
+The goal of AidTrust is to ensure the donor organisations, as well as aid and non-governmental organizations (NGO), are able to evidence that donated medicines did maintain appropriate chain of custody throughout distribution and ultimately, reach the intended patient, even in complex environments.
+
+![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/OriginTrail/Pharma%20Supply%20Chain.png)
+![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/OriginTrail/AidTrust.png)
+![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/OriginTrail/AidTrust%20and%20BSI.png)
+
+این پروژه یکی از پروژه هایی برایی مقابه با کووید از آن استفاده شده بود  و World Economics Forum به آن اشاره کرده و آن را ستایش کرده بود.
+
+### EVRYTHNG
+EVRYTHNG is an internet of things software company performing supply chain logistics for a number of global brands. **These include Coca Cola, Ralph Lauren, Puma, and Avery Dennison, among others.** EVRYTHNG has made a big push over two years for blockchain integration for their brands. OriginTrail has had a partnership with EVRYTHNG since May 2018 and a number of pilots by EVRYTHNG have made use of OriginTrail technology and testnets. These include:
+
+<li>May, 2018: EVRYTHNG partnered with OriginTrail and created an IoT/provenance connected “Barry the Bear” stuffed animal in advance of the GS1 Global Forum conference.</li>
+<li> June, 2019: EVRYTHNG upgraded their partnership and used OriginTrail and IOTA to create a traceability solution using Avery Dennison IoT products and fashion brand 1017 ALYX 9SM.</li>
+
+![](https://evrythng.com/wp-content/uploads/2019/08/EVT-Trusted-Product-Provenance-Infographic-626x1024.png)
+
+### The Food Safety Market
+European Union Supports the Food Safety Market with Trace Labs to Facilitate Blockchain Adoption; the main objective of The FSM project is to create a transparent data-powered certification ecosystem for a safe food supply chain. With the global food industry relying on getting certified according to food safety standards, the exchange of data and the transparency across the supply chain is of paramount importance. Moreover, through remote audits it aims to lower the cost of certification by fully digitizing food safety data transactions.
+Building the FSM utilizing trust enhancing technologies of OriginTrail Decentralized Knowledge Graph and blockchain, with the foundation in the semantic technologies and open data models such as Verifiable Credentials, enables a decentralized marketplace for certification and traceability data residing in existing IT systems.<br>
+**Food Safety Market Consortium Partners**
+![](https://miro.medium.com/max/1400/1*3tCjpwYCJs1vBqxfyrLGrQ.jpeg)
+![](https://miro.medium.com/max/1400/1*Z_d95AtNztscTUqjAoS2YQ.png)
+![](https://miro.medium.com/max/1400/0*E1P1OeL50RyEMEKQ)
+![](https://foodsafetymarket.eu/wp-content/uploads/2022/03/TheFSM-Architecture-v2.0-Scemas-for-review-Review.drawio-2.png)
+
+### SmartAgriHubs
+A consortium of 160 partners in the European agriculture space to aid in the adoption of 80 new digital solutions. OriginTrail is part of a flagship integration experiment, and is using both blockchain oracles and their Oracle partnership to improve the milk supply chain in Europe.
+
+### Swiss Federal Railways
+
+SBB has adopted to meet the challenge of unifying the European rail system into a comprehensive network of shared data and resources with regards to coordination of infrastructure maintenance, parts and repair.
+
+![](https://miro.medium.com/max/1400/1*vW4ZV0agkhl6XKmKABU2Rw.jpeg)
+
+The solution SBB decided on combines a decentralized EPCIS repository with an open source data indexing middleware called OriginTrail. **Think of the EPCIS repository as a massive spreadsheet written in chronological order. Origin Trail takes this raw data and indexes it into interlinked knowledge graphs with subgraphs. This provides search ability, interlinkage of related data, filtering, identity based access controls, open ended extensibility and infinite scaling.** <br>
+Electronic Product Code Information Services = a GS1 standard that enables trading partners to share information about the movement and status of physical or digital objects as they travel through the supply chain.
+<br>
+**The Role Of OriginTrail:**
+Translating data into a common format further requires organizing it in meaningful ways to make it useful.
+
+OriginTrail is open source, neutral middleware designed to standardize data coming from anywhere and organize it in indexed knowledge graphs with flexible public / private permissions. Knowledge Graphs are a way of organizing data in terms of relationship to other data, they’re what enabled Google to conquer the world by extracting actionable insights from previously unstructured data.
+
+OriginTrail hosts data on a fully decentralized, permissionless network of nodes which ensures resistance to data tampering and censorship while structurally guaranteeing data creators privacy by design with complete control over data provenance, sharing only what they choose with other participants for so long as a sharing agreement exists. Hashed data fingerprints are written to the data creator’s blockchain of choice to ensure data integrity.
+
+### Perutnina Ptuj 
+Perutnina Ptuj is the largest poultry producer in Southeastern Europe and has had a six-year partnership with OriginTrail/Tracelabs. They recently introduced a QR code-based IoT scanning platform to track poultry provenance on the OriginTrail Decentralized Network.
+
+### OneAgrix
+OneAgrix is a Singapore-based online marketplace for Halal products. Two billion people in the world consume halal food products, and blockchain is increasingly a part of the certification. TraceLabs and OneAgrix have partnered to allow for halal certification on the OriginTrail Decentralized Network.
+
+### Supercharger
+The OriginTrail DKG helps NFT creators, owners and developers protect, connect and level up the value of their assets. It allows you to trustlessly publish NFT-related content on a decentralized network where it is not only made immutable and verifiable but also easily discoverable and extendable. Once published on the Decentralized Knowledge Graph, you can connect your NFTs with other NFTs and Web3 assets, associate search keywords and tags (e.g. video games, art, sports…) and other verifiable properties. Once connected, anyone searching for these keywords will be able to find your NFTs. The DKG also enables you to add more valuable content to the same “knowledge graph” of your NFT, so you can combine all the valuable content on how you were using, treating and evolving your NFT in a single secure and verifiable place.
+
+### Financial Flows
+
+OriginTrail enables contextual information and alert systems for financial transactions, including stolen Bitcoins. Binance, the world’s biggest exchange for cryptocurrencies and digital assets, announced that it lost some 7,000 bitcoin, worth over $40 million, in a hack in May 2019. The OriginTrail protocol is built to trace any data flow and put it into context when additional data becomes available. The core development team utilized the OriginTrail knowledge graph to track how the stolen Bitcoins are being transferred.
+
+(برای این سیستم، OT از پایگاه داده گراف محور ArangoDB استفاده میکند.)
+
+<br>
+
+#
+
+برای لیست کامل تر پروژه هایی که به نوعی اوریجین تریل با آنها در ارتباط است، به آدرس های زیر مراجعه کیند: <br>
+https://origintrail.io/case-studies
+<br>
+ https://tracelabs.io/technologies
+
+ #
+
+
+ ### A look in the OT's roadmap
+
+ادامه دارد ...
