@@ -22,7 +22,6 @@ There are a number of blockchain companies working with these RFID tags already,
 **!شاید باید به جای اینکه از یک بلاکچینی که به بقیه برتری دارد، باید از چند بلاکچین استفاده کنیم**
 <br> <br>
 اینجاست که با در نظر گرفتن چهار ویژگی بنیادی، شبکه ای ایجاد کرده که در آن بتوان از بلاکچین های مختلف نیز یاری گرفت؛ در ادامه توضیح خواهیم داد.
-#
 
 ## Network Features
 The ODN Mainnet has been operating since December 2018 with actual enterprise “data jobs” being posted by data creator nodes and stored by data holding nodes (continue reading for examples). The OriginTrail protocol and the ODN has been built from the ground up with four core features:
@@ -45,7 +44,6 @@ This means that their protocol can be applied to any blockchain (including priva
 تریدلنز پلتفرمی است که با استفاده از بلاکچین غیرمتمرکز ساخته شده توسط IBM، روش هایی برای بهینه کردن ورد و خروج و ردیابی کانتینرها در گمرک ها و خلیج ها و کشتی ها ارائه دهد که البته شاید برای افرادی خاص یا دولت چین که میخواهند اجناسی خاص را سوار بر کشتی کنند، خیلی جذاب باشد اما به آن صورت نتوانست مورد استقبال عموم قرار گیرد.
 <br/><br/>
 
-#
 
 ## OringinTrail Decentralized Network
 At the core is a decentralized network of data providers, data creators, data holders, and data viewers:
