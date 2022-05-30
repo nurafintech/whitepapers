@@ -13,12 +13,11 @@ Centrifuge token (CFG) is a crypto economic primitive and a native token that ut
 <br/>
 
 
-
-
 ## DeFi - The next financial system
-DeFi is a decentralized financial system based on smart contracts that function without intermediaries, such as banks or insurances. DeFi applications strive to fulfill the services of traditional finance in a permissionless, global and transparent manner built primarily on the Ethereum blockchain.
+DeFi is a decentralized financial system based on smart contracts that function without intermediaries, such as banks or insurances. DeFi applications strive to fulfill the services of traditional finance in a permissionless, global and transparent manner built primarily on the Ethereum blockchain.<br/>
 
-
+## NFTs - The link to traditional finance
+Centrifuge’s privacy-enabled NFTs are tokenized representations of individual assets, keeping some of the assets attributes private on a p2p protocol, while the Centrifuge Chain - a public, decentralized ledger - tracks the asset ownership. This structure allows us to create something unique in DeFi.
 
 
 # Why Centrifuge and A DeFi Platform?
