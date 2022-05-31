@@ -332,7 +332,7 @@ https://origintrail.io/case-studies
 
  ### A look in the OT's roadmap
 
-ادامه دارد ...
+#
 
 ## References
 
