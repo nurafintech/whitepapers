@@ -4,7 +4,7 @@ Parachains are custom, project-specific blockchains that are integrated within t
 
 They take their name from the concept of parallelized chains that run parallel to the Relay Chain. Most commonly, a parachain will take the form of a blockchain, but there is no specific need for them to be actual blockchains.
 
-![](https://wiki.polkadot.network/assets/images/one_parachain-5fe48b5bfbcf7680a91b0f5a940b39c7.pn g)
+![](https://wiki.polkadot.network/assets/images/one_parachain-5fe48b5bfbcf7680a91b0f5a940b39c7.png)
 
 
 
