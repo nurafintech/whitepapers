@@ -53,7 +53,13 @@ Bridged to Ethereum from day 1. Centrifuge Chain uses its own native token - the
 This public chain is owned and operated by no single party: the Centrifuge token empowers its holders with an on-chain governance mechanism that empowers token holders to guide the development of Centrifuge. The chain also employs the Centrifuge token to stake value and provides rewards for security and for Centrifuge adoption, currently through liquidity rewards.
 
 
+## Centrifuge on Polkadot
 
+Centrifuge Chain is built on Parity Substrate, and is currently transitioning from a sovereign chain to a parachain on Polkadot.<br/> 
+
+It relies on staked nodes (Collators) to author blocks and, once Centrifuge Chain becomes a parachain, they will maintain the Centrifuge parachain by collecting transactions from users and producing state transition proofs for Polkadot Relay Chain validators.<br/>
+
+Any node can offer itself as a Collator candidate, but only a limited number will be selected. Only top Collators by stake are elected into the Active Set. Collators can stake their own CFG and can be elected by staked Nominators.
 
 
 
