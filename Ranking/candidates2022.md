@@ -1,6 +1,6 @@
 **~Candidate Projects for the best of 2022**
 
-# Blockchain Advisor Of The Year
+# Blockchain Advisor 
  1. James Bowater <br/>
  2. Montse Guardia Gueil <br/>
  3. Vilma Mattila <br/>
@@ -9,7 +9,7 @@
  6. Christof Waton <br/>
 
 
-# Blockchain Game Of The Year
+# Blockchain Game 
 
  1. Spider Tanks  <br/>
  2. Legends Of Elysium  <br/>
@@ -18,7 +18,7 @@
  5. Polker  <br/>
  6. TownStar  <br/>
 
-# Blockchain Protocol Of The Year
+# Blockchain Protocol 
 
  1. Cardano  <br/>
  2. Avalanche  <br/>
@@ -27,7 +27,7 @@
  5. BitcoinSV  <br/>
  6. 5ire  <br/>
 
-# Blockchain Solution Of The Year
+# Blockchain Solution 
 
  1. Axelar  <br/>
  2. Triall  <br/>
@@ -36,7 +36,7 @@
  5. Yellow  <br/>
  6. Metis  <br/>
 
-# Crypto Casino Of The Year
+# Crypto Casino 
 
  1. HouseMaster  <br/>
  2. SX.Bet  <br/>
@@ -44,7 +44,7 @@
  4. RocketPot  <br/>
  5. BC.Game  <br/>
 
-# Crypto Community Of The Year
+# Crypto Community 
  1. Government Blockchain Association  <br/>
  2. Bitcoin Bay  <br/>
  3. IHodlLife  <br/>
@@ -52,7 +52,7 @@
  5. BoredApeYachtClub  <br/>
  6. Blockchain Game Alliance
 
-# Crypto News Of The Year
+# Crypto News 
 
  1. CoinsPaid  <br/>
  2. TerritorioBlockchain  <br/>
@@ -61,7 +61,7 @@
  5. CoinTelegraph  <br/>
  6. CryptoNews  <br/>
 
-# Crypto News Site Of The Year 
+# Crypto News Site  
  1. CoinsPaid Media  <br/>
  2. Territorio Blockchain  <br/>
  3. Cryptured  <br/>
@@ -69,7 +69,7 @@
  5. CoinTelegraph  <br/>
  6. CryptoNews  <br/>
 
-# Crypto Payment Provider Of The Year
+# Crypto Payment Provider 
 
  1. HyperBC  <br/>
  2. CryptoPay  <br/>
@@ -78,7 +78,7 @@
  5. UTrust  <br/>
  6. CoinsPaid  <br/>
 
-# Crypto Wallet Solution Of The Year
+# Crypto Wallet Solution 
 
  1. Ledger  <br/>
  2. CryptoWallet  <br/>
@@ -86,7 +86,7 @@
  4. HyperPay  <br/>
  5. BlockWallet  <br/>
 
-# DeFi Project Of The Year
+# DeFi Project 
 
  1. Acta Finance  <br/>
  2. Aetherius  <br/>
@@ -95,7 +95,7 @@
  5. Plena Finance  <br/>
  6. Rome Blockchain Labs  <br/>
 
-# Emerging Tech Fund Of The Year
+# Emerging Tech Fund 
 
  1. Cypher Capital  <br/>
  2. Master Ventures  <br/>
@@ -104,7 +104,7 @@
  5. Transform Ventures  <br/>
  6. Mempool Ventures  <br/>
 
-# Emerging Tech Marketing Agency Of The Year
+# Emerging Tech Marketing Agency 
 
  1. SalAd Labs  <br/>
  2. BlockWiz  <br/>
@@ -112,7 +112,7 @@
  4. Amazix  <br/>
  5. MasterBlox  <br/>
 
-# Exchange Of The Year
+# Exchange 
 
  1. Gate.io  <br/>
  2. Themis  <br/>
@@ -121,7 +121,7 @@
  5. BitForex  <br/>
  6. Yellow  <br/>
 
-# NFT Project Of The Year
+# NFT Project 
 
  1. Everlens  <br/>
  2. Stepn  <br/>
@@ -129,7 +129,7 @@
  4. MetaRacerX  <br/>
  5. RealFevr  <br/>
 
-# Social Impact Project Of The Year
+# Social Impact Project 
 
  1. Stepn  <br/>
  2. 5ire  <br/>
@@ -137,7 +137,7 @@
  4. Monopole  <br/>
  5. Sydtek  <br/>
 
-# Tokenization Project Of The Year
+# Tokenization Project 
 
  1. BitSliced  <br/>
  2. BitBond  <br/>
