@@ -13,7 +13,7 @@ Centrifuge token (CFG) is a crypto economic primitive and a native token that ut
 <br/>
 
 
-## DeFi - The next financial system
+       ## DeFi - The next financial system
 DeFi is a decentralized financial system based on smart contracts that function without intermediaries, such as banks or insurances. DeFi applications strive to fulfill the services of traditional finance in a permissionless, global and transparent manner built primarily on the Ethereum blockchain.<br/>
 
 ## NFTs - The link to traditional finance
@@ -30,6 +30,53 @@ With our first user facing product - Tinlake - **Centrifuge allows anyone to lau
 
 # Tinlake is currently built on Ethereum 
 Tinlake is currently built on Ethereum, however going forward it will be fully migrated to our *Centrifuge Chain* and our secure p2p protocol. This will allow **accurate pricing and risk assessment** of any kind of assets (be that your future revenue as a business, a house or some farm land) and create liquid markets for these assets. As this ecosystem grows, more data will be on chain reducing the trust in the off-chain world and reducing the dependence on a single point of failure.
+
+
+# The Ecosystem
+## Our Tech Stack
+![](https://developer.centrifuge.io/5713d7bb0b3889831a27cfb8f7d07f50/centrifuge_tech_stack.png)
+
+## Tinlake
+Tinlake is the consumer facing Dapp used by asset originators and investors to finance assets. This is currently built on Ethereum, Tinlake communicates to the Centrifuge Chain via a Chainsafe bridge, but moving forward Tinlake will fully migrate to the Centrifuge Chain.<br/>
+
+Tinlake allows for on-chain borrowing against collateralized assets completely managed by smart contracts. <br/>
+
+Not only does Tinlake enable Asset Originators to access the growing liquidity in the Decentralized Finance ecosystem, it also enables stablecoin issuers to offer a stable store of value backed by collateralized asset pools. <br/>
+
+> Ultimately, Tinlake will become a fully decentralized financing protocol that interoperates with different blockchains and plugs into a variety of funding sources, including a variety of stablecoins.
+
+# Centrifuge Chain
+Centrifuge Chain is the home for real-world assets (RWA) on-chain. It is a **Proof-of-Stake** blockchain built on Substrate that enables users to bring their assets on-chain as non-fungible tokens (NFTs). <br/>
+
+Bridged to Ethereum from day 1. Centrifuge Chain uses its own native token - the Centrifuge (CFG) token. It also incentivizes nodes (known as Collators) and Nominators to participate through a block reward. <br/>
+
+This public chain is owned and operated by no single party: the Centrifuge token empowers its holders with an on-chain governance mechanism that empowers token holders to guide the development of Centrifuge. The chain also employs the Centrifuge token to stake value and provides rewards for security and for Centrifuge adoption, currently through liquidity rewards.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Future
 We believe that Tinlake is only the first step. The Protocol we are building will enable use cases such as **Deep Tier Finance** fulfilling our vision to foster economic opportunity everywhere.
