@@ -333,3 +333,23 @@ https://origintrail.io/case-studies
  ### A look in the OT's roadmap
 
 ادامه دارد ...
+
+## References
+
+# 
+
+https://origintrailexplained.info/
+<br>
+https://medium.com/origintrail/british-standards-institution-releases-white-paper-on-use-of-origintrail-decentralised-network-b8c32937ea39 
+<br>
+https://dt.gl/tweetstorm-bank-of-america-primer/
+<br>
+https://medium.com/origintrail/the-network-operating-system-liquidity-provisioning-system-part-1-uniswap-integration-b38e7ae75e76
+<br>
+https://btigresearch.bluematrix.com/sellside/EmailDocViewer?encrypt=581fef78-ef72-4af0-968c-d3900f788607&mime=pdf&co=btigresearch&id=mpalmer@btig.com&source=mail
+<br>
+https://medium.com/origintrail/origintrail-bi-yearly-report-h2-2021-making-humanitys-most-important-assets-discoverable-af873702d807
+<br>
+https://origintrail.io/
+
+
