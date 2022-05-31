@@ -31,6 +31,59 @@ With our first user facing product - Tinlake - **Centrifuge allows anyone to lau
 # Tinlake is currently built on Ethereum 
 Tinlake is currently built on Ethereum, however going forward it will be fully migrated to our *Centrifuge Chain* and our secure p2p protocol. This will allow **accurate pricing and risk assessment** of any kind of assets (be that your future revenue as a business, a house or some farm land) and create liquid markets for these assets. As this ecosystem grows, more data will be on chain reducing the trust in the off-chain world and reducing the dependence on a single point of failure.
 
+
+# The Ecosystem
+## Our Tech Stack
+![](https://developer.centrifuge.io/5713d7bb0b3889831a27cfb8f7d07f50/centrifuge_tech_stack.png)
+
+## Tinlake
+Tinlake is the consumer facing Dapp used by asset originators and investors to finance assets. This is currently built on Ethereum, Tinlake communicates to the Centrifuge Chain via a Chainsafe bridge, but moving forward Tinlake will fully migrate to the Centrifuge Chain.<br/>
+
+Tinlake allows for on-chain borrowing against collateralized assets completely managed by smart contracts. <br/>
+
+Not only does Tinlake enable Asset Originators to access the growing liquidity in the Decentralized Finance ecosystem, it also enables stablecoin issuers to offer a stable store of value backed by collateralized asset pools. <br/>
+
+> Ultimately, Tinlake will become a fully decentralized financing protocol that interoperates with different blockchains and plugs into a variety of funding sources, including a variety of stablecoins.
+
+# Centrifuge Chain
+Centrifuge Chain is the home for real-world assets (RWA) on-chain. It is a **Proof-of-Stake** blockchain built on Substrate that enables users to bring their assets on-chain as non-fungible tokens (NFTs). <br/>
+
+Bridged to Ethereum from day 1. Centrifuge Chain uses its own native token - the Centrifuge (CFG) token. It also incentivizes nodes (known as Collators) and Nominators to participate through a block reward. <br/>
+
+This public chain is owned and operated by no single party: the Centrifuge token empowers its holders with an on-chain governance mechanism that empowers token holders to guide the development of Centrifuge. The chain also employs the Centrifuge token to stake value and provides rewards for security and for Centrifuge adoption, currently through liquidity rewards.
+
+
+## Centrifuge on Polkadot
+
+Centrifuge Chain is built on Parity Substrate, and is currently transitioning from a sovereign chain to a parachain on Polkadot.<br/> 
+
+It relies on staked nodes (Collators) to author blocks and, once Centrifuge Chain becomes a parachain, they will maintain the Centrifuge parachain by collecting transactions from users and producing state transition proofs for Polkadot Relay Chain validators.<br/>
+
+Any node can offer itself as a Collator candidate, but only a limited number will be selected. Only top Collators by stake are elected into the Active Set. Collators can stake their own CFG and can be elected by staked Nominators.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Future
 We believe that Tinlake is only the first step. The Protocol we are building will enable use cases such as **Deep Tier Finance** fulfilling our vision to foster economic opportunity everywhere.
 
