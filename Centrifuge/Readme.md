@@ -25,9 +25,6 @@ This value is primarily captured in the use of CFG for transaction fees, and add
 
 <br/>
 
-## DeFi - The next financial system
-DeFi is a decentralized financial system based on smart contracts that function without intermediaries, such as banks or insurances. DeFi applications strive to fulfill the services of traditional finance in a permissionless, global and transparent manner built primarily on the Ethereum blockchain.<br/>
-
 ## NFTs - The link to traditional finance
 Centrifuge’s privacy-enabled NFTs are tokenized representations of individual assets, keeping some of the assets attributes private on a p2p protocol, while the Centrifuge Chain - a public, decentralized ledger - tracks the asset ownership. This structure allows us to create something unique in DeFi.
 
@@ -97,16 +94,16 @@ Asset originators can selectively share asset details with service providers who
 
 
 
+# Integrations/Composability
+
+## The ETH/DOT Relationship
+
+Centrifuge Chain bridges the Ethereum and Polkadot ecosystems - bringing DeFi liquidity from both to finance real-world assets on Tinlake.
+
+![](https://developer.centrifuge.io/f65624f472b6b2207525202efefb3a20/centrifuge_ecosystem.png)
 
 
-
-
-
-
-
-
-
-
+> **This gives Centrifuge an edge on accessing two of the biggest ecosystems in crypto: one for DeFi liquidity today (ETH) and one for speed and a growing ecosystem (DOT).**
 
 
 
