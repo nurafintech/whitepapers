@@ -75,11 +75,11 @@ Asset originators can selectively share asset details with service providers who
 
 
 ## Ethereum smart contracts are used for:
+
 <li>Maintaining identities in a similar format to the ERC725 standard</li>
-
 <li>Anchoring state commitments</li>
-
-**<li>Minting NFTs from off chain Centrifuge documents<br/>**</li>
+<li>Minting NFTs from off chain Centrifuge documents (important**)</li>
+<br/>
 
 >The Centrifuge Node provides a simple API interface to interact with the peer to peer network as well as the Ethereum smart contracts.
 
