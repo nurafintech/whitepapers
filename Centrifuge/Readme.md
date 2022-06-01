@@ -59,9 +59,29 @@ Centrifuge Chain is built on Parity Substrate, and is currently transitioning fr
 
 It relies on staked nodes (Collators) to author blocks and, once Centrifuge Chain becomes a parachain, they will maintain the Centrifuge parachain by collecting transactions from users and producing state transition proofs for Polkadot Relay Chain validators.<br/>
 
-Any node can offer itself as a Collator candidate, but only a limited number will be selected. Only top Collators by stake are elected into the Active Set. Collators can stake their own CFG and can be elected by staked Nominators.
+Any node can offer itself as a Collator candidate, but only a limited number will be selected. Only top Collators by stake are elected into the Active Set. Collators can stake their own CFG and can be elected by staked Nominators.<br/>
+
+In order to secure a parachain slot, Centrifuge will host a Crowd Loan from DOT holders in a Parachain Loan Offering (timeline TBA!). DOT holders who stake their tokens on behalf of the Centrifuge parachain slot will receive CFG as a reward.<br/>
+
+> **You can see the complete explanation about Parachain and its mechanism in Concepts/Parachain.md
 
 
+# P2P protocol and Node (important**)
+> The p2p protocol provides a method to create, exchange and verify asset data and is used for private, off-chain data exchange.<br/>
+
+Asset originators can selectively share asset details with service providers who can assess the data and contribute pricing and underwriting information to the document. The data origin can be verified using cryptographic signatures.<br/>
+
+>**The components of the p2p protocol are a collection of Ethereum smart contracts and a peer to peer (p2p) network implemented on libp2p.**
+
+
+## Ethereum smart contracts are used for:
+<li>Maintaining identities in a similar format to the ERC725 standard</li>
+
+<li>Anchoring state commitments</li>
+
+**<li>Minting NFTs from off chain Centrifuge documents<br/>**</li>
+
+>The Centrifuge Node provides a simple API interface to interact with the peer to peer network as well as the Ethereum smart contracts.
 
 
 
