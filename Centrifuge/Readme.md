@@ -12,6 +12,18 @@ Centrifuge Chain is the home for real-world assets (RWA) on-chain. It is a Proof
 Centrifuge token (CFG) is a crypto economic primitive and a native token that utilizes a nominated-Proof-of-Stake consensus algorithm to stake validators and provide incentives for Centrifuge adoption. CFG empowers holders to guide the development of Centrifuge through on-chain governance.
 <br/>
 
+<li>The Centrifuge token (CFG) powers the Centrifuge Chain. </li>
+<li> CFG is designed to incentivize desirable behavior on Centrifuge Chain — so called mechanism design — to create a robust, decentralized system.</li>
+<li>Owning CFG gives users a stake in the Centrifuge network and can be used to pay for transaction fees, stake towards Collators, and participate in Centrifuge on-chain governance.</li>
+<li>It will also incentivize chain security - both by rewarding DOT holders in the Parachain Loan Offering, and by distributing a block reward to Collators and Nominators.</li>
+
+<li>Centrifuge also empowers its holders with governance. Centrifuge Chain uses Substrate’s native governance module, comprising an elected council and the ability to administer network upgrades.</li>
+<br/>
+
+> As the utility of Centrifuge grows, the Centrifuge token will capture the growing value provided to users of the network through each of its utilities. <br/>
+This value is primarily captured in the use of CFG for transaction fees, and additionally through its importance in Governance of the network. **The token will also serve as a store-of-value through the implementation of the insurance DAO in which CFG will be staked.**
+
+<br/>
 
 ## DeFi - The next financial system
 DeFi is a decentralized financial system based on smart contracts that function without intermediaries, such as banks or insurances. DeFi applications strive to fulfill the services of traditional finance in a permissionless, global and transparent manner built primarily on the Ethereum blockchain.<br/>
@@ -82,6 +94,8 @@ Asset originators can selectively share asset details with service providers who
 <br/>
 
 >The Centrifuge Node provides a simple API interface to interact with the peer to peer network as well as the Ethereum smart contracts.
+
+
 
 
 
