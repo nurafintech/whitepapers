@@ -72,7 +72,9 @@ represents the accounts’ status after transaction. Another important point is 
 Hence, the receiving account should be connected with the input point below.
 Unlike chains, GraphChain don’t need to pack the transactions into a single thread. With GraphChain transactions can be added in parallel by different miners. <br>
 اگر چه این روش از ایده DAG استفاده میکند، اما خود ساختمان داده مربوطه یک DAG نیست.
+<br>
 
+![Fig 1](https://raw.githubusercontent.com/nurafintech/whitepapers/main/AcademicPapers/the-graph-chain-data-structure.png)
 <br>
 
 #
@@ -153,6 +155,8 @@ If network delay, a leader may try to pack a transaction which is already done b
 
 It’s also found that the overall performance would be goingdown while more transactions are appended into GraphChain. The reason is when the chain length increases, the databaseneed to lookup the chain to verify if the transaction exists already in the blocks. This issue is solved by adding cache. After applying this technique we can observe quite average performance in Fig 2.
 
+![Fig 2](https://raw.githubusercontent.com/nurafintech/whitepapers/main/AcademicPapers/the-graph-chain-data-structure-performance.png)
+
 #
 
 ### Use Cases:
@@ -202,3 +206,9 @@ in the banking industry.
 
 
 در مورد اول، پروژه هلیوم و اوریجین تریل، روش هایی برای نود هایی که قرار است داده ها در خود ذخیره کنند، ارائه شده است.
+
+#
+
+## References
+
+https://arxiv.org/pdf/1808.10810.pdf
