@@ -140,6 +140,49 @@ Revolving pools allow investors to invest/redeem independently at any time. A de
 
 <li>A decentralized, automatic mechanism matches investments and redemptions making sure the pool's risk metrics remain intact, e.g. the DROP tranche is always protected by a minimum of TIN investors who take the loss first.</li>
 
+<li>When the investments are executed the investors receive TIN or DROP tokens in exchange for the DAI locked. Transactions are executed at the current token prices reflecting the accrued interest and value according to the underlying NAV model over time.</li>
+
+<li>
+TIN and DROP tokens for investments and received DAI for redemptions can be collected at any time, independent of an epoch. Until collection TIN and DROP tokens remain securely locked in the Tinlake smart contracts and already accrue interest and earn CFG rewards.
+</li><br/>
+
+# Financing an asset
+The Asset Originator can use the capital provided by investors to finance assets.<br/>
+To do this, he locks an NFT representing a tokenized **"Real-World Asset"** into the set of smart contract as collateral.<br/>
+
+**The NFT is minted based on a document created and shared through Centrifuge's P2P protocol.**<br/>
+
+Financing fees and Principal/Maximum Financing amounts for these NFTs/tokenized assets are provided by an on-chain pricing scorecard and going forward determined by external service providers through **"Pricing Oracles"**. <br/>
+
+**Once the NFT is priced the Asset Originator can draw down the financing. Upon repayment of the financing, the NFT is unlocked and transferred back into the Asset Originator's wallet.**
+
+
+# Introducing Centrifuge Chain
+
+## Intro
+Centrifuge Chain is optimized specifically for the transactions required by our specific use case. **This focus allows us to improve upon our current architecture in a few key ways: speed, cost, storage efficiencies, and privacy.**
+
+## ETH is great but ...
+Ethereum works well for low volumes of high value transactions. High volumes of privacy-requiring use-cases require a different solution.<br/>
+
+The average business user, SMBs and large enterprises alike, would be paying many times more using Centrifuge on Ethereum compared to their existing solutions. It wouldn’t be worth it for most businesses to make a switch. But what if we could lower that cost and have high throughput capabilities?
+
+
+## Cenrtifuge Chain Wants to be optimized for the Small Operations but How?
+The transactions on the Centrifuge Chain are optimized for the small subset of operations required by the Centrifuge protocol. This allows for faster execution of logic and finality of transactions.
+<br/>
+
+The optimization of transactions, together with our PoS architecture, is also what brings down the transaction costs dramatically. 
+
+*(They claimed that they would make transactions faster with lower costs but how?)*
+
+## State Rent Model
+Centrifuge Chain also implements a state rent model that **requires users to pay for continuous availability of their data over long periods of time.**<br/>
+
+This encourages decentralization because less resources are required to run a node.
+
+
+
 
 ## Future
 We believe that Tinlake is only the first step. The Protocol we are building will enable use cases such as **Deep Tier Finance** fulfilling our vision to foster economic opportunity everywhere.
