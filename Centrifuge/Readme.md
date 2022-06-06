@@ -107,11 +107,21 @@ Centrifuge Chain bridges the Ethereum and Polkadot ecosystems - bringing DeFi li
 
 
 
+## Current Integrations
+Centrifuge Chain is built on substrate and bridged to Ethereum from day 1 through Tinlake. This enables us to plug into on-chain DeFi liquidity across platforms as is reflected in our partnerships with e.g. MakerDAO and Aave.<br/>
+
+With MakerDAO, Centrifuge has been collaborating as the first protocol to back its Multi Collateral DAI with tokenized, real-world assets. <br/>
+
+DeFi opens up a whole new (financial) universe to those companies that have been traditionally neglected by the prevailing financial system. Predatory lending and banks are replaced by smart contracts: a decentralized line of credit approved by a DAO.<br/>
+
+MakerDAO is a first, and Centrifuge continues innovating with Aave and other large DeFi protocols to unlock instant liquidity.
 
 
+# Introduction to Tinlake
 
+Through Tinlake pools, businesses or "Asset Originators" can responsibly finance real-world assets, such as invoices, mortgages or streaming royalties through DeFi and access bankless liquidity. They do this by tokenizing their financial assets into Non-Fungible Tokens (“NFTs”) and use these NFTs as collateral in their Tinlake pool to finance their assets.
 
-
+![](https://developer.centrifuge.io/3843697c5a64e5a00ba601fe848c25e4/tinlake.png)
 
 
 
