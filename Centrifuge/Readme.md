@@ -123,6 +123,22 @@ Through Tinlake pools, businesses or "Asset Originators" can responsibly finance
 
 ![](https://developer.centrifuge.io/3843697c5a64e5a00ba601fe848c25e4/tinlake.png)
 
+## Earn yield and CFG rewards (TIN and DROP Tokens)
+For every Tinlake pool, investors can invest in two different tokens: TIN and DROP. TIN, known as the “risk token,” takes the risk of defaults first but also receives higher returns. DROP, known as the “yield token,” is protected against defaults by the TIN token and receives stable (but usually lower) returns. This is similar to Junior/Senior investment structures common in traditional finance.
+
+
+# Revolving Pools
+
+## Intro (**important)
+Revolving pools allow investors to invest/redeem independently at any time. A decentralized solver mechanism matches investments and redemptions and ensures that certain preferences (e.g. DROP redeem seniority) are considered and the pool's risk metrics are intact. This ensures that Asset Originators have a constant source of liquidity while investors can flexibly invest and redeem.
+
+## Investing into Tinlake
+
+<li>Investors can be whitelisted for either one (or both) of Tinlake's two tranches. To invest into TIN or DROP investors lock their investment in DAI into the Tinlake pool at any time during an epoch.</li>
+
+<li> Investments and redemptions are then executed at the end of an epoch, usually every 24 hours.</li>
+
+<li>A decentralized, automatic mechanism matches investments and redemptions making sure the pool's risk metrics remain intact, e.g. the DROP tranche is always protected by a minimum of TIN investors who take the loss first.</li>
 
 
 ## Future
