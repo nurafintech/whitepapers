@@ -351,6 +351,9 @@ https://btigresearch.bluematrix.com/sellside/EmailDocViewer?encrypt=581fef78-ef7
 https://medium.com/origintrail/origintrail-bi-yearly-report-h2-2021-making-humanitys-most-important-assets-discoverable-af873702d807
 <br>
 https://origintrail.io/
+<br>
+https://tracelabs.io/technologies
+<br>
 
 
 
