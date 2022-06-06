@@ -200,6 +200,8 @@ Centrifuge Chain is built on Substrate and will connect to the Polkadot Relay Ch
 **<li>Another important benefit for Centrifuge will be using the relay chain to bridge to other chains in the Polkadot ecosystem.</li>**
 
 
+*Polkadot will auction the first parachain slots later this year - and Centrifuge plans to be one of the first projects to obtain a parachain slot.*
+
 ## Future
 We believe that Tinlake is only the first step. The Protocol we are building will enable use cases such as **Deep Tier Finance** fulfilling our vision to foster economic opportunity everywhere.
 
