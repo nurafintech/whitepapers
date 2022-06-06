@@ -179,9 +179,25 @@ The optimization of transactions, together with our PoS architecture, is also wh
 ## State Rent Model
 Centrifuge Chain also implements a state rent model that **requires users to pay for continuous availability of their data over long periods of time.**<br/>
 
-This encourages decentralization because less resources are required to run a node.
+This encourages decentralization because less resources are required to run a node. *(How?)*
 
 
+## Building our own chain also allows us to improve upon the user and developer experience for Centrifuge 
+ 
+Our users require privacy, and this is something we can build for directly — targeting the features they need from the start. For developers, we can provide custom APIs and tools that come with the blockchain node itself instead of smart contract APIs which are harder to integrate with.
+
+
+## Downsides and Advantages to Building a Single Purpose Chain
+While there are downsides to building a single purpose chain, the advantages for our use case outweigh the costs.<br/>
+
+Integration with other Ethereum and DeFi projects becomes a bit more involved. Our experience with Ethereum development, **combined with a standardized bridge to get data to/from our Parity Substrate based chain reduces the overhead substantially, while still benefiting from the upside of our own chain.**
+
+# Substrate/Polkadot
+Centrifuge Chain is built on Substrate and will connect to the Polkadot Relay Chain as a Parachain. A parachain is a blockchain that is connected to a larger relay chain. The goal is for the relay chain to provide a high level of security, with its large validator set and high value at stake, to all of its connected parachains.<br/>
+
+**<li>Centrifuge plans to become a parachain to outsource its chain security to achieve a higher level of security at a better cost - allowing Centrifuge to focus on its core features.**</li>
+
+**<li>Another important benefit for Centrifuge will be using the relay chain to bridge to other chains in the Polkadot ecosystem.</li>**
 
 
 ## Future
