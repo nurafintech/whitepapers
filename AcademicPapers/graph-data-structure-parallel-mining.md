@@ -19,7 +19,8 @@ provides a method to build a blockchain with practical performance. The new data
 framework and the new mining mechanism increases the
 overall performance. The outcome could be use scenario, such
 as a micro transactions system, blockchain with big data or a
-new generation banking system.<br>
+new generation banking system.
+#
 در واقع هدف پیاده سازی نوعی ساختمان داده ای است به شکل یک گراف تا بتوان با استفاده از آن به صورت پارالل، بلاک های جدید را ایجاد کرد.
 
 #
@@ -40,11 +41,14 @@ several problems has been discovered on this model:
 1. Most of the power energy for calculation is wasted, as
 too much competition results in only one winner. Allowing
 one winner only means this miner acts like a central lock to
-limit the blockchains performance.<br>
+limit the blockchains performance.
+#
 کلی قدرت محاسباتی صرف شده تا فقط یک ماینر که پازل محسباتی را حل کرده، تراکنش ها را در بلاک خود بسازد که همین باعث کند شدن پروسه تولید بلاک های جدید و سرعت پردازش تراکنش ها میشود.
+#
 2. The transactions need to wait for the next new block
 generation to be confirmed. It means transactions can not be
 finished in real time.
+#
 تراکنش ها باید تا ساخته شدن بلاک بعدی، منتظر مانده و پردازش شوند.
 
 برای بهتر شدن عملکرد بلاکچین، میتوان زمان ساخته شدن بلاک ها را کاهش یا اندازه هر بلاک را افزایش داد اما با بالا رفتن کاربران سیستم، این روش ها کارساز نخواند بود.
@@ -88,9 +92,9 @@ period of time.
 Unlike the traditional blockchain for example Bitcoin,
 the new mechanism requires the miner, who won the election,
 to stay online for its duty time.
-<br>
+#
 استفاده همزمان از چندین ماینر منتخب که همان لیدر ها هستند، باعث میشود تا اگر برای هر کدام از آن ها اتفاقاتی نظیر قطعی اینترنت و برق رخ داد، ساخت بلاک های جدید با مشکل مواجه نشود:
-
+#
 A. Miner to Leader
 On the basis of parallel mining, when a miner is elected as a leader, the leader serves his duty for a certain time. In a sliding time window, m (number of) miners are elected to leaders. According to Bitcoin [1] system, the researchers set the election interval time to 10 minutes and the service time to 1 hour. It results that 6 leaders are online in a sliding time window. The leaders listen to the peer-to-peer network and wait for new transaction requests while they are on duty. Once the new transaction is broadcasting, leaders pack it into GraphChain. As the delay of communication between leaders, there are chances that same transaction is packed into the GraphChain multiple times by different leaders. Only m (number of) leaders are working in parallel, resulting in maximum of m (number of) forks of the GraphChain.
 #
