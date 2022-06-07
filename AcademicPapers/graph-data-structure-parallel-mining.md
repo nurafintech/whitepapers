@@ -144,22 +144,24 @@ In parallel mining scenario, limited number of leaders try to solve much simpler
 
 The chain data structure is hard to be ’sharded’ because the blockchain can not be split by account.
 The existing solution suggests keeping the certain period of times blockchain by snapshot. The accounts balance list also need to keep stand-alone. Dropping part of the blockchain data will cause the difficulty in data verification.
-<br>
+#
 در سیستم حسابداری یو تی اکس او ی بیت کوین این کار خیلی سخت و در سیستم بر پایه اکانت اتریوم این امر نشدنی میباشد.
-
+#
 Also, the term ’sharding’ here is different from Ethereum's sharding’. thereum’s sharding is to increase the capacity with a twolayer design. In GraphChain, the sharding can be done by
 splitting data by user.
+#
 یعنی شاردینگ داده ای که برای گراف چین در نظر میگیریم با شاردینگ لایه ای اتریوم متفاوت میباشد.
 در گراف چین، میخواهیم با تقسیم کردن و شکاندن تمامی تراکنش ها که در هر بلاک باید ثبت شوند، به چندین قسم و ذخیره آن قسم ها در نود هایی که کارشان نگهداری از این داده هاست، حجم بلاک ها را کاهش داده و به بتوانیم تراکنش هایی که مستقل از یکدیگرند و هیچ ربطی به هم ندارند، به طور مجزا در گراف مد نظر ذخیره و پردازش کنیم.
+#
 
 As the high TPS’s requirement for the production environment, the overall size of data will be increased very fast.
 Assume there are 2000 TPS, about 24G data will be generated
 per day. Less PC will meet the condition to act as the full clone node.
 Data shard on GraphChain divides the data by accounts. In general a user account internally is represented as hash. A node can be simply designed to keep all the transaction information related the accounts whose hash starts with ’a’ or ’b’. By this configuration, the huge data can be kept separately by many nodes with redundancy.
-
+#
 هش های کاربران را دسته بندی کرده ( مثلا بر اولین حروفی که با آن ها شروع میشوند) و در هنگام پردازش تراکنش ها، در این نود درستی و صحت میزان موجودی و تراکنش های قبلی هر هش را بررسی میکنیم.
 با استفاده cache کردن نیز میتوانی به این امر سرعت بخشیم.
-
+#
 If network delay, a leader may try to pack a transaction which is already done by other leaders. According to the longest chain rule, in the case of two chains with same length, PoL algorithm is used to decide which fork to go.
 
 It’s also found that the overall performance would be goingdown while more transactions are appended into GraphChain. The reason is when the chain length increases, the databaseneed to lookup the chain to verify if the transaction exists already in the blocks. This issue is solved by adding cache. After applying this technique we can observe quite average performance in Fig 2.
