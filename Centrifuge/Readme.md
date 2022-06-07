@@ -202,6 +202,56 @@ Centrifuge Chain is built on Substrate and will connect to the Polkadot Relay Ch
 
 *Polkadot will auction the first parachain slots later this year - and Centrifuge plans to be one of the first projects to obtain a parachain slot.*
 
+
+# Bridge
+Centrifuge Chain supports the [ChainSafe Bridge Pallet](https://github.com/ChainSafe/chainbridge-substrate) which enables users to securely move assets between Centrifuge Chain and Ethereum. It is a bi-directional blockchain bridge to allow data and value transfer between both chains. <br/>
+
+The Centrifuge<>Ethereum Bridge currently has 6 whitelisted, trusted relayers to both networks that have been added through on-chain democracy referenda.<br/>
+
+The authorized set currently includes *2 Centrifuge relayers and 4 external relayers* that are also validators on Centrifuge Chain: **[PureStake](https://www.purestake.com/), [ChorusOne](https://chorus.one/), [Staked.us](https://staked.us/), [Stake Capital](https://www.stake.capital/).**
+<br/>
+
+# Governance
+Centrifuge Chain has a formalized governance system that is encoded on-chain utilizing the Substrate democracy pallet. This enables on-chain voting mechanisms for binding and transparent governance by CFG token holders.<br/>
+
+To make any change to the Centrifuge Chain requires a stake-weighted majority.
+<br/>
+
+CFG holders can vote with their stake on referenda that are proposed by the Centrifuge community or the Centrifuge Chain Council; a body of 7 members elected by CFG holders.<br/>
+
+CFG holders can propose and vote on changes such as runtime upgrades, distribution of **treasury funds, chain parameters, and the governance system itself.** 
+<br/>
+
+## CFG Holder Votes and increasing the Weight of their Vote (**important)
+
+CFG holders vote on proposals with their tokens, and **increase the weight of their vote by locking up tokens for extended periods of time along with their vote.**
+
+<br/>
+
+
+# Centrifuge Chain Council
+
+The Centrifuge Chain Council comprises a body of 7 elected members who gain prioritized voting rights over other CFG holders.<br/>
+
+The purpose of the council is to **propose referenda beneficial** to the Centrifuge Network, based on member's expertise and experience in developing, maintaining and using Centrifuge.<br/>
+
+The council also serves to represent passive CFG holders who may not participate in all referenda. *(How?)*<br/> 
+
+
+## Public Refrenda
+Though Public Referenda can be proposed by any CFG holder, the vote needed to pass is generally super-majority carried, adaptive to the voter turnout.<br/>
+
+However, when the Council proposes a motion and >3/4 of the Council vote in favour of the proposal, the vote becomes a simple majority-carries with no reference to turnout.<br/>
+
+When a proposal is unanimously voted in favor by the council, it benefits from negative turnout bias.<br/> 
+This requires a heavy supermajority of nay votes to reject at low turnouts, but as turnout increases towards 100%, it becomes a simple majority-carries.
+*(investigate more)*
+
+
+
+
+
+
 ## Future
 We believe that Tinlake is only the first step. The Protocol we are building will enable use cases such as **Deep Tier Finance** fulfilling our vision to foster economic opportunity everywhere.
 
