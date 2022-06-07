@@ -249,7 +249,27 @@ This requires a heavy supermajority of nay votes to reject at low turnouts, but 
 
 
 
+# How the P2P Network Works
+## Intro
+The Centrifuge peer-to-peer (P2P) network provides a secure method to create, exchange and verify asset data between collaborators and tokenize the assets into NFTs.
+<br/>
 
+**Asset originators can selectively share asset details with service providers who can assess the data and contribute information to the minted NFT.**
+<br/>
+
+The data origin can be verified using cryptographic signatures.<br/>
+
+
+## P2P Network Implementation
+The components of the P2P network are implemented on libp2p.<br/>
+
+Centrifuge Chain is used for:
+<li>Maintaining identities in a similar format to the ERC725 standard </li>
+<li>Anchoring State Commitments (?)</li>
+<li> Minting NFTs from off-chain documents.</li>
+<br/>
+
+*These NFTs can be bridged to Ethereum to be locked as collateral into Tinlake to finance these assets.*
 
 
 ## Future
