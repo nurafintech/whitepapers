@@ -271,6 +271,48 @@ Centrifuge Chain is used for:
 
 *These NFTs can be bridged to Ethereum to be locked as collateral into Tinlake to finance these assets.*
 
+![](https://developer.centrifuge.io/8fa44b7b1406a4f5c7f6edeada43a59c/p2p_network_overview.png)
+
+# Centrifuge Node
+<li> Each collaborator runs or accesses a hosted Centrifuge node to connect to the network.</li>
+
+<li>The Centrifuge node provides a simple API interface to interact with the p2p network, the Centrifuge chain as well as the Ethereum smart contracts.</li>
+
+<li>The Node operates on a “service bus” principal where plugins and outside systems can subscribe to messages about specific objects (e.g., a procurement application can subscribe to changes of order objects).</li>
+
+<li>The P2P Node abstracts the events that occur on the public blockchain, sidechain, and P2P Layer and translates them into messages on this internal bus for other applications to consume.</li>
+
+<li> The Node also offers the connectivity to Ethereum for applications that build on top of the network.</li>
+<br/>
+
+# Identities
+
+Each entity or collaborator on the P2P network has a verifiable Centrifuge Identity (Centrifuge ID) which is a unique ID assigned to a participant of the P2P network.<br/>
+
+It keeps track of the different cryptographic keys in use and ensures that this data can be modified only by the creator and/or a delegate chosen by the creator.<br/>
+
+The unique identifier of a participant in the Centrifuge protocol is equivalent to the **Ethereum address of his/her identity contract**. Centrifuge is adopting the DID-compatible ERC725v1 Ethereum standard for self-sovereign identities.
+<br/>
+
+## Centrifuge Identity Credentials
+<li>
+Peer-to-Peer Messaging Encryption Keys: are used for message encryption.<br/> These keys are used to identify the nodes over the P2P network and establish an encrypted communication channel between peers.
+</li><br/>
+<li>
+Signing Keys: Documents in Centrifuge are signed with signing keys.<br/> These signatures are a part of the Merkle root that is anchored on the public chain and verifiable at a later time.</li>
+
+*(In my opinion Something like VRF)*
+<br/>
+
+<li>Ethereum Accounts: When interacting with a smart contract on Ethereum, an account needs to be linked to the identity to act on its behalf.<br/>
+The linked Ethereum accounts are the accounts that are allowed to interact with DApps utilizing Centrifuge.</li><br/>
+
+# Document
+A document is a structured set of fields with specific field types representing a financial asset. <br/>
+
+The network supports any document type as long as the formats are agreed upon (via a schema) and shared between *selected collaborators*.<br/>
+
+
 
 ## Future
 We believe that Tinlake is only the first step. The Protocol we are building will enable use cases such as **Deep Tier Finance** fulfilling our vision to foster economic opportunity everywhere.
