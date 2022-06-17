@@ -202,6 +202,118 @@ Centrifuge Chain is built on Substrate and will connect to the Polkadot Relay Ch
 
 *Polkadot will auction the first parachain slots later this year - and Centrifuge plans to be one of the first projects to obtain a parachain slot.*
 
+
+# Bridge
+Centrifuge Chain supports the [ChainSafe Bridge Pallet](https://github.com/ChainSafe/chainbridge-substrate) which enables users to securely move assets between Centrifuge Chain and Ethereum. It is a bi-directional blockchain bridge to allow data and value transfer between both chains. <br/>
+
+The Centrifuge<>Ethereum Bridge currently has 6 whitelisted, trusted relayers to both networks that have been added through on-chain democracy referenda.<br/>
+
+The authorized set currently includes *2 Centrifuge relayers and 4 external relayers* that are also validators on Centrifuge Chain: **[PureStake](https://www.purestake.com/), [ChorusOne](https://chorus.one/), [Staked.us](https://staked.us/), [Stake Capital](https://www.stake.capital/).**
+<br/>
+
+# Governance
+Centrifuge Chain has a formalized governance system that is encoded on-chain utilizing the Substrate democracy pallet. This enables on-chain voting mechanisms for binding and transparent governance by CFG token holders.<br/>
+
+To make any change to the Centrifuge Chain requires a stake-weighted majority.
+<br/>
+
+CFG holders can vote with their stake on referenda that are proposed by the Centrifuge community or the Centrifuge Chain Council; a body of 7 members elected by CFG holders.<br/>
+
+CFG holders can propose and vote on changes such as runtime upgrades, distribution of **treasury funds, chain parameters, and the governance system itself.** 
+<br/>
+
+## CFG Holder Votes and increasing the Weight of their Vote (**important)
+
+CFG holders vote on proposals with their tokens, and **increase the weight of their vote by locking up tokens for extended periods of time along with their vote.**
+
+<br/>
+
+
+# Centrifuge Chain Council
+
+The Centrifuge Chain Council comprises a body of 7 elected members who gain prioritized voting rights over other CFG holders.<br/>
+
+The purpose of the council is to **propose referenda beneficial** to the Centrifuge Network, based on member's expertise and experience in developing, maintaining and using Centrifuge.<br/>
+
+The council also serves to represent passive CFG holders who may not participate in all referenda. *(How?)*<br/> 
+
+
+## Public Refrenda
+Though Public Referenda can be proposed by any CFG holder, the vote needed to pass is generally super-majority carried, adaptive to the voter turnout.<br/>
+
+However, when the Council proposes a motion and >3/4 of the Council vote in favour of the proposal, the vote becomes a simple majority-carries with no reference to turnout.<br/>
+
+When a proposal is unanimously voted in favor by the council, it benefits from negative turnout bias.<br/> 
+This requires a heavy supermajority of nay votes to reject at low turnouts, but as turnout increases towards 100%, it becomes a simple majority-carries.
+*(investigate more)*
+
+
+
+# How the P2P Network Works
+## Intro
+The Centrifuge peer-to-peer (P2P) network provides a secure method to create, exchange and verify asset data between collaborators and tokenize the assets into NFTs.
+<br/>
+
+**Asset originators can selectively share asset details with service providers who can assess the data and contribute information to the minted NFT.**
+<br/>
+
+The data origin can be verified using cryptographic signatures.<br/>
+
+
+## P2P Network Implementation
+The components of the P2P network are implemented on libp2p.<br/>
+
+Centrifuge Chain is used for:
+<li>Maintaining identities in a similar format to the ERC725 standard </li>
+<li>Anchoring State Commitments (?)</li>
+<li> Minting NFTs from off-chain documents.</li>
+<br/>
+
+*These NFTs can be bridged to Ethereum to be locked as collateral into Tinlake to finance these assets.*
+
+![](https://developer.centrifuge.io/8fa44b7b1406a4f5c7f6edeada43a59c/p2p_network_overview.png)
+
+# Centrifuge Node
+<li> Each collaborator runs or accesses a hosted Centrifuge node to connect to the network.</li>
+
+<li>The Centrifuge node provides a simple API interface to interact with the p2p network, the Centrifuge chain as well as the Ethereum smart contracts.</li>
+
+<li>The Node operates on a “service bus” principal where plugins and outside systems can subscribe to messages about specific objects (e.g., a procurement application can subscribe to changes of order objects).</li>
+
+<li>The P2P Node abstracts the events that occur on the public blockchain, sidechain, and P2P Layer and translates them into messages on this internal bus for other applications to consume.</li>
+
+<li> The Node also offers the connectivity to Ethereum for applications that build on top of the network.</li>
+<br/>
+
+# Identities
+
+Each entity or collaborator on the P2P network has a verifiable Centrifuge Identity (Centrifuge ID) which is a unique ID assigned to a participant of the P2P network.<br/>
+
+It keeps track of the different cryptographic keys in use and ensures that this data can be modified only by the creator and/or a delegate chosen by the creator.<br/>
+
+The unique identifier of a participant in the Centrifuge protocol is equivalent to the **Ethereum address of his/her identity contract**. Centrifuge is adopting the DID-compatible ERC725v1 Ethereum standard for self-sovereign identities.
+<br/>
+
+## Centrifuge Identity Credentials
+<li>
+Peer-to-Peer Messaging Encryption Keys: are used for message encryption.<br/> These keys are used to identify the nodes over the P2P network and establish an encrypted communication channel between peers.
+</li><br/>
+<li>
+Signing Keys: Documents in Centrifuge are signed with signing keys.<br/> These signatures are a part of the Merkle root that is anchored on the public chain and verifiable at a later time.</li>
+
+*(In my opinion Something like VRF)*
+<br/>
+
+<li>Ethereum Accounts: When interacting with a smart contract on Ethereum, an account needs to be linked to the identity to act on its behalf.<br/>
+The linked Ethereum accounts are the accounts that are allowed to interact with DApps utilizing Centrifuge.</li><br/>
+
+# Document
+A document is a structured set of fields with specific field types representing a financial asset. <br/>
+
+The network supports any document type as long as the formats are agreed upon (via a schema) and shared between *selected collaborators*.<br/>
+
+
+
 ## Future
 We believe that Tinlake is only the first step. The Protocol we are building will enable use cases such as **Deep Tier Finance** fulfilling our vision to foster economic opportunity everywhere.
 
