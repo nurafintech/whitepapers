@@ -259,7 +259,7 @@ It will be possible for a parachain that holds a parachain slot to swap this slo
 This provides a graceful off-ramp for parachains that have reached the end of their lease and do not have sufficient usage to justify renewal; they can remain registered on the Relay Chain but only produce new blocks when they need to.
 <br/>
 
-Parathreads help ease the sharp stop of the parachain slot term by allowing parachains that are still doing something useful to produce blocks, even if it is no longer economically viable to rent a parachain slot.
+*Parathreads help ease the sharp stop of the parachain slot term by allowing parachains that are still doing something useful to produce blocks, even if it is no longer economically viable to rent a parachain slot.*
 
 ![](https://miro.medium.com/max/1400/1*uYZgrixc8ek19mZvUA_Mzw.png)
 
