@@ -23,43 +23,47 @@ Parachains are next-generation layer-1 blockchains that put the 'multi' in multi
 
 A parachain (parallelizable chain) is a simpler form of blockchain, which attaches to the security provided by a “relay chain” rather than providing its own. The relay chain is called that because it not only lends security to attached parachains, but also provides a guarantee of secure message-passing between them. One key feature of parachains is that the computations they perform are inherently independent. Fully generalized systems of turing-complete smart contracts run into issues in determining which transactions will “collide” with each other, meaning that transactions which could potentially be parallelized are often run in sequence, wasting valuable computation time. **Drawing clear boundaries between parachains means that we can execute all of them at once without fear of collision — if we have 10 parachains, we can perform 10 times the work using the same source of security.**
 
-### Specialization
-    Parachains can be specialized for virtually every blockchain use case, and also represent a tool for experimenting with completely new use cases, especially on Kusama. Thanks to this specialization, parachains can do more working together than any single chain can do alone, creating a rich ecosystem where new decentralized economies can flourish.
-    هر پاراچین که در واقع خود یک بلاکچین جداگانه میباشد را برای یک ایده و کار خاص optimise میکنیم.
+## Specialization
+Parachains can be specialized for virtually every blockchain use case, and also represent a tool for experimenting with completely new use cases, especially on Kusama. Thanks to this specialization, parachains can do more working together than any single chain can do alone, creating a rich ecosystem where new decentralized economies can flourish.
+#
+ هر پاراچین که در واقع خود یک بلاکچین جداگانه میباشد را برای یک ایده و کار خاص optimize میکنیم.
+#
 
-### Flexibility
+## Flexibility
 
-    Polkadot gives parachain developers the maximum possible flexibility when building their chain. The only technical requirement for being a parachain is that it must be able to prove to Polkadot validators that every block of the parachain follows the agreed-upon protocol. Beyond that, the sky's the limit for designing the perfect chain for any particular use case or set of use cases.
+Polkadot gives parachain developers the maximum possible flexibility when building their chain. The only technical requirement for being a parachain is that it must be able to prove to Polkadot validators that every block of the parachain follows the agreed-upon protocol. Beyond that, the sky's the limit for designing the perfect chain for any particular use case or set of use cases.
 
-    Building a parachain also gives blockchain developers much more flexibility than if they were building on top of a smart contract platform. When building at the smart contract layer, developers are locked into the design decisions of the underlying blockchain, which may not be optimal for their use case. Polkadot allows developers to drill down into the logic of the layer-1 parachain itself, unlocking far more possibilities for optimization.
-    دست توسعه دهندگان برای کانفیگ پاراچین ها باز میباشد.
+Building a parachain also gives blockchain developers much more flexibility than if they were building on top of a smart contract platform. When building at the smart contract layer, developers are locked into the design decisions of the underlying blockchain, which may not be optimal for their use case. Polkadot allows developers to drill down into the logic of the layer-1 parachain itself, unlocking far more possibilities for optimization.
+#
+   دست توسعه دهندگان برای کانفیگ پاراچین ها باز میباشد.
+#
 
-### Interoperability
+## Interoperability
+A key aspect of the parachain model is the ability for blockchains of differing design to communicate with each other. Polkadot's interoperability, also known as cross-chain composability, means blockchains are no longer isolated islands closed off from each other. Parachains end the era of siloed blockchains, creating a decentralized, connected internet of blockchains where before there existed only isolated networks with their own tribalistic communities.<br/>
 
-    A key aspect of the parachain model is the ability for blockchains of differing design to communicate with each other. Polkadot's interoperability, also known as cross-chain composability, means blockchains are no longer isolated islands closed off from each other. Parachains end the era of siloed blockchains, creating a decentralized, connected internet of blockchains where before there existed only isolated networks with their own tribalistic communities.
+Crucially, Polkadot allows parachains to send not only tokens but any type of data between each other, opening up a host of new blockchain use cases. Polkadot developers can build services that take advantage of the features of multiple blockchains, rather than being limited to the features of any one chain.
+#
+ تمامی پاراچین ها که از طریق Relay chain  امنیت شان برقرار میشود، میتوانند با یکدیگر ارتباط برقرار کرده و message passing داشته باشند. بدین ترتیب کل پلتفرم پلکادات interoperable خواهد بود.
+#
 
-    Crucially, Polkadot allows parachains to send not only tokens but any type of data between each other, opening up a host of new blockchain use cases. Polkadot developers can build services that take advantage of the features of multiple blockchains, rather than being limited to the features of any one chain.
-    تمامی پاراچین ها که از طریق Relay chain  امنیت شان برقرار میشود، میتوانند با یکدیگر ارتباط برقرار کرده و message passing داشته باشند. بدین ترتیب کل پلتفرم پلکادات interoperable خواهد بود.
+## Scalability
+With the parachain model, Polkadot achieves scalability at layer-1, which is more decentralized and efficient than relying purely on layer 2. However, parachains can also incorporate layer-2 solutions, further increasing scalability. Polkadot allows transactions to be spread out and processed in parallel over an ecosystem of specialized layer-1 blockchains, significantly improving throughput and scalability over non-sharded networks.<br/>
 
-### Scalability
+In addition, several optimizations have been proposed that will allow Polkadot to continue improving scalability and transaction throughput into the future, while maintaining decentralization, security, and data availability. The last point is important, as other networks may prioritize TPS (transactions per second) at the expense of these important factors, but sacrificing decentralization for throughput defeats the underlying purpose of Web3.
 
-    With the parachain model, Polkadot achieves scalability at layer-1, which is more decentralized and efficient than relying purely on layer 2. However, parachains can also incorporate layer-2 solutions, further increasing scalability. Polkadot allows transactions to be spread out and processed in parallel over an ecosystem of specialized layer-1 blockchains, significantly improving throughput and scalability over non-sharded networks.
+## Freedom from platform fees
 
-    In addition, several optimizations have been proposed that will allow Polkadot to continue improving scalability and transaction throughput into the future, while maintaining decentralization, security, and data availability. The last point is important, as other networks may prioritize TPS (transactions per second) at the expense of these important factors, but sacrificing decentralization for throughput defeats the underlying purpose of Web3.
+Parachains connected to Polkadot can access as much computing power as they need without additional fees or “gas” costs. Polkadot's flexibility frees parachain teams and dapp developers to implement whatever fee structure they want for their users.<br/>
 
-### Freedom from platform fees
+Best of all, users of parachains are not required to hold DOT tokens to interact with apps and services, and indeed don't even need to know that they're interacting with a blockchain. In this sense, the parachain model allows blockchain technology to overcome a significant barrier to usability and adoption that exists with legacy networks.
 
-    Parachains connected to Polkadot can access as much computing power as they need without additional fees or “gas” costs. Polkadot's flexibility frees parachain teams and dapp developers to implement whatever fee structure they want for their users.
+## Security
 
-    Best of all, users of parachains are not required to hold DOT tokens to interact with apps and services, and indeed don't even need to know that they're interacting with a blockchain. In this sense, the parachain model allows blockchain technology to overcome a significant barrier to usability and adoption that exists with legacy networks.
-
-### Security
-
-New blockchains typically need to bootstrap their own security by building a network of validators or miners. This is an incredibly difficult and time consuming process, and many blockchains are left with a level of security that leaves them vulnerable to attacks.
+New blockchains typically need to bootstrap their own security by building a network of validators or miners. This is an incredibly difficult and time consuming process, and many blockchains are left with a level of security that leaves them vulnerable to attacks.<br/>
 
 Parachains get robust security automatically when connecting to Polkadot. This built-in security feature, also called shared security, provides newer blockchain teams with bank-like security at minimal effort on their part. It also gives them fewer barriers to entry and significantly reduces the time necessary to launch a new network.
 
-### Upgradability
+## Upgradability
 We live in a world of constant innovation, where technology is advanced one day and out of date the next. Like all software, blockchains need periodic updates to add new features, fix bugs, and incorporate more advanced technologies as they become available. But upgrading conventional blockchains is a laborious process often involving ‘forking’ or splitting the chain, which slows innovation and sometimes rips communities apart.
 
 Polkadot and its parachains can take advantage of easier, 'forkless' upgrades. This means parachains can be upgraded easily based on the will of their communities — so they can be ready for whatever the future holds. With the parachain model, blockchains can better evolve and adapt to changing conditions, which means they can continue to be relevant into the future as new technologies become available.
@@ -97,18 +101,21 @@ Since Polkadot gives parachain teams maximum flexibility to design the network t
 * **Parathreads**: Pay-as-you-go parachains for early stage networks and those that don’t need continuous connectivity to Polkadot. Parathreads are a proposed feature that will need to be added by Polkadot governance once developed.
 
 ## Parachain slot auctions and crowdloans
-    Parachains connect to Polkadot by leasing an open slot on the Relay Chain via auction, which involves locking up a bond of DOT for the duration of the lease. DOT holders can help their favorite parachains win an auction, potentially earning a reward in return, by contributing to a crowdloan and temporarily locking their own DOT for the parachain’s bond.
+Parachains connect to Polkadot by leasing an open slot on the Relay Chain via auction, which involves locking up a bond of DOT for the duration of the lease. DOT holders can help their favorite parachains win an auction, potentially earning a reward in return, by contributing to a crowdloan and temporarily locking their own DOT for the parachain’s bond.
 
 **Auctions and crowdloans raise the bar for blockchain projects, incentivizing them to demonstrate their technology and gain community support prior to launch. This reduces the likelihood of so-called ‘vaporware’ projects that raise funds without the intention or technical ability to deliver on their promises.** Crowdloans also represent a fairer, more community-driven way of bootstrapping a native token in a decentralized way.
 
 ## The cost of running a parachain
-    Parachains connected to Polkadot by leasing a parachain slot can access as much computing power as they need without additional fees or “gas” costs. Since the full amount of DOT bonded by a team for a parachain slot is unlocked at the end of the lease period, the cost of running a parachain is best described as the opportunity cost from not having access to the locked DOT for the duration of the lease.
+Parachains connected to Polkadot by leasing a parachain slot can access as much computing power as they need without additional fees or “gas” costs. Since the full amount of DOT bonded by a team for a parachain slot is unlocked at the end of the lease period, the cost of running a parachain is best described as the opportunity cost from not having access to the locked DOT for the duration of the lease.<br/>
 
-    Teams that choose to fund their slot via crowdloan may choose to reward their contributors in any way they see fit, representing an additional cost. Other minor costs include the expense of running collator nodes on the individual parachain.
+Teams that choose to fund their slot via crowdloan may choose to reward their contributors in any way they see fit, representing an additional cost. Other minor costs include the expense of running collator nodes on the individual parachain.
 
 **For applications with a lot of users and traffic, running on Polkadot as a parachain is expected to be more economical than running as a solo blockchain or building on an existing smart contract platform.**
 
+#
+
 هر تیمی که بخواهد برای پروژه خود، پاراچین دریافت کند، باید مقداری توکن بومی پلکادات، یعنی دات در شبکه به گرو بگذارد. همچنین اگر توکن داران دات، علاقه مند به این تیم و پروژه آن ها باشند، باید از دات های خود برای رای دادن به این پروژه استفاده کنند. بدین ترتیب برای شبکه پلکادات و توکن آن، استفاده ای واقعی و روزمره ایجاد شده است و این دهنده ارزشمند بودن توکن دات نیز میباشد.
+#
 
 ## Parachain Slot Acquisition
 Polkadot supports a limited number of parachains, currently estimated to be about 100. As the number of slots is limited, there are several ways to allocate them:
@@ -177,13 +184,14 @@ Note that validators are likely to be engaging in each of these protocols at the
 
 This internal parallelism also reflects the architecture of the implementation: each of these protocols is implemented as an independent subsystem, and all the subsystems run in parallel. Every node is always doing a little bit of everything.
 
-    Due to their parallel nature, they are able to parallelize transaction processing and achieve scalability of the Polkadot system. They share in the security of the entire network and can communicate with other parachains through the XCM format.
+#
+Due to their parallel nature, they are able to parallelize transaction processing and achieve scalability of the Polkadot system. They share in the security of the entire network and can communicate with other parachains through the XCM format.<br/>
 
-    Parachains are maintained by a network maintainer known as a collator. The role of the collator node is to maintain a full node of the parachain, retain all necessary information of the parachain, and produce new block candidates to pass to the Relay Chain validators for verification and inclusion in the shared state of Polkadot . The incentivization of a collator node is an implementation detail of the parachain. They are not required to be staked on the Relay Chain or own the native token unless stipulated by the parachain implementation.
+Parachains are maintained by a network maintainer known as a collator. The role of the collator node is to maintain a full node of the parachain, retain all necessary information of the parachain, and produce new block candidates to pass to the Relay Chain validators for verification and inclusion in the shared state of Polkadot . The incentivization of a collator node is an implementation detail of the parachain. They are not required to be staked on the Relay Chain or own the native token unless stipulated by the parachain implementation.<br/>
 
-    The Polkadot Host (PH) requires that the state transitions performed on parachains be specified as a Wasm executable. Proofs of new state transitions that occur on a parachain must be validated against the registered state transition function (STF) that is stored on the Relay Chain by the validators before Polkadot acknowledges a state transition has occurred on a parachain. The key constraint regarding the logic of a parachain is that it must be verifiable by the Relay Chain validators. Verification most commonly takes the form of a bundled proof of a state transition known as a Proof-of-Verification (PoV) block, which is submitted to the validators from one or more of the parachain collators to be checked.
+The Polkadot Host (PH) requires that the state transitions performed on parachains be specified as a Wasm executable. Proofs of new state transitions that occur on a parachain must be validated against the registered state transition function (STF) that is stored on the Relay Chain by the validators before Polkadot acknowledges a state transition has occurred on a parachain. The key constraint regarding the logic of a parachain is that it must be verifiable by the Relay Chain validators. Verification most commonly takes the form of a bundled proof of a state transition known as a Proof-of-Verification (PoV) block, which is submitted to the validators from one or more of the parachain collators to be checked.<br/>
 
-The below diagram or similar ones are distributed widely over the internet. They show how validators are split into groups and assigned to parachains and get parachain block proposals from collators.
+The below diagram or similar ones are distributed widely over the internet. They show how validators are split into groups and assigned to parachains and get parachain block proposals from collators.<br/>
 
 ![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/Polkadot/Polkadot%20Architecture.png)
 
@@ -205,7 +213,8 @@ While Polkadot enables crosschain functionality amongst the parachains, it neces
 
 **Due to the necessary latency involved in sending crosschain messages, some parachains plan to become hubs for an entire industry**. For example, a parachain project **Acala** is planning to become a hub for decentralized finance (DeFi) applications. Many DeFi applications take advantage of a property known as composability which means that functions of one application can be synergistically composed with others to create new applications. One example of this includes flash loans, which borrow funds to execute some on-chain logic as long as the loan is repaid at the end of the transaction.
 
-    An issue with crosschain latency means that composability property weakens among parachains compared to a single blockchain. This implication is common to all sharded blockchain designs, including Polkadot, Eth2.0, and others. The solution to this is the introduction of parachain hubs, which maintain the stronger property of single block composability.
+#
+An issue with crosschain latency means that composability property weakens among parachains compared to a single blockchain. This implication is common to all sharded blockchain designs, including Polkadot, Eth2.0, and others. The solution to this is the introduction of parachain hubs, which maintain the stronger property of single block composability.
 
 #
 
@@ -213,14 +222,14 @@ While Polkadot enables crosschain functionality amongst the parachains, it neces
 ![](https://miro.medium.com/max/1400/1*EFqF3Y-yF8yRX7oNtzavKA.png)
 Parathreads are an idea for parachains to temporarily participate (on a block by block basis) in Polkadot security without needing to lease a dedicated parachain slot. This is done through economically sharing the scarce resource of a parachain slot among several competing resources (parathreads). Chains that otherwise would not be able to acquire a full parachain slot or do not find it economically sensible to do so, are enabled to participate in Polkadot's shared security — albeit with an associated fee per executed block. It also offers a graceful off-ramp to parachains that no longer require a dedicated parachain slot, but would like to continue using the Relay Chain.
 
-    Origin
-    Since computers have a limited amount of physical memory, when an application needs more, the computer can create virtual memory by using swap space on a hard disk. Swap space allows the capacity of a computer's memory to expand and for more processes to run concurrently with the trade-off that some processes will take longer to progress.
+## Origin
+Since computers have a limited amount of physical memory, when an application needs more, the computer can create virtual memory by using swap space on a hard disk. Swap space allows the capacity of a computer's memory to expand and for more processes to run concurrently with the trade-off that some processes will take longer to progress.
 
 
 ## How do Parathreads Operate?
-A portion of the parachain slots on the Relay Chain will be designated as part of the parathread pool. In other words, some parachain slots will have no parachain attached to them and rather will be used as a space for which the winner(s) of the block-by-block parathread fee auction can have their block candidate included.
+A portion of the parachain slots on the Relay Chain will be designated as part of the parathread pool. In other words, some parachain slots will have no parachain attached to them and rather will be used as a space for which the winner(s) of the block-by-block parathread fee auction can have their block candidate included.<br/>
 
-    Collators will offer a bid designated in DOT for inclusion of a parathread block candidate. The Relay Chain block author is able to select from these bids to include a parathread block. The obvious incentive is for them to accept the block candidate with the highest bid, which would bring them the most profit. The tokens from the parathread bids will likely be split 80-20, meaning that 80% goes into Polkadot treasury and 20% goes to the block author. This is the same split that applies also to transaction fees and, like many other parameters in Polkadot, can be changed through a governance mechanism.
+Collators will offer a bid designated in DOT for inclusion of a parathread block candidate. The Relay Chain block author is able to select from these bids to include a parathread block. The obvious incentive is for them to accept the block candidate with the highest bid, which would bring them the most profit. The tokens from the parathread bids will likely be split 80-20, meaning that 80% goes into Polkadot treasury and 20% goes to the block author. This is the same split that applies also to transaction fees and, like many other parameters in Polkadot, can be changed through a governance mechanism.
 
 ![](https://miro.medium.com/max/1400/1*Zge-m0Ot81ckvoWpzduZSA.png)
 
