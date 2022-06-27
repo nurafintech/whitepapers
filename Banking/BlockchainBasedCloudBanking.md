@@ -78,5 +78,195 @@ Furthermore, smart contracts are useful for automatic invoicing. Pricewaterhouse
 
 #
 
+## Sketching a network architecture
+The network can function a decentralized cloud banking infrastructure as a service, running on the top of existing core-banking systems. Then all banking and financial services can be implemented as decentralized applications, running on the top of the cloud (i.e. the Blockchain), which utilize all advantages of Blockchain and smartcontract, while preserving the essential legal compliance and security of the banking systems.
+
+## Two-tier network and workflow
+The proposed network is not pure peer-to-peer like Bitcoin, Ethereum and other public Blockchains. It consists of two classes (or tiers): **master nodes** and **normal nodes** (see Fig. 1) with different right and role.
+
+![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/Banking/Blockchain%20banking%20cloud.png)
+
+* **Master nodes** are block generators who hold the ultimate power, be able to
+function all core protocols and the consensus mechanism, and store full blockdata. **Only legitimate banks can become master nodes**. The block generators verify submitted transactions, then gather in a block and finalize it according to the consensus mechanism.
+* Normal nodes are transaction validators. **Banks, financial institutions, payment service providers, big merchants**, can join the network as normal nodes. The validators receive transaction proposals from clients (i.e. from end-users), validate them and then forward to master nodes for confirmation and finalization.
+
+In general, clients may submit their transaction proposals directly to master nodes. However, master nodes give priority to the validated transaction pool. Normal nodes help validate transactions before sending to master nodes, thus reduce the block generators’ workload.
+
+![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/Banking/Blockchain%20banking%20cloud%20flowchart.png)
+
+ The network allows nodes attaching their private chains (or private payment channels) on the main chain, thus improving the overall scalability and performance.
+
+![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/Banking/Block%20data%20and%20participants.png)
+
+* The Header
+  1. Hash of previous block (i.e. hashing value of the previous block data).
+  2. Time stamp presents the time point of block generation.
+  3. Root hash of the Merkle tree.
+* The State
+  1. New registered identification hashes (e.g. hashing values of [name, identity number, birthday]).
+  2. New registered account addresses ( e.g. hashing [bank code] + hashing [public key] ).
+  3. Balance and state updates show new state changes on the entire network, ( e.g. [identity-account mapping, account addresses, available balance, other new states] ).
+  4. Coinbase presents rewards (paid via a native token like bitcoin, ether). Feebase describes stable-coin-based transaction fee. Rewards and fees are accompanied with an appropriate distribution over the nodes.
+* The Body
+  1. Clearing updates show clearing statistics among participant banks (commonly master nodes only) so they can proceed to settlement, e.g. via an outside clearing house.
+  2. Transaction records show detail information of all transactions and their hash values, e.g. [sender’s addresses, receiver’s addresses, number of transferred tokens].
+
+The proposed block data and its distribution differ with existing public Blockchains in the following major points:
+* **Account** and **identity:** Identification hash is mapped with a real identity stored off chain. An identification hash may be attached with (at least) one or many account addresses. Every account must be mapped with at least one identity.
+* **Coinbase** and **feebase** presents a dual-token model. The coinbase utilizes a native toke (like bitcoin, ether) to incentivize participating nodes for contribution to the network operation. The feebase uses stable coins (i.e. digitized fiat currencies based on bank pledge) as transaction fee utilities, except native coin transactions.
+* **Clearing update** gives clearing statistics among participant banks so they can proceed to settlement, especially in real time without a centralized clearing house, provided a builtin central bank digital currency.
+
+Master nodes play the critical role of full block data storage and full operation on
+the network. When a block is produced and endorsed, the generator will broadcast it fully to other master nodes, the header and the state to normal nodes. The
+normal nodes can use the header and the body for Simplified Payment Verification (SPV) and transaction validation without asking master nodes. SPV nodes
+on Bitcoin Network must ask full nodes to verify certain transactions. Thus, normal nodes in our network are neither precisely equivalent to Simplified Payment
+Verification nodes nor full nodes on Bitcoin or Ethereum. In addition, block data
+(specified relevant transaction info) is partially updated to the associated users.
+This task is normally done by normal nodes and client servers.
+
+#
+
+## Core protocols
+
+**Identification protocol** utilizes hash (checksum) techniques to help identity
+verification better and faster. The Blockchain network does not store customer
+identity information but its hashed value for cross verification. Member banks
+and other network participants keep their own customer identity information in
+their own private database. The only thing the members do is registering (i.e.
+submitting) identity hash values on the network. Note that each identity hash
+is identical with one and only one body (e.g. an individual, a company or an
+organization):
+1. An user request opening an account on the cloud banking network. The
+node storing his identity info will hash the data, then broadcast the hashed
+value associated with (at least) one or many new public addresses to the
+network. The registration is complete once the identity hash and its associated address(es) are included in a confirmed block. Then the user can make
+transactions.
+2. If no identity information exists, then the user is required to complete Know
+Your Customer (KYC) process. After KYC, it returns Step 1.
+
+The identification hash helps the network’s participants verify the existence of
+an identity while keeping the original identity information confidentially outside the Blockchain. This protects privacy and confidentiality while facilitating cross verification, certification and information exchange. **Note that all public Blockchains (e.g. Bitcoin, Ethereum) store anonymous addresses without any mapping to real identities. Our proposed Blockchain is anonymous on chain but every account is associated with a verified KYC info stored off-chain (at least in some node’s private database).**
+
+بنابراین بحث KYC به صورت Centralized بوده و اطلاعات هویتی افراد باید در جایی ذخیره بشوند.
+
+**Incentive protocol** is **implemented** at the **bottom of the Blockchain**, and only **master nodes** (as block generators) have the right to function and maintain it. The protocol issues a unique native token (or native coin) utilized for staking (in the consensus mechanism) and rewarding on the entire Blockchain network. The native coin represents the **intrinsic value of the Blockchain cloud banking network analogously to crypto assets** (e.g. BTC of Bitcoin, ETH of Ethereum), which may varies over time. Therefore, no stable coin (e.g. digitized fiat types) can satisfy that special nature. The protocol will pre-mine a certain amount of native coins at the genesis block (i.e. block 0) to use for initial staking of the foundation nodes. After that the new coins are generated as reward per newly produced block and distributed appropriately to all nodes, and possibly to the development foundation.
+
+For example, the parameters of the incentive protocol can be set as followed:
+* The block reward rate is max 2% of the current supply per year, evenly divided per block. One can set a maximal supply (e.g. 1 billion native coins), i.e. the protocol will not generate new coins any more after reaching that number.
+*  In each block, coinbase protocol computes and distributes new generated coins and transaction fees (applied for native coin transactions and specified executions only) as the following. Assuming there is N nodes on the Blockchain network:
+
+    • 10% or 1/N (for which smaller) to the block generator.
+
+    • 5% or 1/2N (for which smaller) to the block endorsers who co-sign to finalize the block (if any), other than the generator.
+    
+    • 10% or 1/N (for which smaller) to the transaction validators (evenly divided by the number of native coin transactions included in the block).
+
+    • 3% or 1/3N (for which smaller) to the development foundation.
+
+    • The rest 72% will be distributed evenly as 44% to all master nodes and 28% to all normal nodes.
 
 
+**Stable coin protocol** (more explicitly the fiat digitization protocol) is implemented at the bottom of the Blockchain, i.e. only master nodes have the
+right to operate and maintain it. The protocol allows issuing digital tokens 1-
+to-1 corresponding to equivalent cash pledged in bank and burning the tokens
+corresponding to cash withdrawal amount. This means no new currency is issued. The token is simply an accounting representative of cash reserve in bank.
+The protocol also provides digitized fiat balance update of all accounts on the
+network. Zero Knowledge Proof algorithms can be implemented to blind user
+balance updates (in the state of block data) sending to normal nodes. **An implementation of shielded transactions and addresses can be found on Tron using zk-SNARK**. The purpose is protecting privacy on the entire network while
+allowing easy verification and fully tracking on the master nodes and the account
+holders respectively:
+
+* Cashin allows users (with registered account on the network) deposit to the Blockchain network based on their cash balance in bank. For example, an user requests a deposit of $1000, his home bank verifies and confirms if his cash balance is enough. Then the bank (also a master node) issues $1000 stable coins to the user’s Blockchain account.
+* Cashout allows users withdraw cash from his own balance on the Blockchain. For example, an user requests a withdrawal of $1000, any member can verifies his balance and confirms cash providing. Then $1000 stable coins are deducted from the user account and sent to the burning address (containing exactly non-reusable redeemed stable coins).
+* Cashin must be executed by associated banks while cashout can be provided
+by any member of the network.
+*  Fee for Cashin and Cashout is cash basis and depends on the service providers.
+
+In addition, the stable coin protocol allows nodes to setup their desire fee for
+transaction validation and confirmation, except native coin transactions. The
+protocol also returns feebase to be included in the state of block data (Fig. 3).
+In addition, the protocol allows **multiple stable coin issuance**. Each type of stable
+coins can be easily **converted** to others via **atomic swap techniques** which has
+many practiced implementations in crypto-currency space.
+
+
+
+**Clearing protocol** is implemented at the bottom of the Blockchain, and only
+master nodes have the right to operate it. Per block, the protocol reads:
+
+ #per participant bank, run
+
+    Cash_flow = Cashin - Cashout
+
+#then for the entire network, return
+
+    Clear(positive Cash_flow group, negative Cash_flow group)
+
+توضیحات دقیق تر درباره این سودوکد رفرنس اصلی موجود میباشد.
+
+
+# 
+
+## Governance on the network
+
+Our proposed Blockchain is **neither permissionless nor permissioned**. In fact,
+no central authority exists on the network. Then a nomination mechanism is
+introduced to ensure that only qualified candidates have opportunity to join the
+group of network operators while preventing corruption caused by one centralized
+authority and potential malicious guys.
+
+###  The conditions to become a node
+**The necessary condition.** To become an operating node, a candidate must
+stake a required minimum amount of native coins to activate (or register) the
+pair of public-private keys with the network. A higher minimum stake is required
+for master node role.
+
+**The sufficient condition.** A body wishing to become a network operator (i.e.
+a master or normal node) must complete registration first, and then nomination.
+Explicitly, a candidate for normal node is required at least two nominations from
+normal nodes or one nomination from master nodes. A candidate for master node
+is required at least two master node nominators. One may ask an additional
+condition that the two nominators must possess (in summation) a minimum
+percentage (e.g. 10% or 2/N for which smaller) of the total reputation scores of
+all nodes, where N is the number of nodes.
+ Of course, at the genesis block, no nomination happens, and the foundation nodes
+are all promoted up by the developer legitimately. Note that, if the developer is
+not a legal licensed bank, it may not be a master node, because other foundation
+banks do not allow to build up such a network.
+
+**Node deactivation.** An active node can decide itself to leave the network, simply inform its leaving with other nodes. Another way, operating nodes can vote
+to kick out some node if it is not honest with proven damage evidences for the
+network, or it is not qualified longer under the assessment of the majority. Votes
+are weighted by reputation scores and at least 68% of weighted
+majority from the network is needed to deactivate a node. This mechanism helps
+removing proven malicious nodes from the network and promoting high quality
+nomination, honest commitment and frequent activities.
+
+###  Reputation score system
+Reputation is very important in social reality. It bases on two major factors:
+wealth and performance (or achievement). Thuat Do et. al. investigated reputation in Blockchain space and introduced a novel framework for consensus, namely **Delegated Proof of Reputation.**
+Therein, ranking (inspired by Google’s
+PageRanking) is an essential component contributing to reputation, **applied not only for nodes but also all accounts** on the network.
+It exploits the idea that a
+node’s ranking is built up over time based on its cooperation (connection) and
+work achievement. Basically, more valuable transactions, more connection will
+get higher ranking.
+
+در این گزارش به چگونگی پیاده سازی و استفاده از الگوریتم های ranking برای تعیین و تغییر اعتبار و شهرت، نمیپردازیم و صرفا فرض میکنیم که چنین سیستم های ranking ای، برای امنیت و پایداری کلی سیستم چقدر خوب میباشند.
+
+جزییات فنی تر در رفرنس موجود میباشد.
+
+### Block production and consensus mechanism
+A bundle of consensus protocols are proposed and implemented in various Blockchain
+networks. The most popular ones (by order) are Proof of Work (PoW), Proof of Stake (PoS) and Delegated Proof of Stake (DPoS). In this part, the author exploits **Delegated Proof of Reputation (DPoR)**, with a modification (i.e. removing resource power in overall reputation Accounts on the network are allowed to grant their reputation scores to operating nodes (**this is similar to voting procedure in Tron and EOS**). A node’s reputation score (included granted quantities) is converted to the probability of the node to be selected as transaction validators, block generators, reputation score providers and random source generators. Higher reputation score implies greater probability and hence earning more rewards and fees.
+
+![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/Banking/Governance%20and%20consensus.png)
+
+(جزییات کامل در رفرنس)
+
+he Algorand Blockchain uses a Byzantine Agreement protocol and verifiable random function in its so-called pure PoS consensus system. Such a random function is a usefully practical implementation to deploy on other PoS-based Blockchains, as random sources play a critical role in the selection of block generators and transaction validators fairly and honestly.
+
+#
+
+## Refrences
+* https://repository.ust.hk/ir/Record/1783.1-113175
