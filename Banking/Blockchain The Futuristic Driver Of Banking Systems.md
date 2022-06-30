@@ -13,7 +13,7 @@
 
 سهم ( درصد % ) بخش های مختلفی که در آن¬ها از بلاکچین استفاده میشود:
 
-![]()
+![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/Banking/fig%201.png)
 
 ## تراکنش¬های برون¬مرزی، کارگزاری بانکی و SWIFT
 
@@ -23,21 +23,21 @@
 
 کاهش تعداد بانک¬های واسطه و کارگزاری در قاره¬های پنج¬گانه:
 
-![]()
+![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/Banking/fig%202.png)
 
 هزینه های مرتبط با سیستم¬های nostro-vostro برای پرداخت¬های برون شبکه¬ای و بین¬المللی ( به درصد)
 
-![]()
+![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/Banking/fig%203.png)
 
 تراکنش¬های برون مرزی:
 
 معماری روش¬های سنتی مبتنی بر SWIFT و کارگزاری
 
-![]()
+![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/Banking/fig%204.png)
 
 معماری روش ¬های بلاک¬چین و حذف واسطه¬ها
 
-![]()
+![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/Banking/fig%205.png)
 
 ## جرقه¬ی یک ایده
 ایده اصلی DLT از جایی شروع می¬شود که بتوانیم که یک دفتر حساب و کتاب ( Ledger ) ایجاد کنیم و این دفتر را میان چند نهاد و سازمان، به اشتراک بگذاریم به طوری که وقتی یک تراکنش و یا صورت حساب، در آن ثبت شد، دیگر کسی نتواند آن را تغییر دهد؛ در نتیجه خیال ما از درستی داده¬های آن راحت باشد و این رویه ثبت کاملا ماشینی بوده و اتوماتیک¬وار انجام شود.<br>
@@ -57,7 +57,7 @@
 
 سیر سالیانه تکامل بلاکچین
 
-![]()
+![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/Banking/fig%206.png)
 
 ## فرصت¬های پیش¬ رو
 با افزایش روزافزون توجهات به بلاک¬چین و استفاده هر چه بیشتر افراد از این تکنولوژی، امروزه می¬توان تقریبا **هر چیزی را به توکن قابل تعویض یا غیرقابل تعویض تبدیل کرد** که اصطلاحا به این فرآیند توکنیزه کردن می¬گویند؛ و **معامله این توکن¬ها بر روی شبکه بلاکچین**، اولین گام بزرگ در استفاده همه روزه از بلاکچین خواهد بود.<br>
@@ -70,11 +70,13 @@
 
 مقایسه محیط های آزمایشی قانونی کردن یک فناوری جدید
 
-![]()
+![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/Banking/fig%207.png)
 
-multiple img
-![]()
+![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/Banking/fig%208.png)
 
+![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/Banking/fig%209.png)
+
+![](https://raw.githubusercontent.com/nurafintech/whitepapers/main/Banking/figg%2010.png)
 
 منابع مورد استفاده در این گزارش:
 
