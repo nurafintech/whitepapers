@@ -126,6 +126,7 @@ Fortunately there's a chance to modify this transaction without breaking anythin
 <br/>
 
 
+![](https://assets.website-files.com/5d6187ea45d8931e9051a507/5dca8fc37f778bab565247d1_stratum%20v2%20logo.svg)
 
 
 
@@ -143,3 +144,5 @@ Fortunately there's a chance to modify this transaction without breaking anythin
 4- [STRATUM V1](https://braiins.com/stratum-v1/docs#example)
 
 5- [Mastering Bitcoin - Second Edition](https://www.amazon.com/Mastering-Blockchain-Distributed-technology-decentralization/dp/1788839048)
+
+6- [Stratum V2](https://braiins.com/stratum-v2)
