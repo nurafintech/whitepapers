@@ -133,15 +133,26 @@ I considered many solutions for serializing and deserializing message payloads. 
 <li>In contrary of most binary protocol, JSON payload can be easily extended without breaking backward compatibility.</li>
 <li>JSON-RPC already specifies three native message types which Stratum uses: request, response and notification. We don't need to reinvent a wheel.</li>
 <li>JSON has definitely some data overhead, but Stratum mining messages typically fits into one TCP packet...</li>
-
 <br/>
 
+## Stratum Versus Getblocktemplate
+Getblocktemplate introduced in bitcoind 0.7 is a very progressive solution for delegating block creation from full bitcoin client to standalone, specialized software.
+<br/>
+Stratum mining server uses getblocktemplate mechanism under the hood. There are still some reasons why Stratum is, in my opinion, a better solution for pooled mining:
+
+<li>It is less complex, much easier to implement in existing miners and it still does the job perfectly.</li>
+
+<li>For historical reasons getblocktemplate still uses HTTP protocol and long polling mechanism. I described above why this fails on large scale mining.</li>
+
+<li>Stratum scales much better for rising amount of processed Bitcoin transactions, because it transfers only merkle branch hashes, in the contrary to complete dump of server’s memory pool in getblocktemplate.</li>
 
 
 
 
-# Ethereum Stratum (EIP-1571)
 
+
+# Ethereum Stratum (EIP-1571) (To be continued...)
+The main Stratum design flaw is the absence of a well defined standard. This implies that miners (and mining software developers) have to struggle with different flavours which make their life hard when switching from one pool to another or even when trying to “guess” which is the flavour implemented by a single pool. Moreover all implementations still suffer from an excessive verbosity for a chain with a very small block time like Ethereum. A few numbers may help understand. A normal mining.notify message weigh roughly 240 bytes: assuming the dispatch of 1 work per block to an audience of 50k connected TCP sockets means the transmission of roughly 1.88TB of data a month. And this can be an issue for large pools. But if we see the same figures the other way round, from a miner’s perspective, we totally understand how mining decentralization is heavily affected by the quality of internet connections.
 
 # References
 
@@ -156,3 +167,5 @@ I considered many solutions for serializing and deserializing message payloads. 
 5- [Mastering Bitcoin - Second Edition](https://www.amazon.com/Mastering-Blockchain-Distributed-technology-decentralization/dp/1788839048)
 
 6- [Stratum V2](https://braiins.com/stratum-v2)
+
+7- [Ethereum Stratum (EIP-1571)](https://eips.ethereum.org/EIPS/eip-1571)
