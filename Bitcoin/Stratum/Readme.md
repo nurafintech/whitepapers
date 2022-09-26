@@ -1,6 +1,6 @@
-# Stratum 
+# Stratum
 The stratum overlay protocol was extended to support pooled mining as a replacement for
-obsolete getwork protocol in late 2012. The mining service specification was initially announced
+obsolete **getwork protocol** in late 2012. The mining service specification was initially announced
 via Slush's pool's website [2]. 
 
 # Why Stratum? [4]
