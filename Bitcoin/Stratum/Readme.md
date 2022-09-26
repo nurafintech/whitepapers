@@ -125,6 +125,7 @@ Every bitcoin block contains so-called coinbase transaction which specify the bi
 Fortunately there's a chance to modify this transaction without breaking anything. **By changing coinbase transaction, merkle root will change and we will have unique block header to hash. Currently this (creating unique coinbase) happens on pool servers. So let's move it to miners!**
 <br/>
 
+<br/>
 
 ![](https://assets.website-files.com/5d6187ea45d8931e9051a507/5dca8fc37f778bab565247d1_stratum%20v2%20logo.svg)
 
