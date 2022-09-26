@@ -150,6 +150,7 @@ Stratum mining server uses getblocktemplate mechanism under the hood. There are 
 # For Mining Software Developers [4]
 ## Exception Handling
 Stratum defines simple exception handling. Example of rejected share looks like:
+<br/>
  <code>{"id": 10, "result": null, "error": (21, "Job not found", null)}</code>
 
 Where error field is defined as (error_code, human_readable_message, traceback).
