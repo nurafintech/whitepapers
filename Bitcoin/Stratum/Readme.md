@@ -76,7 +76,7 @@ Long polling uses separate connection to pool server, which leads to various iss
 <br/>
 **Another problem consists of packet storms, coming from clients trying to reconnect to the server after long polling broadcasts. Sometimes it's hard to distinguish valid long polling reconnections from DDoS attacks.** All this makes pool architecture more complicated and harder to maintain, which is reflected in less reliable pool service and has a real impact on miners.
 
-# What's Stratum Protocol use case?
+# What's Stratum Protocol use case? [4]
 I originally designed Stratum protocol for lightweight Bitcoin client called Electrum.
 <br/>
 
@@ -86,11 +86,21 @@ In a simplified manner, Stratum is a line-based protocol using plain TCP socket,
 ## It's very easy to implement and very easy to debug!
 There are good reasons for such solution: it is very easy to implement and very easy to debug, because both sides are talking in human-readable format.
 <br/>
+The protocol is unlike many other solutions easily extensible **without messing up the backwards compatibility.**
+<br/>
+
 As a bonus, JSON is widely supported on all platforms and current miners already have JSON libraries included. So packing and unpacking of the message is really simple and convenient.
 <br/>
 
+## There is no HTTP overhead
+There's no HTTP overhead involved and there're no hacks like mining extension flags encoded in HTTP headers anymore.
+<br/>
 
-The protocol is unlike many other solutions easily extensible **without messing up the backwards compatibility.**
+But the biggest improvement from HTTP-based getwork is the fact, that server can drive the load by itself, it can send broadcast messages to miners at any time without any long-polling workarounds, load balancing issues and packet storms.
+
+
+# Extranonce Rolling: The New Dimension [4]
+This is probably the most innovative part of the new protocol. In contrary to current mining where only *ntime* and *nonce* can be iterated, **Stratum mining protocol gives a power to miners to easily build unique coinbase transactions locally, so they'll be able to produce unique block headers locally.**
 
 
 
