@@ -107,6 +107,7 @@ I recommend to iterate four bytes of extranonce, which gives the possibility to 
 
 
 
+
 # Ethereum Stratum (EIP-1571)
 
 
@@ -118,6 +119,6 @@ I recommend to iterate four bytes of extranonce, which gives the possibility to 
 
 3- [Where are BIPs 40 and 41? :)) ](https://bitcoin.stackexchange.com/questions/114168/where-are-bips-40-and-41)
 
-4- [STRATUM V1 Docs](https://braiins.com/stratum-v1/docs#example)
+4- [STRATUM V1](https://braiins.com/stratum-v1/docs#example)
 
 5- [Mastering Bitcoin - Second Edition](https://www.amazon.com/Mastering-Blockchain-Distributed-technology-decentralization/dp/1788839048)
