@@ -24,7 +24,7 @@ new merkleroot for the block header, which effectively means the miner generates
 HTTP was designed for web site browsing where clients ask servers for specific content. **Pooled mining is different - server knows very well what clients need and can control the communication in a more efficient way.** 
 
 
-# The Bitcoin Network
+# The Bitcoin Network [5]
 
 Bitcoin’s P2P network architecture is much more than a topology choice. The term “bitcoin network” refers to the collection of nodes running the bitcoin P2P
 protocol. In addition to the bitcoin P2P protocol, there are **other protocols such as
@@ -76,7 +76,8 @@ Long polling uses separate connection to pool server, which leads to various iss
 <br/>
 **Another problem consists of packet storms, coming from clients trying to reconnect to the server after long polling broadcasts. Sometimes it's hard to distinguish valid long polling reconnections from DDoS attacks.** All this makes pool architecture more complicated and harder to maintain, which is reflected in less reliable pool service and has a real impact on miners.
 
-
+# What's Stratum Protocol use case?
+I originally designed Stratum protocol for lightweight Bitcoin client called Electrum.
 
 # Ethereum Stratum (EIP-1571)
 
@@ -90,3 +91,5 @@ Long polling uses separate connection to pool server, which leads to various iss
 3- [Where are BIPs 40 and 41? :)) ](https://bitcoin.stackexchange.com/questions/114168/where-are-bips-40-and-41)
 
 4- [STRATUM V1 Docs](https://braiins.com/stratum-v1/docs#example)
+
+5- [Mastering Bitcoin](https://www.amazon.com/Mastering-Blockchain-Distributed-technology-decentralization/dp/1788839048)
