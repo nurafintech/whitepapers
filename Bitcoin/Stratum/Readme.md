@@ -174,6 +174,7 @@ On the beginning of the session, client subscribes current connection for receiv
 <code>{"id": 1, "result": [ [ ["mining.set_difficulty", "b4b6693b72a50c7116db18d6497cac52"], ["mining.notify", "ae6812eb4cd7735a302a8a9dd95cf71f"]], "08000002", 4], "error": null}
 </code>
 <br/>
+
 The result contains three items:<br/>
 **1- Subscriptions details** - 2-tuple with name of subscribed notification and subscription ID. Teoretically it may be used for unsubscribing, but obviously miners won't use it.<br/>
 **2- Extranonce1** - Hex-encoded, per-connection unique string which will be used for coinbase serialization later. Keep it safe! <br/>
