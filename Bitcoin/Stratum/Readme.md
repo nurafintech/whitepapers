@@ -54,6 +54,9 @@ explorers, merchant payment processing) to be built on top.
 
 Attached to the main bitcoin P2P network are a number of pool servers and protocol gateways that connect nodes running other protocols. These other protocol nodes are mostly pool
 mining nodes and lightweight wallet clients, which do not carry a full copy of the blockchain.
+<br/>
+
+![](https://learn.saylor.org/pluginfile.php/3452313/mod_book/chapter/18897/image%20(1).png)
 
 All nodes include the routing function to participate in the network and might
 include other functionality.
