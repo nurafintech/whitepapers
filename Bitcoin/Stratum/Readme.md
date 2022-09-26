@@ -136,7 +136,7 @@ I considered many solutions for serializing and deserializing message payloads. 
 
 <br/>
 
-![](https://assets.website-files.com/5d6187ea45d8931e9051a507/5dca8fc37f778bab565247d1_stratum%20v2%20logo.svg)
+
 
 
 
