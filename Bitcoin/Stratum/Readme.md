@@ -125,6 +125,15 @@ Every bitcoin block contains so-called coinbase transaction which specify the bi
 Fortunately there's a chance to modify this transaction without breaking anything. **By changing coinbase transaction, merkle root will change and we will have unique block header to hash. Currently this (creating unique coinbase) happens on pool servers. So let's move it to miners!**
 <br/>
 
+## JSON Versus Your-Preferred-Protocol
+I considered many solutions for serializing and deserializing message payloads. I wrote some reasons for JSON above, but let's sumarize them again:
+
+<li>JSON payload is human readable, easy to implement and debug.</li>
+<li>All bitcoin miners already have JSON libraries included. JSON has native support in almost every language.</li>
+<li>In contrary of most binary protocol, JSON payload can be easily extended without breaking backward compatibility.</li>
+<li>JSON-RPC already specifies three native message types which Stratum uses: request, response and notification. We don't need to reinvent a wheel.</li>
+<li>JSON has definitely some data overhead, but Stratum mining messages typically fits into one TCP packet...</li>
+
 <br/>
 
 ![](https://assets.website-files.com/5d6187ea45d8931e9051a507/5dca8fc37f778bab565247d1_stratum%20v2%20logo.svg)
