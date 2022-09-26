@@ -157,7 +157,6 @@ Where error field is defined as (error_code, human_readable_message, traceback).
 Traceback may contain additional information for debugging errors.
 Proposed error codes for mining service are:
 <br/>
-
 20 - Other/Unknown<br/>
 21 - Job not found (=stale)<br/>
 22 - Duplicate share<br/>
@@ -165,6 +164,14 @@ Proposed error codes for mining service are:
 24 - Unauthorized worker<br/>
 25 - Not subscribed<br/>
 
+
+## Miner Connects the Server
+On the beginning of the session, client subscribes current connection for receiving mining jobs:
+<br/>
+<code>
+{"id": 1, "method": "mining.subscribe", "params": []}<br/>
+{"id": 1, "result": [ [ ["mining.set_difficulty", "b4b6693b72a50c7116db18d6497cac52"], ["mining.notify", "ae6812eb4cd7735a302a8a9dd95cf71f"]], "08000002", 4], "error": null}
+</code>
 
 
 # Ethereum Stratum (EIP-1571) (To be continued...) [7]
