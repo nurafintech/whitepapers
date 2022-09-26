@@ -106,6 +106,27 @@ This is probably the most innovative part of the new protocol. In contrary to cu
 I recommend to iterate four bytes of extranonce, which gives the possibility to serve 18 EHash/s (Exa-hashes/s) mining rig from a single TCP connection. But it can be easily changed by the pool operator anytime.
 
 
+# Technical Explanation [4]
+Block header (that string what is in getwork response and what miners are hashing) is composed from following parts:
+<li>
+Block version, nbits, hash of previous block in the blockchain and some padding bytes, which are constants.
+</li>
+<li>Nonce and ntime, which miner can modify already.</li>
+<li>Merkle root hash, which is created by hashing of bitcoin transactions included in the particular mining job.</li>
+
+<br/>
+
+## Produce More Unique Block Headers 
+To produce more unique block headers (and thus be able to generate more unique hashes), we have to modify something.
+<br/>
+
+Every bitcoin block contains so-called coinbase transaction which specify the bitcoin address for sending block reward.
+<br/>
+Fortunately there's a chance to modify this transaction without breaking anything. **By changing coinbase transaction, merkle root will change and we will have unique block header to hash. Currently this (creating unique coinbase) happens on pool servers. So let's move it to miners!**
+<br/>
+
+
+
 
 
 # Ethereum Stratum (EIP-1571)
