@@ -20,7 +20,7 @@ hash rate.
 new merkleroot for the block header, which effectively means the miner generates new work continuously without contacting the server.**
 
 
-
+p
 
 
 
