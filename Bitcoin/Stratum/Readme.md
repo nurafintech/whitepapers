@@ -36,7 +36,9 @@ When pools came into the game, people found out that they must decide between sh
 <br/>
 Long polling is a great way to achieve real-time updates using standard web technologies. But as I already mentioned in the text above, web technologies are not ideal for Bitcoin mining.<br/>
 Long polling uses separate connection to pool server, which leads to various issues on server side, like load balancing of connections between more backends.
-
+<br/>
+<br/>
+**Another problem consists of packet storms, coming from clients trying to reconnect to the server after long polling broadcasts. Sometimes it's hard to distinguish valid long polling reconnections from DDoS attacks.** All this makes pool architecture more complicated and harder to maintain, which is reflected in less reliable pool service and has a real impact on miners.
 
 
 
