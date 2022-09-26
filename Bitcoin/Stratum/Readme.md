@@ -24,6 +24,14 @@ new merkleroot for the block header, which effectively means the miner generates
 HTTP was designed for web site browsing where clients ask servers for specific content. Pooled mining is different - server knows very well what clients need and can control the communication in a more efficient way. Let’s swap roles and leave orchestration to the server!
 
 
+# How is getwork? [4]
+Strictly following getwork specification, one getwork job is enough for 4.2GHash/s mining rig and (thanks to ntime rolling) this job is usable for one minute or until a new Bitcoin block arrives (depending on what happens first).
+<br/>
+So, **for 42 GHash/s rig you’ll need 10 getwork requests at once, but usually a few more because of some pre-caching strategies implemented by miners to prevent idling on network latencies.** 
+<br/>
+And what about 1 THash/s ASIC miners coming soon? We simply need some solution where network load is not at all bounded to miners performance.
+
+
 # Ethereum Stratum (EIP-1571)
 
 
