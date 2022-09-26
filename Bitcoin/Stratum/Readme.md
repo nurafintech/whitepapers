@@ -78,6 +78,11 @@ Long polling uses separate connection to pool server, which leads to various iss
 
 # What's Stratum Protocol use case?
 I originally designed Stratum protocol for lightweight Bitcoin client called Electrum.
+<br/>
+
+## **Stratum by simpilified manner**
+In a simplified manner, Stratum is a line-based protocol using plain TCP socket, with payload encoded as JSON-RPC messages. That's all. Client simply opens TCP socket and writes requests to the server in the form of JSON messages finished by the newline character \n. Every line received by the client is again a valid JSON-RPC fragment containing the response.
+
 
 # Ethereum Stratum (EIP-1571)
 
