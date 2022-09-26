@@ -20,8 +20,8 @@ hash rate.
 new merkleroot for the block header, which effectively means the miner generates new work continuously without contacting the server.**
 
 
-
-
+# HTTP: Communication is Driven by Miners [4]
+HTTP was designed for web site browsing where clients ask servers for specific content. Pooled mining is different - server knows very well what clients need and can control the communication in a more efficient way. Let’s swap roles and leave orchestration to the server!
 
 
 # Ethereum Stratum (EIP-1571)
