@@ -21,7 +21,7 @@ new merkleroot for the block header, which effectively means the miner generates
 
 
 # HTTP: Communication is Driven by Miners [4]
-HTTP was designed for web site browsing where clients ask servers for specific content. Pooled mining is different - server knows very well what clients need and can control the communication in a more efficient way. Let’s swap roles and leave orchestration to the server!
+HTTP was designed for web site browsing where clients ask servers for specific content. **Pooled mining is different - server knows very well what clients need and can control the communication in a more efficient way.** 
 
 
 # How is getwork? [4]
@@ -30,6 +30,14 @@ Strictly following getwork specification, one getwork job is enough for 4.2GHash
 So, **for 42 GHash/s rig you’ll need 10 getwork requests at once, but usually a few more because of some pre-caching strategies implemented by miners to prevent idling on network latencies.** 
 <br/>
 And what about 1 THash/s ASIC miners coming soon? We simply need some solution where network load is not at all bounded to miners performance.
+
+# Long Polling: An Anti-Pattern [4]
+When pools came into the game, people found out that they must decide between short polling intervals (=higher network load, lower stale ratio) and intervals, which don't overload network and servers, but lead to a much higher ratio of rejected shares, and **long polling pattern was the answer.** 
+<br/>
+Long polling is a great way to achieve real-time updates using standard web technologies. But as I already mentioned in the text above, web technologies are not ideal for Bitcoin mining.<br/>
+Long polling uses separate connection to pool server, which leads to various issues on server side, like load balancing of connections between more backends.
+
+
 
 
 # Ethereum Stratum (EIP-1571)
