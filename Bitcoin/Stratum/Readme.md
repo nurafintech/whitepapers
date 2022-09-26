@@ -101,6 +101,9 @@ But the biggest improvement from HTTP-based getwork is the fact, that server can
 
 # Extranonce Rolling: The New Dimension [4]
 This is probably the most innovative part of the new protocol. In contrary to current mining where only *ntime* and *nonce* can be iterated, **Stratum mining protocol gives a power to miners to easily build unique coinbase transactions locally, so they'll be able to produce unique block headers locally.**
+<br/>
+
+I recommend to iterate four bytes of extranonce, which gives the possibility to serve 18 EHash/s (Exa-hashes/s) mining rig from a single TCP connection. But it can be easily changed by the pool operator anytime.
 
 
 
@@ -117,4 +120,4 @@ This is probably the most innovative part of the new protocol. In contrary to cu
 
 4- [STRATUM V1 Docs](https://braiins.com/stratum-v1/docs#example)
 
-5- [Mastering Bitcoin](https://www.amazon.com/Mastering-Blockchain-Distributed-technology-decentralization/dp/1788839048)
+5- [Mastering Bitcoin - Second Edition](https://www.amazon.com/Mastering-Blockchain-Distributed-technology-decentralization/dp/1788839048)
