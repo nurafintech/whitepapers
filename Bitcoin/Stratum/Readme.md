@@ -18,9 +18,8 @@ hash rate.
 <br/>
 **This is done by allowing the miner to increase a counter in the coinbase transaction, and build a
 new merkleroot for the block header, which effectively means the miner generates new work continuously without contacting the server.**
-pppp
 
-p
+
 
 
 
