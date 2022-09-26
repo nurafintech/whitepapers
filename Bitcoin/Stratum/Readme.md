@@ -147,11 +147,26 @@ Stratum mining server uses getblocktemplate mechanism under the hood. There are 
 <li>Stratum scales much better for rising amount of processed Bitcoin transactions, because it transfers only merkle branch hashes, in the contrary to complete dump of server’s memory pool in getblocktemplate.</li>
 
 
+# For Mining Software Developers [4]
+## Exception Handling
+Stratum defines simple exception handling. Example of rejected share looks like:
+ <code>{"id": 10, "result": null, "error": (21, "Job not found", null)}</code>
+
+Where error field is defined as (error_code, human_readable_message, traceback).
+Traceback may contain additional information for debugging errors.
+Proposed error codes for mining service are:
+<br/>
+
+20 - Other/Unknown<br/>
+21 - Job not found (=stale)<br/>
+22 - Duplicate share<br/>
+23 - Low difficulty share<br/>
+24 - Unauthorized worker<br/>
+25 - Not subscribed<br/>
 
 
 
-
-# Ethereum Stratum (EIP-1571) (To be continued...)
+# Ethereum Stratum (EIP-1571) (To be continued...) [7]
 The main Stratum design flaw is the absence of a well defined standard. This implies that miners (and mining software developers) have to struggle with different flavours which make their life hard when switching from one pool to another or even when trying to “guess” which is the flavour implemented by a single pool. Moreover all implementations still suffer from an excessive verbosity for a chain with a very small block time like Ethereum. A few numbers may help understand. A normal mining.notify message weigh roughly 240 bytes: assuming the dispatch of 1 work per block to an audience of 50k connected TCP sockets means the transmission of roughly 1.88TB of data a month. And this can be an issue for large pools. But if we see the same figures the other way round, from a miner’s perspective, we totally understand how mining decentralization is heavily affected by the quality of internet connections.
 
 # References
