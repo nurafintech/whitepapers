@@ -80,8 +80,18 @@ Long polling uses separate connection to pool server, which leads to various iss
 I originally designed Stratum protocol for lightweight Bitcoin client called Electrum.
 <br/>
 
-## **Stratum by simpilified manner**
+## Stratum by simpilified manner
 In a simplified manner, Stratum is a line-based protocol using plain TCP socket, with payload encoded as JSON-RPC messages. That's all. Client simply opens TCP socket and writes requests to the server in the form of JSON messages finished by the newline character \n. Every line received by the client is again a valid JSON-RPC fragment containing the response.
+
+## It's very easy to implement and very easy to debug!
+There are good reasons for such solution: it is very easy to implement and very easy to debug, because both sides are talking in human-readable format.
+<br/>
+As a bonus, JSON is widely supported on all platforms and current miners already have JSON libraries included. So packing and unpacking of the message is really simple and convenient.
+<br/>
+
+
+The protocol is unlike many other solutions easily extensible **without messing up the backwards compatibility.**
+
 
 
 # Ethereum Stratum (EIP-1571)
