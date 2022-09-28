@@ -592,6 +592,38 @@ Miners’ security and privacy are enhanced by implementing AEAD (authenticated 
         * CLI tooling to configure and deploy the stack from one-command
         * Deployments are triggered by either a single make command or terraform apply.
 
+# An Architecture for a distributed Bitcoin mining pool server [9]
+
+![](https://user-images.githubusercontent.com/36882284/112812184-639f6880-90af-11eb-8c0f-f5168d426848.jpg)
+
+Components:
+
+1. Jobmaster, deployed on the mining pool server to connect to the Bitcoin node.
+    * Jobmaster obtains mining task from the Bitcoin node and the Merged mining node, and sends it to Gateway.
+    * To accept instructions from Bitpeer and Poolbench, so as to generate empty block task.
+    * If a new block is successfully mined, it will be submitted to the node and broadcast by Blockmaster at the same time.
+2. Gateway, deployed on the mining pool server and can be scaled horizontally.
+    * Implements the stratum protocol. When jobmaster sends the task, Gateway will forward it to miners, accept and verify the hashrate submitted by miners.
+    * Implements a custom proxy protocol. When jobmaster sends the task, gateway will forward it to mineragent, accept and verify the hashrate of mineragent.
+    * Aggregates hashrate and submits it to metawriter or metarelay.
+3. Mineragent, mainly used in mining farms with a huge number of mining machines and deployed in the mining farms, which can effectively save bandwidth and improve performance.
+    * Implements the stratum protocol. It assigns task to miners, receives and verifies the hashrate submitted by miners.
+    * Implements custom proxy protocol, receives mining task from gateway and submits hashrate to gateway.
+4. Blockmaster, connects the bitcoin node and bitpeer
+    * Implements the thin block function and speeds up the synchronization of nodes and blocks.
+    * After receiving the newly mined block, jobmaster will broadcast to multiple blockmaster and bitpeer to accelerate the block broadcasting.
+5. Bitpeer, can be considered as a special bitcoin node, with any number of deployments.
+    * Implements the bitcoin p2p protocol and is connectable to multiple bitcoin nodes.
+    * After accepting blockmaster’s block submission, Bitpeer will broadcast the block to the connected bitcoin node.
+    * When Bitpeer noticed the block update of the connected node, it will prompt jobmaster to start mining empty blocks.
+6. Poolbench
+    * Monitors the task update status of each mining pool.
+    * If the height of the tasks of other mining pools is updated, it will prompt jobmaster to start mining empty blocks.
+7. Metawriter: Accpets the hashrate data submitted by Gateway or forwarded by Metarelay, and writes to redis after aggregating the data.
+8. Metarelay: Accpets the hashrate data submitted by Gateway and forwards it to Metawriter.
+9. Alertcenter: A simple server that writes FATAL level log to redis list so we can send alert emails.
+10. Redis: used to save the hashrate data of miners
+
 # References
 
 1- [[bitcoin-dev] [BIP] Stratum protocol specification](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015728.html)
@@ -609,3 +641,5 @@ Miners’ security and privacy are enhanced by implementing AEAD (authenticated 
 7- [Ethereum Stratum (EIP-1571)](https://eips.ethereum.org/EIPS/eip-1571)
 
 8- [Insight - Automated Stratum V2 mining pool for Nervos](https://talk.nervos.org/t/insight-automated-stratum-v2-mining-pool-for-nervos/4870)
+
+9- [Viabtc Mining Server](https://github.com/viabtc/viabtc_mining_server)
