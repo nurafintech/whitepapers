@@ -232,6 +232,17 @@ More specifically, the Template Distribution Protocol is used to communicate wit
 ![](https://i.ibb.co/H2H175N/hashrate-consume.jpg) 
 
 
+## Job Distribution Protocol
+Used to pass newly-negotiated work to interested nodes, which can either be proxies or actual mining devices. **This protocol is complementary to the Job Negotiation protocol.**
+<br/>
+
+In the case that miners aren’t negotiating their own work (i.e. choosing their own transaction sets), jobs will be distributed directly from pools to proxies and end devices, similarly to in the original stratum protocol.
+<br/>
+
+Additionally, it’s possible that the Job Negotiation role will be part of a larger Mining Protocol proxy that also distributes jobs, making this sub-protocol unnecessary even when miners do choose their own transaction sets.
+
+
+
 # For Mining Software Developers [4]
 ## Exception Handling
 Stratum defines simple exception handling. Example of rejected share looks like:
