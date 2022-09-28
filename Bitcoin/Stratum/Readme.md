@@ -177,8 +177,27 @@ Stratum mining server uses getblocktemplate mechanism under the hood. There are 
 The next generation protocol for pooled mining by Pavel Moravec and Jan Čapek, in collaboration with Matt Corallo and other industry experts.
 ## Stratum V2 Focuses
 Stratum V2 is the next generation protocol for pooled mining. **It focuses on making data transfers more efficient, reducing physical infrastructure requirements for mining operations, and increasing security.**
+<br/>
+
+Stratum V2 introduces three new sub-protocols that allow miners to select their own transaction sets through a negotiation process with pools, improving decentralization.
+
+## Protocol Overview
+
+* <b>Device</b> <br/>
+The actual mining machine computing the hashes.
 
 
+* <b>Proxy</b> <br/>
+An intermediary between Mining Devices and Pool Services that aggregates connections for efficiency and may optionally provide additional functionality, such as monitoring the health and performance of devices.
+
+* <b>Hashrate Consumer</b><br/>
+An upstream node to which shares (i.e. completed jobs) are being submitted. The most common hashrate consumers are pools.
+
+![](./hashrate-consume.jpg)
+
+* <b>Job Negotiator</b><br/>
+A node which negotiates with a pool on behalf of one or more miners to determine which jobs they will work on. This node also communicates with a block template provider (e.g. bitcoind) and sends jobs to mining proxies to be distributed to miners.
+ 
 
 
 
