@@ -181,18 +181,33 @@ Stratum V2 is the next generation protocol for pooled mining. **It focuses on ma
 
 Stratum V2 introduces three new sub-protocols that allow miners to select their own transaction sets through a negotiation process with pools, improving decentralization.
 
-<br/>
-
 ## Protocol Overview
 
 * <b>Device</b> <br/>
 The actual mining machine computing the hashes.
 
 
+* <b>Proxy</b> <br/>
+An intermediary between Mining Devices and Pool Services that aggregates connections for efficiency and may optionally provide additional functionality, such as monitoring the health and performance of devices.
 
+* <b>Hashrate Consumer</b><br/>
+An upstream node to which shares (i.e. completed jobs) are being submitted. The most common hashrate consumers are pools.
 
+* <b>Job Negotiator</b><br/>
+A node which negotiates with a pool on behalf of one or more miners to determine which jobs they will work on. This node also communicates with a block template provider (e.g. bitcoind) and sends jobs to mining proxies to be distributed to miners.
  
 
+## Mining Protocol
+This is the direct successor of stratum protocol v1. It’s the main protocol used for mining and the only part of the full protocol stack that needs to be implemented in all scenarios. It is used for communication between Mining Devices, Proxies, and Pool Services.
+<br/>
+
+The protocol defines three types of communication channels: 
+
+* <b>Standard channels</b> don’t manipulate the Merkle path / coinbase transaction, greatly simplifying the communication required between them and upstream nodes.
+
+* <b>Extended channels</b> are given extensive control over the search space so that they can implement advanced use cases (e.g. translation between v1 and v2, difficulty aggregation, custom search space splitting, etc.).
+
+* <b>Group channels</b> are simply collections of standard channels that are opened within a particular connection so that they are addressable through a common communication channel.
 
 
 # For Mining Software Developers [4]
