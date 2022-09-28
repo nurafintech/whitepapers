@@ -210,6 +210,28 @@ The protocol defines three types of communication channels:
 * <b>Group channels</b> are simply collections of standard channels that are opened within a particular connection so that they are addressable through a common communication channel.
 
 
+## Job Negotiation Protocol
+Used by a miner to negotiate a block template (which includes the transaction set) with a pool, making pooled mining more similar to solo mining and thus increasing decentralization. 
+<br/>
+The negotiation results can be re-used for all mining connections to the pool (of which there can be hundreds of thousands), greatly **reducing the computational intensity.**
+<br/>
+
+<b>This protocol is a separate, optional piece of infrastructure from the Mining Protocol and can be provided as a 3rd party service for mining farms.</b>
+
+## Template Distribution Protocol
+Used to get information about the next block out of Bitcoin Core.
+<br/>
+
+This protocol was designed as a much more efficient and easy-to-implement API to replace getblocktemplate (BIPs 22 and 23).
+<br/>
+
+## Template Distribution Protocol & "bitcoind"
+More specifically, the Template Distribution Protocol is used to communicate with a part of Bitcoin Core called “bitcoind” which implements the Bitcoin protocol for Remote Procedure Call (RPC) use. In other words, bitcoind allows the Bitcoin protocol to be integrated with other software.
+<br/>
+
+![](https://i.ibb.co/H2H175N/hashrate-consume.jpg) 
+
+
 # For Mining Software Developers [4]
 ## Exception Handling
 Stratum defines simple exception handling. Example of rejected share looks like:
