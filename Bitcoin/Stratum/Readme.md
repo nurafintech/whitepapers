@@ -173,6 +173,14 @@ Stratum mining server uses getblocktemplate mechanism under the hood. There are 
 
 <li>Stratum scales much better for rising amount of processed Bitcoin transactions, because it transfers only merkle branch hashes, in the contrary to complete dump of server’s memory pool in getblocktemplate.</li>
 
+# Stratum V2 [6]
+The next generation protocol for pooled mining by Pavel Moravec and Jan Čapek, in collaboration with Matt Corallo and other industry experts.
+## Stratum V2 Focuses
+Stratum V2 is the next generation protocol for pooled mining. **It focuses on making data transfers more efficient, reducing physical infrastructure requirements for mining operations, and increasing security.**
+
+
+
+
 
 # For Mining Software Developers [4]
 ## Exception Handling
