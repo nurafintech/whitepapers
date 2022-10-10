@@ -18,6 +18,13 @@ A blockchain node for an application-focused Cosmos blockchain consists of a **s
 
 ![](https://tutorials.cosmos.network/resized-images/600/academy/2-cosmos-concepts/images/architecture_overview.png)
 
+## What is the Tendermint Core?
+The Tendermint Core is a blockchain application platform which supports state machines in any language.The language-agnostic Tendermint Core helps developers securely and consistently replicate deterministic, finite state machines.
+<br/>
+Tendermint BFT is maintained even when 1/3rd of all machines fail, by providing two components:
+
+<li>A blockchain consensus engine.</li>
+<li>A generic application interface.</li>
 
 
 
