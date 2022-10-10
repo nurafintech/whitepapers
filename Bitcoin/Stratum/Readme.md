@@ -193,11 +193,53 @@ An intermediary between Mining Devices and Pool Services that aggregates connect
 * <b>Hashrate Consumer</b><br/>
 An upstream node to which shares (i.e. completed jobs) are being submitted. The most common hashrate consumers are pools.
 
-![](./hashrate-consume.jpg)
-
 * <b>Job Negotiator</b><br/>
 A node which negotiates with a pool on behalf of one or more miners to determine which jobs they will work on. This node also communicates with a block template provider (e.g. bitcoind) and sends jobs to mining proxies to be distributed to miners.
  
+
+## Mining Protocol
+This is the direct successor of stratum protocol v1. It’s the main protocol used for mining and the only part of the full protocol stack that needs to be implemented in all scenarios. It is used for communication between Mining Devices, Proxies, and Pool Services.
+<br/>
+
+The protocol defines three types of communication channels: 
+
+* <b>Standard channels</b> don’t manipulate the Merkle path / coinbase transaction, greatly simplifying the communication required between them and upstream nodes.
+
+* <b>Extended channels</b> are given extensive control over the search space so that they can implement advanced use cases (e.g. translation between v1 and v2, difficulty aggregation, custom search space splitting, etc.).
+
+* <b>Group channels</b> are simply collections of standard channels that are opened within a particular connection so that they are addressable through a common communication channel.
+
+
+## Job Negotiation Protocol
+Used by a miner to negotiate a block template (which includes the transaction set) with a pool, making pooled mining more similar to solo mining and thus increasing decentralization. 
+<br/>
+The negotiation results can be re-used for all mining connections to the pool (of which there can be hundreds of thousands), greatly **reducing the computational intensity.**
+<br/>
+
+<b>This protocol is a separate, optional piece of infrastructure from the Mining Protocol and can be provided as a 3rd party service for mining farms.</b>
+
+## Template Distribution Protocol
+Used to get information about the next block out of Bitcoin Core.
+<br/>
+
+This protocol was designed as a much more efficient and easy-to-implement API to replace getblocktemplate (BIPs 22 and 23).
+<br/>
+
+## Template Distribution Protocol & "bitcoind"
+More specifically, the Template Distribution Protocol is used to communicate with a part of Bitcoin Core called “bitcoind” which implements the Bitcoin protocol for Remote Procedure Call (RPC) use. In other words, bitcoind allows the Bitcoin protocol to be integrated with other software.
+<br/>
+
+![](https://i.ibb.co/H2H175N/hashrate-consume.jpg) 
+
+
+## Job Distribution Protocol
+Used to pass newly-negotiated work to interested nodes, which can either be proxies or actual mining devices. **This protocol is complementary to the Job Negotiation protocol.**
+<br/>
+
+In the case that miners aren’t negotiating their own work (i.e. choosing their own transaction sets), jobs will be distributed directly from pools to proxies and end devices, similarly to in the original stratum protocol.
+<br/>
+
+Additionally, it’s possible that the Job Negotiation role will be part of a larger Mining Protocol proxy that also distributes jobs, making this sub-protocol unnecessary even when miners do choose their own transaction sets.
 
 
 
@@ -294,7 +336,7 @@ It is like Request, but it does not expect any response and message ID is always
     * error - null or list (error code, error message)
 
 
-# Methods
+# Methods [2]
 ##  Methods (client to server)
 1. mining.authorize("workername", "password")
 
@@ -420,7 +462,7 @@ It is like Request, but it does not expect any response and message ID is always
     its parameters.
 
 
-# Criticism
+# Criticism [2]
 * Closed development:
 The mining extensions have been criticised as having been developed behind closed doors without
 input from the wider development and mining community, resulting in various obvious problems
@@ -437,6 +479,151 @@ mining is often neglected while stratum is deployed
 # Ethereum Stratum (EIP-1571) (To be continued...) [7]
 The main Stratum design flaw is the absence of a well defined standard. This implies that miners (and mining software developers) have to struggle with different flavours which make their life hard when switching from one pool to another or even when trying to “guess” which is the flavour implemented by a single pool. Moreover all implementations still suffer from an excessive verbosity for a chain with a very small block time like Ethereum. A few numbers may help understand. A normal mining.notify message weigh roughly 240 bytes: assuming the dispatch of 1 work per block to an audience of 50k connected TCP sockets means the transmission of roughly 1.88TB of data a month. And this can be an issue for large pools. But if we see the same figures the other way round, from a miner’s perspective, we totally understand how mining decentralization is heavily affected by the quality of internet connections.
 
+
+# An imaginary Development Scenario: [8]
+
+<strong>Let's assume that we have a custom pre-build PoW blockchain.</strong>
+## Motivation:
+The Stratum protocol V2 offers significant improvements to infrastructure efficiency, pool security, and miner privacy. We will implement this latest mining tech into an open-source pool backend system to attract more miners to secure your custom blockchain, and encourage ASIC firmware developers to support V2. Furthermore, we will develop infrastructure-as-code automated deployments to lower technical barriers and facilitate the entry of new pools into the ecosystem.
+
+The Stratum V2 protocol adds several new features and optimizations. **Efficiency is increased through judicious selection of what data is broadcast, when it is sent, and how it is encoded.** For example, job assignments will begin upon opening a channel, eliminating the unnecessary miner subscription step in V1. Cleverly, **a job can be sent separately from the hash of the previous block, which enables miners to plan ahead and begin mining on a cached block template as soon as the previous hash received. Further efficiency is gained by using a binary rather than json encoding, which significantly reduces message size.**
+
+This efficiency is complemented and enhanced by flexibility. The specification includes protocols giving miners the ability to choose their own work (transaction set). Or, mining devices can operate in a simplified but more efficient mode via header-only mining. Flexibility along with extensive support for proxies and highly efficient communication channels enables backend infrastructures to maximize productive use of resources while still accommodating a range of miners as well as firmwares / hardware targets. As is a design goal, a balance is achieved between efficiency and decentralization.
+
+Miners’ security and privacy are enhanced by implementing AEAD (authenticated encryption with associated data) to hinder network-level surveillance and prevent hashrate hijacking. The miners can also influence which transactions are included in the block, which is beneficial for network decentralization and censorship resistance.
+
+## The Stratum V2 developers’ advice and possible MileStones
+
+* Milestone 1 of 3:
+
+    Develop infrastructure provisioning and automated deployments utilizing your blockchain within the BTCPool infrastructure
+
+    In order to empower development and facilitate adoption of the stack, we will initially focus the grant on building an automated deployment of the necessary components of the infrastructure. Development will focus on a VM based approach configured with Ansible and deploying all the dependencies on a single host environment for both cloud and on-prem. Packaging will initially be done with docker-compose to facilitate development though efforts will be made to expose the interfaces that would allow the stack to be decoupled (ie kafka / redis / etc) into a multi-host environment.
+
+    An Ansible role will be developed and uploaded to the Ansible Galaxy registry to allow users to easily run the role for both on-prem and cloud deployments. A continuous integration pipeline will be built with CircleCI to test the deployment steps in automation on each commit. Terraform modules will then be built to support a one-click deployment on AWS with options to extend into other clouds on request from foundation. Configuration will be done through a custom CLI to inform options exposed by the infrastructure as code. A suite of prometheus exporters will be integrated into the deployment with an automated deployment of prometheus to monitor the deployment.
+
+    With the infrastructure fully automated, any changes built into our design will be immediately available by redeploying the stack, thereby creating an immutable deployment pattern to support all subsequent operations.
+
+    * Deliverables
+        * Deployment of all components in containers within a single docker-compose for quick iterative testing of stack
+        * Ansible roles to configure hosts with relevant tooling for both on-premise and cloud
+        * Terraform modules to deploy stack on the cloud in a single host environment with interfaces exposed to decouple parts of the stack on AWS and Alibaba (more clouds on request)
+        * CLI tooling to configure and deploy the stack from one-command
+
+<br>
+
+* Milestone 2 of 3:
+
+    Implement your-custom-blockchain-miner-compatible V1 <-> V2 proxy compatible with BTCPool’s BTCAgent protocol agent.
+
+    With a running automated deployment including observability into key performance metrics, we have set the stage for a robust, staged implementation of the stratum v2 protocol.
+
+    **Note that stratum is designed with three layers or components: transport, application protocol, and services.** The focus of this effort is the application protocol. The BTCPool codebase reflects this in its design. The pool codebase (BTCPool) provides the bulk of the transport and services components, while the BTCAgent provides the protocol component while serving as a proxy/agent for miners to communicate with the pool at high efficiency. Thus, our engineering focus will be on the BTCAgent, while being careful to maintain performance and compatibility with the BTCPool infrastructure.
+
+    Here’s a high-level diagram of the architecture:
+    ![](https://raw.githubusercontent.com/btccom/btcagent/master/docs/architecture.png)
+
+    In the first milestone and stage, we implement a V1 → V2 proxy that is compatible with the BTCAgent.
+
+    With these reference templates and existing stratum server subclasses for bitcoin and etherium already running in BTCAgent, we will deliver the following.
+
+    * Deliverables:
+
+        * Implement your-custom-blockchain subclass for BTCPool stratum servers, similar to existing bitcoin and ethereum implementations
+        * Implement the data structures (especially message types) and network/messaging flows required by the V2 application protocol (see specification, especially Mining Protocol section)
+        * Implement, test, and optimize for your-custom- a V1 -> V2 proxy, in anticipation of the next milestone (but testable with simulation tools provided by braiins and BTCPool).
+        * Further develop and iterate on design for implementation of V2 into the pool infrastructure
+    
+<br>
+
+* Milestone 3 of 3:
+    Implement the Stratum V2 Mining Protocol (the minimal and only required component of Stratum V2) into the BTCAgent with connecting code contributed as needed in BTCPool. (Estimated time: 4-6 weeks)
+
+    An automated, observable deployment with a functioning V1 -> V2 proxy prepares us for the final goal: implementing the V2 protocol within the pool infrastructure.
+
+    The pool’s design allows us to continue focusing our efforts within the BTCAgent while carefully propagating changes out into BTCPool where needed. In the previous milestone, we implement fundamental data structures and the ability to generate streams of V2 messages via our translating proxy. This is through subclassing stratum servers. In this milestone, we could push implementation deeper into the fundamentals classes (namely, btcpool/src/Stratum*.cc/h and btcpool/src/sserver).
+
+    Within this source, we would implement the stratum v2 binary message format and all required  [Mining Protocol method](https://docs.google.com/document/d/1FadCWj-57dvhxsnFM_7X806qyvhR0u3i85607bGHxvg/edit#heading=h.vb25snoj2vgj)
+
+    These fundamental components will be connected and made performant by leveraging the gRPC framework, which maps well to the current JSON rpc framework while allowing for binary message formats. Protobufs for GRPC will be derived directly from the v2 protocol spec and will be uploaded to the kafka schema registry. **We anticipate up to a 10x message transfer performance improvement over the current json format.**
+
+    * Deliverables:
+        * Compliant implementation of the stratum v2 Mining Protocol, the direct standardized successor to the ad-hoc v1 protocol, at the pool level.
+        * gRPC-based framework for connecting components and performant message streaming
+        * Integration and testing of your-custom-blockchain-miner
+
+* After Reaching the milestones:
+
+    Part of the difficulty in running a cryptocurrency mining pool assembling all the necessary services into a single cohesive stack. Before we would built this project, one needed to install many dependencies, message queues, and databases and tussle with difficult to understand configuration files that were not for the faint of heart. To simplify the process, your team can compile these services into a single containerized deployment deployed with docker-compose. You could also include override files to allow for multiple configurations such as a testnet mining pool and prometheus monitoring.
+
+    * Some services to highlight:
+        * Stratum Server: The service the miners connect and send hashrate to.
+        * GBTMaker/Nodebridge: The service to pull mining jobs from your custom blockchain node
+        * JobMaker: The service to format raw mining jobs from Nodebridge into miner jobs
+        * BlockMaker: The service to pull miner hashes and structure them into blocks to be submitted to your custom blockchain
+        * bitcoind/ckb-node: The database to sync, stor
+
+<br>
+
+* As seen below, the BTCpool architecture is quite complex with now each of these services deployed within a single stack:
+    ![](https://raw.githubusercontent.com/btccom/btcpool-ABANDONED/master/docs/btcpool.png)
+
+    Additionally, the terraform and ansible projects will allow quick deployments to your cloud provider of choice (currently supporting AWS and Alibaba Cloud). By simply installing terraform and signing up with your cloud provider, you will be able to deploy the mining pool with just a few commands.
+
+* To deploy on bare metal, you could have also provided an ansible role 2 which the cloud providers use to configure the node.
+
+    * Deliverables Completed:
+
+        * Deployment of all components in containers within a single docker-compose for quick iterative testing of stack
+            * We compiled all the needed components to run  your custom blockchain mining pool into a single docker-compose project.
+            * Several configurations are supported for running the node with prometheus
+            * Components include:
+                * BTCpool
+                * your-custom-blockchain-node
+                * Kafka
+                * Miner-list
+                * Nodebridge
+                * Prometheus
+            * https://github.com/insight-stratum/btcpool-docker-compose
+        * Ansible roles to configure hosts with relevant tooling for both on-premise and cloud
+            * Ansible role provided to setup the pool
+        * Terraform modules to deploy stack on the cloud in a single host environment with interfaces exposed to decouple parts of the stack on AWS and Alibaba (more clouds on request)
+            * We configured terraform modules to allow users to deploy your custom blockchain mining pool on the AWS or Alibaba clouds.
+        * CLI tooling to configure and deploy the stack from one-command
+        * Deployments are triggered by either a single make command or terraform apply.
+
+# An Architecture for a distributed Bitcoin mining pool server [9]
+
+![](https://user-images.githubusercontent.com/36882284/112812184-639f6880-90af-11eb-8c0f-f5168d426848.jpg)
+
+Components:
+
+1. Jobmaster, deployed on the mining pool server to connect to the Bitcoin node.
+    * Jobmaster obtains mining task from the Bitcoin node and the Merged mining node, and sends it to Gateway.
+    * To accept instructions from Bitpeer and Poolbench, so as to generate empty block task.
+    * If a new block is successfully mined, it will be submitted to the node and broadcast by Blockmaster at the same time.
+2. Gateway, deployed on the mining pool server and can be scaled horizontally.
+    * Implements the stratum protocol. When jobmaster sends the task, Gateway will forward it to miners, accept and verify the hashrate submitted by miners.
+    * Implements a custom proxy protocol. When jobmaster sends the task, gateway will forward it to mineragent, accept and verify the hashrate of mineragent.
+    * Aggregates hashrate and submits it to metawriter or metarelay.
+3. Mineragent, mainly used in mining farms with a huge number of mining machines and deployed in the mining farms, which can effectively save bandwidth and improve performance.
+    * Implements the stratum protocol. It assigns task to miners, receives and verifies the hashrate submitted by miners.
+    * Implements custom proxy protocol, receives mining task from gateway and submits hashrate to gateway.
+4. Blockmaster, connects the bitcoin node and bitpeer
+    * Implements the thin block function and speeds up the synchronization of nodes and blocks.
+    * After receiving the newly mined block, jobmaster will broadcast to multiple blockmaster and bitpeer to accelerate the block broadcasting.
+5. Bitpeer, can be considered as a special bitcoin node, with any number of deployments.
+    * Implements the bitcoin p2p protocol and is connectable to multiple bitcoin nodes.
+    * After accepting blockmaster’s block submission, Bitpeer will broadcast the block to the connected bitcoin node.
+    * When Bitpeer noticed the block update of the connected node, it will prompt jobmaster to start mining empty blocks.
+6. Poolbench
+    * Monitors the task update status of each mining pool.
+    * If the height of the tasks of other mining pools is updated, it will prompt jobmaster to start mining empty blocks.
+7. Metawriter: Accpets the hashrate data submitted by Gateway or forwarded by Metarelay, and writes to redis after aggregating the data.
+8. Metarelay: Accpets the hashrate data submitted by Gateway and forwards it to Metawriter.
+9. Alertcenter: A simple server that writes FATAL level log to redis list so we can send alert emails.
+10. Redis: used to save the hashrate data of miners
+
 # References
 
 1- [[bitcoin-dev] [BIP] Stratum protocol specification](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015728.html)
@@ -452,3 +639,7 @@ The main Stratum design flaw is the absence of a well defined standard. This imp
 6- [Stratum V2](https://braiins.com/stratum-v2)
 
 7- [Ethereum Stratum (EIP-1571)](https://eips.ethereum.org/EIPS/eip-1571)
+
+8- [Insight - Automated Stratum V2 mining pool for Nervos](https://talk.nervos.org/t/insight-automated-stratum-v2-mining-pool-for-nervos/4870)
+
+9- [Viabtc Mining Server](https://github.com/viabtc/viabtc_mining_server)
