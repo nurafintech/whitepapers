@@ -26,6 +26,11 @@ Tendermint BFT is maintained even when 1/3rd of all machines fail, by providing 
 <li>A blockchain consensus engine.</li>
 <li>A generic application interface.</li>
 
+# Consensus in Tendermint Core and Cosmos
+It relies on Proof-of-Stake (PoS) with delegation and Practical Byzantine Fault Tolerance.<br/>
+Users signal support by staking ATOM, or the native token of the respective chain. Staking bears the possibility of acquiring a share of the network transaction fees which means if you're an unreliable node, it could damage your publicity and your further rewards. *(orginal: but also the risk of reduced returns or even losses should the supported node become unreliable.)*
+<br/>
+
 
 
 # Resources
@@ -34,3 +39,5 @@ Tendermint BFT is maintained even when 1/3rd of all machines fail, by providing 
 [Tendermint - Building the most powerful tools for distributed networks](https://tendermint.com/)
 
 [Tendermint Core - The leading BFT engine for building blockchains](https://tendermint.com/core/)
+
+[Tendermint - Github](https://github.com/tendermint/tendermint)
