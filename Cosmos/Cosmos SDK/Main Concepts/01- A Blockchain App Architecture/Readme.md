@@ -28,8 +28,24 @@ Tendermint BFT is maintained even when 1/3rd of all machines fail, by providing 
 
 # Consensus in Tendermint Core and Cosmos
 It relies on Proof-of-Stake (PoS) with delegation and Practical Byzantine Fault Tolerance.<br/>
-Users signal support by staking ATOM, or the native token of the respective chain. Staking bears the possibility of acquiring a share of the network transaction fees which means if you're an unreliable node, it could damage your publicity and your further rewards. *(orginal: but also the risk of reduced returns or even losses should the supported node become unreliable.)*
+Users signal support by staking ATOM, or the native token of the respective chain. Staking bears the possibility of acquiring a share of the network transaction fees, in addition if you're an unreliable node, it could damage your publicity and your further rewards. *(orginal: but also the risk of reduced returns or even losses should the supported node become unreliable.)*
 <br/>
+
+
+## You do need to continue even in Adverse (harmful) conditions
+
+Network participants are incentivized to stake their ATOM with nodes which are the most likely to provide dependable service, and to withdraw their support should those conditions change. A Cosmos blockchain is expected to adjust the validator configuration and continue even in adverse conditions.
+
+# Who are the Validators?
+Only the top 150 nodes (as ranked by staked ATOM) participate in the transaction finalization process as validators:))
+<br/>
+
+The privilege of creating a block is awarded in proportion to the voting power a validator has. Voting power is calculated as all ATOM tokens staked by a validator and its delegates.
+<br/>
+
+For example, if a given validator's voting power is 15% of the total voting power of all validators, then the validator can expect to receive the block creation privilege 15% of the time.
+
+
 
 
 
