@@ -94,10 +94,30 @@ The Tendermint BFT provides security guarantees, including the following:
 The Tendermint BFT is not concerned with the interpretation of transactions. That occurs at the application layer, and Tendermint is un-opinionated about the meaning any transactions have.
 <br/>
 
+## Block time and Finality 
 The block time is approximately seven seconds, and blocks may contain thousands of transactions. Transactions are finalized and cannot be overturned as soon as they appear in a block.
 
+## Two Board Approaches to Application-Level Concerns
+<li>Create an application-specific blockchain where everything that can be done is defined in the protocol.</li>
+
+<li>Create a programmable state machine and push application concerns to a higher level, such as bytecode created by compilers interpreting higher-level languages.</li>
+
+## Ethereum-like Blockchains
+Ethereum-like blockchains are part of the second category above: **only the state machine is defined in the on-chain protocol, which defines the rules of contract creation, interaction, execution, and little else.**
 
 
+## What's the concerns of Ethereum-like systems development?
+
+- Very little is universally defined: **standards** for basic concerns such as tokens **emerge organically through voluntary participation.**
+
+- Contracts can and **do contain repetitive code that may or may not correctly implement the developer's intentions.**
+
+- This inherent flexibility makes it **challenging to reason about what is correct, or even what is friendly.**
+
+- There are practical limits to the complexity of operations, which are very low compared to what is possible in other settings.
+##
+These limitations make it especially difficult to perform analysis or reorganize data, and developers are forced to adapt to the constraints.
+##
 
 
 # Resources
