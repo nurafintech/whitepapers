@@ -45,6 +45,22 @@ The privilege of creating a block is awarded in proportion to the voting power a
 
 For example, if a given validator's voting power is 15% of the total voting power of all validators, then the validator can expect to receive the block creation privilege 15% of the time.
 
+## Validator's Broadcasting Conditions
+The created block is broadcast to the other validators, who are expected to respond promptly and correctly:
+
+<li>Validators confirm candidate blocks.</li>
+<li>Validators absorb penalties for failing to do so.(??)</li>
+<li>Validators can and must reject invalid blocks.</li>
+<li>Validators accept the block by returning their signature.</li>
+
+## Finalized Blocks with no Ambiguity
+When sufficient signatures have been collected by the block creator, the block is finalized and broadcast to the wider network.
+<br/>
+
+There is no ambiguity in this process: either a block has the necessary signatures or it does not. If it does, insufficient signatories exist to overturn the block and so the block can be understood as finalized - there is no process in which the blockchain would be reorganized. This provides a level of certainty when it comes to transaction finality that a probabilistic system like Proof-of-Work (PoW) cannot match.
+##
+This is quite different from PoW, which favors inclusion and must accommodate slower nodes with greater latency and less reliability. A Cosmos blockchain can handle thousands of transactions per second, with confirmations taking seven seconds.
+##
 
 
 
