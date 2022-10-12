@@ -122,6 +122,16 @@ Ethereum-like blockchains are part of the second category above: **only the stat
 
 ## A purpose-built or application-specific blockchain is different
 There is no need to present a "Turing-complete" language or a general-purpose, programmable state machine because application concerns are addressed by the protocol the developers create.
+<br/>
+
+## Developing Experience With EVMs
+
+Developers who have worked with blockchains based on the Ethereum Virtual Machine (EVM) will recognize a shift in the way concerns are addressed.
+<br/>
+Authorization and access control, the layout of storage and the state, and application governance are not implemented as contracts on a state machine.<br/>
+
+They instead become properties of a unique blockchain that is built for a singular purpose.
+ 
 
 
 
