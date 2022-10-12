@@ -115,9 +115,14 @@ Ethereum-like blockchains are part of the second category above: **only the stat
 - This inherent flexibility makes it **challenging to reason about what is correct, or even what is friendly.**
 
 - There are practical limits to the complexity of operations, which are very low compared to what is possible in other settings.
+
 ##
-These limitations make it especially difficult to perform analysis or reorganize data, and developers are forced to adapt to the constraints.
+**These limitations make it especially difficult to perform analysis or reorganize data, and developers are forced to adapt to the constraints.**
 ##
+
+## A purpose-built or application-specific blockchain is different
+There is no need to present a "Turing-complete" language or a general-purpose, programmable state machine because application concerns are addressed by the protocol the developers create.
+
 
 
 # Resources
@@ -127,4 +132,4 @@ These limitations make it especially difficult to perform analysis or reorganize
 
 [Tendermint Core - The leading BFT engine for building blockchains](https://tendermint.com/core/)
 
-[Tendermint - Github](https://github.com/tendermint/tendermint)
+[Tendermint Specification](https://github.com/tendermint/tendermint/tree/main/spec)
