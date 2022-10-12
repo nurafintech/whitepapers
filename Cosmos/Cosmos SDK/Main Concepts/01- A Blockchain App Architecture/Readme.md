@@ -45,6 +45,11 @@ The privilege of creating a block is awarded in proportion to the voting power a
 
 For example, if a given validator's voting power is 15% of the total voting power of all validators, then the validator can expect to receive the block creation privilege 15% of the time.
 
+## Validators should be very Demanding
+Validators and delegators are the parties who vote on proposals, with weights proportional to their respective stakes. If a delegator does not vote on a proposal, the delegator's vote is taken as that of its delegated validator.
+<br/>
+This means that delegators should be very demanding when they act, as they also lend their default vote to the validator.
+
 ## Validator's Broadcasting Conditions
 The created block is broadcast to the other validators, who are expected to respond promptly and correctly:
 
@@ -61,6 +66,36 @@ There is no ambiguity in this process: either a block has the necessary signatur
 ##
 This is quite different from PoW, which favors inclusion and must accommodate slower nodes with greater latency and less reliability. A Cosmos blockchain can handle thousands of transactions per second, with confirmations taking seven seconds.
 ##
+
+## Upgradeability of Chains
+In any known blockchain, a change in the implementation requires an upgrade to the node software running on each node. In a disorderly process with voluntary participation, this can result in a hard fork: a situation in which one constituency forges ahead with the old rules while another adopts new rules.
+<br/>
+
+In a Tendermint blockchain, transactions are irreversibly finalized upon block creation, and upgrades are themselves governed by the block creation and validation process. This leaves no room for uncertainty: either the nodes agree to simultaneously upgrade their protocol, or the upgrade proposal fails.
+
+
+# Application Blockchain Interface (ABCI)
+Tendermint BFT packages the networking and consensus layers of a blockchain and presents an interface to the application layer, the Application Blockchain Interface (ABCI).
+<br/>
+
+![](https://tutorials.cosmos.network/resized-images/600/academy/2-cosmos-concepts/images/ABCI_3.png)
+
+The Tendermint BFT engine is connected to the application by a socket protocol. ABCI provides a socket for applications written in other languages. If the application is written in the same language as the Tendermint implementation, the socket is not used.
+
+# Tendermint Guarantees
+The Tendermint BFT provides security guarantees, including the following:
+<li>Forks are never created, provided that at least half the validators are honest.</li>
+
+<li>Determination of liability is achieved through the implementation of strict accountability for fork creation. <i>(original: Strict accountability for fork creation allows determination of liability.)</i></li>
+
+<li>Transactions are finalized as soon as a block is created.</li>
+
+##
+The Tendermint BFT is not concerned with the interpretation of transactions. That occurs at the application layer, and Tendermint is un-opinionated about the meaning any transactions have.
+<br/>
+
+The block time is approximately seven seconds, and blocks may contain thousands of transactions. Transactions are finalized and cannot be overturned as soon as they appear in a block.
+
 
 
 
