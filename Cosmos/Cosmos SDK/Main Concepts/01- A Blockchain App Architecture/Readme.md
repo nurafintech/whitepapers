@@ -95,7 +95,16 @@ Tendermint BFT packages the networking and consensus layers of a blockchain and 
 
 ![](https://tutorials.cosmos.network/resized-images/600/academy/2-cosmos-concepts/images/ABCI_3.png)
 
-The Tendermint BFT engine is connected to the application by a socket protocol. ABCI provides a socket for applications written in other languages. If the application is written in the same language as the Tendermint implementation, the socket is not used.
+The Tendermint BFT engine is connected to the application by a socket protocol. ABCI provides a socket for applications written in other languages.
+<br/>
+
+## How is actually Tendermint connecting with ABCI?
+
+Tendermint passes confirmed transactions to the application layer through the Application Blockchain Interface (ABCI). The application layer must implement ABCI, which is a socket protocol. If the application is written in the same language as the Tendermint implementation, the socket is not used.
+
+## Tendermint and ABCI are completing each other
+
+Tendermint is unconcerned with the interpretation of transactions, and the application layer can be unconcerned with propagation, broadcast, confirmation, network formation, and other lower-level concerns that Tendermint attends to (unless it wants to inspect such properties).
 
 # Tendermint Guarantees
 
@@ -170,7 +179,14 @@ The creation of an application-specific blockchain with the Cosmos SDK is largel
 
 ##
 
-This greatly reduces the scope of original development required, as development becomes mostly focused on the truly novel aspects of the application.
+This greatly reduces the scope of original development required, as development becomes **mostly focused on the truly novel aspects of the application.**
+<br/>
+
+The application, consensus, and network layers are contained within the custom blockchain node that forms the foundation of the custom blockchain.
+
+# What's Inter-Blockchain Communication Protocol (IBC)?
+
+The Inter-Blockchain Communication Protocol (IBC) is a common framework for exchanging information between blockchains and also, It enables communication between applications that run on separate application-specific blockchains.
 
 # Resources
 
