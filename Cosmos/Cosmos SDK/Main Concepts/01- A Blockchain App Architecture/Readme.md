@@ -172,8 +172,6 @@ The creation of an application-specific blockchain with the Cosmos SDK is largel
 
 This greatly reduces the scope of original development required, as development becomes mostly focused on the truly novel aspects of the application.
 
-##
-
 # Resources
 
 [Cosmos Academy - A Blockchain App Architecture](https://tutorials.cosmos.network/academy/2-cosmos-concepts/1-architecture.html)
