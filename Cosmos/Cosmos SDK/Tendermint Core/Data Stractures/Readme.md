@@ -351,7 +351,7 @@ EvidenceList is a simple wrapper for a list of evidence:
 
 Evidence in Tendermint is used to indicate breaches in the consensus by a validator.
 
-More information on how evidence works in Tendermint can be found [here](../consensus/evidence.md)
+More information on how evidence works in Tendermint can be found [here](../Consensus/Evidence/Readme.md)
 
 ### DuplicateVoteEvidence
 
