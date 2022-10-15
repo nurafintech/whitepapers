@@ -1,4 +1,4 @@
-# Data Structures
+# DataStructures
 
 Here we describe the data structures in the Tendermint blockchain and the rules for validating them.
 
@@ -54,6 +54,7 @@ and a list of evidence of malfeasance (ie. signing conflicting votes).
 | LastCommit | [Commit](#commit)              | `LastCommit` includes one vote for every validator.  All votes must either be for the previous block, nil or absent. If a vote is for the previous block it must have a valid signature from the corresponding validator. The sum of the voting power of the validators that voted must be greater than 2/3 of the total voting power of the complete validator set. The number of votes in a commit is limited to 10000 (see `types.MaxVotesCount`).                                                                                             | Must be empty for the initial height and must adhere to the validation rules of [commit](#commit).  |
 
 ## Execution
+[&uparrow; Back to Outline](#DataStructures)
 
 Once a block is validated, it can be executed against the state.
 
@@ -114,6 +115,7 @@ The steps to validate a new block are:
 - Validate the evidence in the block. Note: Evidence can be empty
 
 ## Header
+[&uparrow; Back to Outline](#DataStructures)
 
 A block header contains metadata about the block and about the consensus, as well as commitments to
 the data in the current block, the previous block, and the results returned by the application:
@@ -136,6 +138,7 @@ the data in the current block, the previous block, and the results returned by t
 | ProposerAddress   | slice of bytes (`[]byte`) | Address of the original proposer of the block. Validator must be in the current validatorSet.                                                                                                                                                                                                                                                                                         | Must  be of length 20                                                                                                                                                                            |
 
 ## Version
+[&uparrow; Back to Outline](#DataStructures)
 
 NOTE: that this is more specifically the consensus version and doesn't include information like the
 P2P Version. (TODO: we should write a comprehensive document about
@@ -147,6 +150,7 @@ versioning that this can refer to)
 | App   | uint64 | App version is decided on by the application. Read [here](../abci/abci.md#info)                                 | `block.Version.App == state.Version.Consensus.App`                                                                 |
 
 ## BlockID
+[&uparrow; Back to Outline](#DataStructures)
 
 The `BlockID` contains two distinct Merkle roots of the block. The `BlockID` includes these two hashes, as well as the number of parts (ie. `len(MakeParts(block))`)
 
@@ -158,6 +162,7 @@ The `BlockID` contains two distinct Merkle roots of the block. The `BlockID` inc
 See [MerkleRoot](./encoding.md#MerkleRoot) for details.
 
 ## PartSetHeader
+[&uparrow; Back to Outline](#DataStructures)
 
 | Name  | Type                      | Description                       | Validation           |
 |-------|---------------------------|-----------------------------------|----------------------|
@@ -165,6 +170,7 @@ See [MerkleRoot](./encoding.md#MerkleRoot) for details.
 | Hash  | slice of bytes (`[]byte`) | MerkleRoot of a serialized block  | Must be of length 32 |
 
 ## Part
+[&uparrow; Back to Outline](#DataStructures)
 
 Part defines a part of a block. In Tendermint blocks are broken into `parts` for gossip.
 
@@ -175,11 +181,13 @@ Part defines a part of a block. In Tendermint blocks are broken into `parts` for
 | proof | [Proof](#proof) | MerkleRoot of a serialized block  | Must be of length 32 |
 
 ## Time
+[&uparrow; Back to Outline](#DataStructures)
 
 Tendermint uses the [Google.Protobuf.Timestamp](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.Timestamp)
 format, which uses two integers, one 64 bit integer for Seconds and a 32 bit integer for Nanoseconds.
 
 ## Data
+[&uparrow; Back to Outline](#DataStructures)
 
 Data is just a wrapper for a list of transactions, where transactions are arbitrary byte arrays:
 
@@ -188,6 +196,7 @@ Data is just a wrapper for a list of transactions, where transactions are arbitr
 | Txs  | Matrix of bytes ([][]byte) | Slice of transactions. | Validation does not occur on this field, this data is unknown to Tendermint |
 
 ## Commit
+[&uparrow; Back to Outline](#DataStructures)
 
 Commit is a simple wrapper for a list of signatures, with one for each validator. It also contains the relevant BlockID, height and round:
 
@@ -199,6 +208,7 @@ Commit is a simple wrapper for a list of signatures, with one for each validator
 | Signatures | Array of [CommitSig](#commitsig) | Array of commit signatures that correspond to current validator set. | Length of signatures must be > 0 and adhere to the validation of each individual [Commitsig](#commitsig) |
 
 ## CommitSig
+[&uparrow; Back to Outline](#DataStructures)
 
 `CommitSig` represents a signature of a validator, who has voted either for nil,
 a particular `BlockID` or was absent. It's a part of the `Commit` and can be used
@@ -215,6 +225,7 @@ NOTE: `ValidatorAddress` and `Timestamp` fields may be removed in the future
 (see [ADR-25](https://github.com/tendermint/tendermint/blob/master/docs/architecture/adr-025-commit.md)).
 
 ## BlockIDFlag
+[&uparrow; Back to Outline](#DataStructures)
 
 BlockIDFlag represents which BlockID the [signature](#commitsig) is for.
 
@@ -228,6 +239,7 @@ enum BlockIDFlag {
 ```
 
 ## Vote
+[&uparrow; Back to Outline](#DataStructures)
 
 A vote is a signed message from a validator for a particular block.
 The vote includes information about the validator signing it. When stored in the blockchain or propagated over the network, votes are encoded in Protobuf.
@@ -247,6 +259,7 @@ The vote extension is not part of the [`CanonicalVote`](#canonicalvote).
 | ExtensionSignature | slice of bytes (`[]byte`)       | Signature by the validator if they participated in consensus for the associated bock.       | Length must be 0 if Type != `SIGNED_MSG_TYPE_PRECOMMIT`; else length must be > 0 and < 64            |
 
 ## CanonicalVote
+[&uparrow; Back to Outline](#DataStructures)
 
 CanonicalVote is for validator signing. This type will not be present in a block. Votes are represented via `CanonicalVote` and also encoded using protobuf via `type.SignBytes` which includes the `ChainID`, and uses a different ordering of
 the fields.
@@ -283,6 +296,7 @@ func (vote *Vote) Verify(chainID string, pubKey crypto.PubKey) error {
 ```
 
 ## Proposal
+[&uparrow; Back to Outline](#DataStructures)
 
 Proposal contains height and round for which this proposal is made, BlockID as a unique identifier
 of proposed block, timestamp, and POLRound (a so-called Proof-of-Lock (POL) round) that is needed for
@@ -300,6 +314,7 @@ is locked in POLRound. The message is signed by the validator private key.
 | Signature | slice of bytes (`[]byte`)       | Signature by the validator if they participated in consensus for the associated bock. | Length of signature must be > 0 and < 64                |
 
 ## SignedMsgType
+[&uparrow; Back to Outline](#DataStructures)
 
 Signed message type represents a signed messages in consensus.
 
@@ -317,6 +332,7 @@ enum SignedMsgType {
 ```
 
 ## Signature
+[&uparrow; Back to Outline](#DataStructures)
 
 Signatures in Tendermint are raw bytes representing the underlying signature.
 
@@ -331,6 +347,7 @@ EvidenceList is a simple wrapper for a list of evidence:
 | Evidence | Array of [Evidence](#evidence) | List of verified [evidence](#evidence) | Validation adheres to individual types of [Evidence](#evidence) |
 
 ## Evidence
+[&uparrow; Back to Outline](#DataStructures)
 
 Evidence in Tendermint is used to indicate breaches in the consensus by a validator.
 
@@ -350,6 +367,7 @@ in the same round of the same height. Votes are lexicographically sorted on `Blo
 | Timestamp        | [Time](#time) | Time of the block where the equivocation occurred                  | Must be equal to the nodes own copy of the data     |
 
 ### LightClientAttackEvidence
+[&uparrow; Back to Outline](#DataStructures)
 
 `LightClientAttackEvidence` is a generalized evidence that captures all forms of known attacks on
 a light client such that a full node can verify, propose and commit the evidence on-chain for
@@ -365,6 +383,7 @@ and Amnesia. These attacks are exhaustive. You can find a more detailed overview
 | Timestamp            | [Time](#time)                    | Time of the block where the infraction occurred                      | Must be equal to the nodes own copy of the data                  |
 
 ## LightBlock
+[&uparrow; Back to Outline](#DataStructures)
 
 LightBlock is the core data structure of the [light client](../light-client/README.md). It combines two data structures needed for verification ([signedHeader](#signedheader) & [validatorSet](#validatorset)).
 
@@ -376,6 +395,7 @@ LightBlock is the core data structure of the [light client](../light-client/READ
 The `SignedHeader` and `ValidatorSet` are linked by the hash of the validator set(`SignedHeader.ValidatorsHash == ValidatorSet.Hash()`.
 
 ## SignedHeader
+[&uparrow; Back to Outline](#DataStructures)
 
 The SignedhHeader is the [header](#header) accompanied by the commit to prove it.
 
@@ -385,6 +405,7 @@ The SignedhHeader is the [header](#header) accompanied by the commit to prove it
 | Commit | [Commit](#commit) | [Commit](#commit) | Commit cannot be nil and must adhere to the [Commit](#commit) criteria            |
 
 ## ValidatorSet
+[&uparrow; Back to Outline](#DataStructures)
 
 | Name       | Type                             | Description                                        | Validation                                                                                                        |
 |------------|----------------------------------|----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
@@ -392,6 +413,8 @@ The SignedhHeader is the [header](#header) accompanied by the commit to prove it
 | Proposer   | [validator](#validator)          | The block proposer for the corresponding block     | The proposer cannot be nil and must adhere to the validation rules of  [validator](#validator)                    |
 
 ## Validator
+[&uparrow; Back to Outline](#DataStructures)
+
 
 | Name             | Type                      | Description                                                                                       | Validation                                        |
 |------------------|---------------------------|---------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -401,6 +424,7 @@ The SignedhHeader is the [header](#header) accompanied by the commit to prove it
 | ProposerPriority | int64                     | Validators proposer priority. This is used to gauge when a validator is up next to propose blocks | No validation, value can be negative and positive |
 
 ## Address
+[&uparrow; Back to Outline](#DataStructures)
 
 Address is a type alias of a slice of bytes. The address is calculated by hashing the public key using sha256 and truncating it to only use the first 20 bytes of the slice.
 
@@ -416,6 +440,8 @@ func SumTruncated(bz []byte) []byte {
 ```
 
 ## ConsensusParams
+[&uparrow; Back to Outline](#DataStructures)
+
 
 | Name      | Type                                | Description                                                                  | Field Number |
 |-----------|-------------------------------------|------------------------------------------------------------------------------|--------------|
@@ -425,6 +451,8 @@ func SumTruncated(bz []byte) []byte {
 | version   | [BlockParams](#blockparams)         | The ABCI application version.                                                | 4            |
 
 ### BlockParams
+[&uparrow; Back to Outline](#DataStructures)
+
 
 | Name         | Type  | Description                                                                                                                                                                                                 | Field Number |
 |--------------|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
@@ -433,6 +461,7 @@ func SumTruncated(bz []byte) []byte {
 | recheck_tx   | bool  | Indicated whether to run `CheckTx` on all remaining transactions *after* every execution of a block | 3            |
 
 ### EvidenceParams
+[&uparrow; Back to Outline](#DataStructures)
 
 | Name               | Type                                                                                                                               | Description                                                                                                                                                                                                                                                                    | Field Number |
 |--------------------|------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
@@ -441,6 +470,8 @@ func SumTruncated(bz []byte) []byte {
 | max_bytes          | int64                                                                                                                              | maximum size in bytes of total evidence allowed to be entered into a block                                                                                                                                                                                                     | 3            |
 
 ### ValidatorParams
+[&uparrow; Back to Outline](#DataStructures)
+
 
 | Name          | Type            | Description                                                           | Field Number |
 |---------------|-----------------|-----------------------------------------------------------------------|--------------|
@@ -453,6 +484,8 @@ func SumTruncated(bz []byte) []byte {
 | app_version | uint64 | The ABCI application version. | 1            |
 
 ### SynchronyParams
+[&uparrow; Back to Outline](#DataStructures)
+S
 
 | Name          | Type   | Description                   | Field Number |
 |---------------|--------|-------------------------------|--------------|
@@ -460,6 +493,7 @@ func SumTruncated(bz []byte) []byte {
 | precision     | [google.protobuf.Duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.Duration) | Bound for how skewed a proposer's clock may be from any validator on the network while still producing valid proposals. | 2            |
 
 ### TimeoutParams
+[&uparrow; Back to Outline](#DataStructures)
 
 | Name          | Type   | Description                   | Field Number |
 |---------------|--------|-------------------------------|--------------|
@@ -471,6 +505,8 @@ func SumTruncated(bz []byte) []byte {
 | bypass_commit_timeout | bool | Parameter that, if enabled, configures the node to proceed immediately to the next height once the node has received all precommits for a block, forgoing the commit timeout. |  6  |
 
 ## Proof
+[&uparrow; Back to Outline](#DataStructures)
+
 
 | Name      | Type           | Description                                   | Field Number |
 |-----------|----------------|-----------------------------------------------|--------------|
