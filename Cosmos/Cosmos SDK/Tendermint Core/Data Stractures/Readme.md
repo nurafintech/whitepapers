@@ -1,4 +1,4 @@
-# Data Structures
+# DataStructures
 
 Here we describe the data structures in the Tendermint blockchain and the rules for validating them.
 
@@ -41,6 +41,7 @@ The Tendermint blockchains consists of a short list of data types:
   - [Proof](#proof)
 
 ## Block
+[&uparrow; Back to Outline](#DataStructures)
 
 A block consists of a header, transactions, votes (the commit),
 and a list of evidence of malfeasance (ie. signing conflicting votes).
