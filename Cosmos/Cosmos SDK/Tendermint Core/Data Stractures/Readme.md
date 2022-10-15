@@ -147,7 +147,7 @@ versioning that this can refer to)
 | Name  | type   | Description                                                                                                     | Validation                                                                                                         |
 |-------|--------|-----------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
 | Block | uint64 | This number represents the version of the block protocol and must be the same throughout an operational network | Must be equal to protocol version being used in a network (`block.Version.Block == state.Version.Consensus.Block`) |
-| App   | uint64 | App version is decided on by the application. Read [here](../abci/abci.md#info)                                 | `block.Version.App == state.Version.Consensus.App`                                                                 |
+| App   | uint64 | App version is decided on by the application. Read [here](../../Main%20Concepts/15-%20ABCI/2-%20ABCI%20Methods/Readme.md#info)                                 | `block.Version.App == state.Version.Consensus.App`                                                                 |
 
 ## BlockID
 [&uparrow; Back to Outline](#DataStructures)
