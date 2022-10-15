@@ -403,7 +403,7 @@ passed on to the Application through ABCI++. It is the responsibility of the
 Application to handle evidence of misbehavior and exercise punishment.
 
 There are two forms of evidence: Duplicate Vote and Light Client Attack. More
-information can be found in either [data structures](../core/data_structures.md)
+information can be found in either [data structures](../../Data%20Stractures/Readme.md)
 or [accountability](../light-client/accountability/).
 
 EvidenceType has the following protobuf format:
