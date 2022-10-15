@@ -32,7 +32,7 @@ In these cases, the sequence of calls to ABCI++ methods may not be so straighfor
 the Application should still be able to handle them, e.g., without crashing.
 The purpose of this section is to define what these sequences look like an a precise way.
 
-As mentioned in the [Basic Concepts](./../Readme.md) section, Tendermint
+As mentioned in the [Basic Concepts](./../1-%20Basic%20Concepts/Readme.md) section, Tendermint
 acts as a client of ABCI++ and the Application acts as a server. Thus, it is up to Tendermint to
 determine when and in which order the different ABCI++ methods will be called. A well-written
 Application design should consider _any_ of these possible sequences.
