@@ -336,7 +336,7 @@ enum SignedMsgType {
 
 Signatures in Tendermint are raw bytes representing the underlying signature.
 
-See the [signature spec](./encoding.md#key-types) for more.
+See the [signature spec](../Encoding/Readme.md#key-types) for more.
 
 ## EvidenceList
 
