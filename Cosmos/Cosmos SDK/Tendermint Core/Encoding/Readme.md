@@ -295,7 +295,7 @@ in HSMs. It creates fixed offsets for relevant fields that need to be read in th
 
 > Note: All canonical messages are length prefixed.
 
-For more details, see the [signing spec](../consensus/signing.md).
+For more details, see the [signing spec](../Consensus/Signing/Readme.md).
 Also, see the motivating discussion in
 [#1622](https://github.com/tendermint/tendermint/issues/1622).
 
