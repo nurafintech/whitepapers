@@ -159,7 +159,7 @@ The `BlockID` contains two distinct Merkle roots of the block. The `BlockID` inc
 | Hash          | slice of bytes (`[]byte`)       | MerkleRoot of all the fields in the header (ie. `MerkleRoot(header)`.                                                                                            | hash must be of length 32                                              |
 | PartSetHeader | [PartSetHeader](#partsetheader) | Used for secure gossiping of the block during consensus, is the MerkleRoot of the complete serialized block cut into parts (ie. `MerkleRoot(MakeParts(block))`). | Must adhere to the validation rules of [PartSetHeader](#partsetheader) |
 
-See [MerkleRoot](./encoding.md#MerkleRoot) for details.
+See [MerkleRoot](../Encoding/Readme.md#MerkleRoot) for details.
 
 ## PartSetHeader
 [&uparrow; Back to Outline](#DataStructures)
