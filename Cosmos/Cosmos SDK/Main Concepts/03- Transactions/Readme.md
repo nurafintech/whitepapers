@@ -149,11 +149,29 @@ TxBuilder interface {
     SetFeeGranter(feeGranter sdk.AccAddress)
 }
 ```
+# Messages
+### Caution
+Transaction messages are not to be confused with ABCI messages, which define interactions between Tendermint and application layers.
+<br/>
 
+Messages or [sdk.Msg](#message-interface) are module-specific objects that trigger state transitions within the scope of the module they belong to.<br/>
+Module developers define module messages by adding methods to the Protobuf <code>Msg</code> service and defining a <code>MsgServer</code>.<br/>
+
+Each [sdk.Msg](#message-interface) is related to exactly one Protobuf <code>Msg</code> service RPC defined inside each module's <code>tx.proto</code> file. A Cosmos SDK app router automatically maps every [sdk.Msg](#message-interface) to a corresponding RPC service, which routes it to the appropriate method. Protobuf generates a <code>MsgServer</code> interface for each module's <code>Msg</code> service and the module developer implements this interface.
+<br/>
+
+## Reuseable Functionalities
+This design puts more responsibility on module developers. It allows application developers to reuse common functionalities without having to repetitively implement state transition logic.<br/>
+
+While messages contain the information for the state transition logic, a transaction's other metadata and relevant information are stored in the <code>TxBuilder</code> and <code>Context</code>.
 
 # References
+[Cosmos Academy - Transactions](https://tutorials.cosmos.network/academy/2-cosmos-concepts/3-transactions.html)
+
 [TxMessages - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx_msg.go#L11-L33)
 
 [StdTx - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/x/auth/legacy/legacytx/stdtx.go#L77-L83)
 
 [Handler - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/handler.go#L8)
+
+[TxConfig - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/client/tx_config.go#L36-L46)
