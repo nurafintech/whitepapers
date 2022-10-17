@@ -2,6 +2,7 @@
 Transactions are objects created by end-users to trigger state changes in applications.<br/>
  They are comprised of metadata that defines a context, and one or more [sdk.Msg]()  that trigger state changes within a module through the module’s Protobuf message service.
 
+### Message Interface
 ```go
 /// sdk.Msg 
 Msg interface {
@@ -34,3 +35,87 @@ Msg interface {
 }
 ```
 
+# Transaction process from an end-user perspective
+
+### Decide 
+Decide on the messages to put into the transaction. This is normally done with the assistance of a wallet or application and a user interface.
+
+### Generate 
+Generate the transaction using the Cosmos SDK's <code>TxBuilder</code>. <code>TxBuilder</code> is the preferred way to generate a transaction.
+### Sign
+Sign the transaction. Transactions must be signed before a validator includes them in a block.
+### Broadcast
+Broadcast the signed transaction using one of the available interfaces.
+<br/>
+
+**Deciding and signing are the main interactions of a user. Generating and broadcasting are attended to by the user interface and other automation.**
+
+# Transaction objects
+Transaction objects are Cosmos SDK types that implement the <code>Tx interface</code>. They contain the following methods:
+
+### Transaction Interface
+```go
+// Tx defines the interface a transaction must fulfill.
+Tx interface {
+    // Gets the all the transaction's messages.
+    GetMsgs() []Msg
+
+    // ValidateBasic does a simple and lightweight validation check that doesn't
+    // require access to any other information.
+    ValidateBasic() error
+}
+```
+- **GetMsgs:** unwraps the transaction and returns a list of contained [sdk.Msg](#message-interface). One transaction may have one or multiple messages.
+
+- **ValidateBasic:** includes lightweight, stateless checks used by the ABCI messages' <code>CheckTx</code> and <code>DeliverTx</code> to make sure transactions are not invalid.<br/>
+
+For example, the auth module's <code>StdTx</code> <code>ValidateBasic</code> function checks that its transactions are signed by the correct number of signers and that the fees do not exceed the user's maximum.
+
+### StdTx and Validate Basic
+```go
+// StdTx is the legacy transaction format for wrapping a Msg with Fee and Signatures.
+// It only works with Amino, please prefer the new protobuf Tx in types/tx.
+// NOTE: the first signature is the fee payer (Signatures must not be nil).
+// Deprecated
+type StdTx struct {
+	Msgs          []sdk.Msg      `json:"msg" yaml:"msg"`
+	Fee           StdFee         `json:"fee" yaml:"fee"`
+	Signatures    []StdSignature `json:"signatures" yaml:"signatures"`
+	Memo          string         `json:"memo" yaml:"memo"`
+	TimeoutHeight uint64         `json:"timeout_height" yaml:"timeout_height"`
+}
+
+// ValidateBasic does a simple and lightweight validation check that doesn't
+// require access to any other information.
+func (tx StdTx) ValidateBasic() error {
+	stdSigs := tx.GetSignatures()
+
+	if tx.Fee.Gas > txtypes.MaxGasWanted {
+		return sdkerrors.Wrapf(
+			sdkerrors.ErrInvalidRequest,
+			"invalid gas supplied; %d > %d", tx.Fee.Gas, txtypes.MaxGasWanted,
+		)
+	}
+	if tx.Fee.Amount.IsAnyNegative() {
+		return sdkerrors.Wrapf(
+			sdkerrors.ErrInsufficientFee,
+			"invalid fee provided: %s", tx.Fee.Amount,
+		)
+	}
+	if len(stdSigs) == 0 {
+		return sdkerrors.ErrNoSignatures
+	}
+	if len(stdSigs) != len(tx.GetSigners()) {
+		return sdkerrors.Wrapf(
+			sdkerrors.ErrUnauthorized,
+			"wrong number of signers; expected %d, got %d", len(tx.GetSigners()), len(stdSigs),
+		)
+	}
+
+	return nil
+}
+```
+
+
+# References
+[TxMessages - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx_msg.go#L11-L33)
