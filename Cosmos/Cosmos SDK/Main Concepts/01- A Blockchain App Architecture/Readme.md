@@ -188,6 +188,35 @@ The application, consensus, and network layers are contained within the custom b
 
 The Inter-Blockchain Communication Protocol (IBC) is a common framework for exchanging information between blockchains and also, It enables communication between applications that run on separate application-specific blockchains.
 
+# State Machines
+Developers can create the state machine using the Cosmos SDK. This includes:
+- **Storage organization:** also known as the state.
+- **State transition functions:** these determine what is permissible and if adjustments to the state result from a transaction.
+
+<br/>
+In this context, the "consensus" establishes a canonical (worthy) set of well-ordered blocks containing well-ordered transactions. All nodes agree that the canonical set is the only relevant set of all finalized transactions.
+<br/>
+
+There is **only one correct interpretation of the canonical transaction set** at any given transaction execution or any block height **due to the state machine's determinism.**
+
+## Tendermint is agnostic to the interpretation of the blocks
+This state machine definition is silent on the processes that confirm and propagate transactions. Tendermint is agnostic to the interpretation of the blocks it organizes.<br/>
+
+The Tendermint consensus establishes the ordered set of transactions. The nodes then reach consensus about the state of the application.
+
+# Additional details
+
+### CheckTx
+Many transactions that could be broadcast should not be broadcast. Examples include malformed transactions and spam-like artifacts.
+<br/>
+
+However, Tendermint cannot determine the transaction interpretation because it is agnostic to it. To address this, the Application Blockchain Interface includes a *CheckTx* method.
+<br/>
+
+Tendermint uses this method to ask the application layer if a transaction is valid. Applications implement this function.
+
+
+
 # Resources
 
 [Cosmos Academy - A Blockchain App Architecture](https://tutorials.cosmos.network/academy/2-cosmos-concepts/1-architecture.html)
