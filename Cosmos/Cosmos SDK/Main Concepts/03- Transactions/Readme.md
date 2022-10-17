@@ -1,6 +1,6 @@
 # Transactions
 Transactions are objects created by end-users to trigger state changes in applications.<br/>
- They are comprised of metadata that defines a context, and one or more [sdk.Msg]()  that trigger state changes within a module through the module’s Protobuf message service.
+ They are comprised of metadata that defines a context, and one or more [sdk.Msg](#message-interface) that trigger state changes within a module through the module’s Protobuf message service.
 
 ### Message Interface
 ```go
@@ -71,7 +71,7 @@ Tx interface {
 
 For example, the auth module's <code>StdTx</code> <code>ValidateBasic</code> function checks that its transactions are signed by the correct number of signers and that the fees do not exceed the user's maximum.
 
-### StdTx and Validate Basic
+### StdTx Struct and Validate Basic
 ```go
 // StdTx is the legacy transaction format for wrapping a Msg with Fee and Signatures.
 // It only works with Amino, please prefer the new protobuf Tx in types/tx.
@@ -116,6 +116,31 @@ func (tx StdTx) ValidateBasic() error {
 }
 ```
 
+### Caution!
+There are two <code>ValidateBasic</code>
+This function is different from the <code>ValidateBasic</code> functions for [sdk.Msg](#message-interface), which perform basic validity checks on messages only.
+<br/>
+For example, <code>runTX</code> first runs <code>ValidateBasic</code> on each message when it checks a transaction created from the auth module. Then it runs the auth module's [AnteHandler](#ant-handler), which calls <code>ValidateBasic</code> for the transaction itself.
+
+
+### Ant Handler
+```go
+// AnteHandler authenticates transactions, before their internal messages are handled.
+// If newCtx.IsZero(), ctx is used instead.
+type AnteHandler func(ctx Context, tx Tx, simulate bool) (newCtx Context, err error)
+
+// AnteDecorator wraps the next AnteHandler to perform custom pre- and post-processing.
+type AnteDecorator interface {
+	AnteHandle(ctx Context, tx Tx, simulate bool, next AnteHandler) (newCtx Context, err error)
+}
+```
+
+
+
 
 # References
 [TxMessages - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx_msg.go#L11-L33)
+
+[StdTx - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/x/auth/legacy/legacytx/stdtx.go#L77-L83)
+
+[Handler - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/handler.go#L8)
