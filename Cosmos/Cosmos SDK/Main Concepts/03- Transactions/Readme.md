@@ -5,7 +5,6 @@ Transactions are objects created by end-users to trigger state changes in applic
  ### sdk.Msg
 
  <code>
- 
  	Msg interface {
 		proto.Message
 
@@ -34,4 +33,4 @@ Transactions are objects created by end-users to trigger state changes in applic
 		// CONTRACT: Returns addrs in some deterministic order.
 		GetSigners() []AccAddress
 	}
- </code>
+</code>
