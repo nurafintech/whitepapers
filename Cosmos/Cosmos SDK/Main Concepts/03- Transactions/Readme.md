@@ -4,7 +4,7 @@ Transactions are objects created by end-users to trigger state changes in applic
 
  ### sdk.Msg
 
-```abnf
+```go
 Msg interface {
     proto.Message
 
