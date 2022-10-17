@@ -120,22 +120,35 @@ func (tx StdTx) ValidateBasic() error {
 There are two <code>ValidateBasic</code>
 This function is different from the <code>ValidateBasic</code> functions for [sdk.Msg](#message-interface), which perform basic validity checks on messages only.
 <br/>
-For example, <code>runTX</code> first runs <code>ValidateBasic</code> on each message when it checks a transaction created from the auth module. Then it runs the auth module's [AnteHandler](#ant-handler), which calls <code>ValidateBasic</code> for the transaction itself.
+For example, <code>runTX</code> first runs <code>ValidateBasic</code> on each message when it checks a transaction created from the auth module. Then it runs the auth module's [AnteHandler](#ante-handler), which calls <code>ValidateBasic</code> for the transaction itself.
 
 
-### Ant Handler
+### Ante Handler
 ```go
 // AnteHandler authenticates transactions, before their internal messages are handled.
 // If newCtx.IsZero(), ctx is used instead.
 type AnteHandler func(ctx Context, tx Tx, simulate bool) (newCtx Context, err error)
+```
+You should rarely manipulate a <code>Tx</code> object directly. It is an intermediate type used for transaction generation. Developers usually use the [TxBuilder](#tx-builder) interface.
 
-// AnteDecorator wraps the next AnteHandler to perform custom pre- and post-processing.
-type AnteDecorator interface {
-	AnteHandle(ctx Context, tx Tx, simulate bool, next AnteHandler) (newCtx Context, err error)
+### Tx Builder
+```go
+// TxBuilder defines an interface which an application-defined concrete transaction
+// type must implement. Namely, it must be able to set messages, generate
+// signatures, and provide canonical bytes to sign over. The transaction must
+// also know how to encode itself.
+TxBuilder interface {
+    GetTx() signing.Tx
+
+    SetMsgs(msgs ...sdk.Msg) error
+    SetSignatures(signatures ...signingtypes.SignatureV2) error
+    SetMemo(memo string)
+    SetFeeAmount(amount sdk.Coins)
+    SetGasLimit(limit uint64)
+    SetTimeoutHeight(height uint64)
+    SetFeeGranter(feeGranter sdk.AccAddress)
 }
 ```
-
-
 
 
 # References
