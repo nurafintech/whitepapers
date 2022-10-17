@@ -1,6 +1,6 @@
 # Transactions
 Transactions are objects created by end-users to trigger state changes in applications.<br/>
- They are comprised of metadata that defines a context, and one or more [sdk.Msg](#sdk.Msg)  that trigger state changes within a module through the module’s Protobuf message service.
+ They are comprised of metadata that defines a context, and one or more [sdk.Msg](###sdk.Msg)  that trigger state changes within a module through the module’s Protobuf message service.
 
  ### sdk.Msg
 
