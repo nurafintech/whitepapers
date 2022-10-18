@@ -316,6 +316,97 @@ TxBuilder interface {
     SetFeeGranter(feeGranter sdk.AccAddress)
 }
 ```
+##
+As there are currently two modes for signing transactions, there are also two implementations of [TxBuilder](#tx-builder-interface).<br/>
+
+There is a wrapper for <code>SIGN_MODE_DIRECT</code> and the [StdTxBuilder](#standard-tx-builder-link) for <code>SIGN_MODE_LEGACY_AMINO_JSON</code>.
+
+
+### Standard Tx Builder [(Link)](https://github.com/cosmos/cosmos-sdk/blob/8fc9f76329dd2433d9b258a867500de419522619/x/auth/migrations/legacytx/stdtx_builder.go#L18-L21)
+
+```go
+// StdTxBuilder wraps StdTx to implement to the context.TxBuilder interface.
+// Note that this type just exists for backwards compatibility with amino StdTx
+// and will not work for protobuf transactions.
+type StdTxBuilder struct {
+	StdTx
+	cdc *codec.LegacyAmino
+}
+```
+The two possibilities should normally be hidden because end-users should prefer the overarching [TxConfig](#tx-config-link) interface.
+
+### Tx Config [(Link)](https://github.com/cosmos/cosmos-sdk/blob/a72f6a8d4fcb1328ead8f14e212c95c1c0c6d64d/client/tx_config.go#L25-L31)
+```go
+// TxConfig defines an interface a client can utilize to generate an
+// application-defined concrete transaction type. The type returned must
+// implement TxBuilder.
+TxConfig interface {
+	TxEncodingConfig
+
+	NewTxBuilder() TxBuilder
+	WrapTxBuilder(sdk.Tx) (TxBuilder, error)
+	SignModeHandler() signing.SignModeHandler
+}
+```
+<code>TxConfig</code> is an app-wide configuration for managing transactions accessible from the context.
+<br/>
+Most importantly, it holds the information about whether to sign each transaction with <code>SIGN_MODE_DIRECT</code> or <code>SIGN_MODE_LEGACY_AMINO_JSON</code>.
+
+### Context Struct [(Link)](https://github.com/cosmos/cosmos-sdk/blob/a72f6a8d4fcb1328ead8f14e212c95c1c0c6d64d/client/context.go#L23) 
+```go
+// Context implements a typical context created in SDK modules for transaction
+// handling and queries.
+type Context struct {
+	FromAddress       sdk.AccAddress
+	Client            rpcclient.Client
+	ChainID           string
+	Codec             codec.Codec
+	InterfaceRegistry codectypes.InterfaceRegistry
+	Input             io.Reader
+	Keyring           keyring.Keyring
+	KeyringOptions    []keyring.Option
+	Output            io.Writer
+	OutputFormat      string
+	Height            int64
+	HomeDir           string
+	KeyringDir        string
+	From              string
+	BroadcastMode     string
+	FromName          string
+	SignModeStr       string
+	UseLedger         bool
+	Simulate          bool
+	GenerateOnly      bool
+	Offline           bool
+	SkipConfirm       bool
+	TxConfig          TxConfig
+	AccountRetriever  AccountRetriever
+	NodeURI           string
+	FeeGranter        sdk.AccAddress
+	Viper             *viper.Viper
+
+	// TODO: Deprecated (remove).
+	LegacyAmino *codec.LegacyAmino
+}
+```
+# Instantiate a New Tx Builder 
+
+A new <code>TxBuilder</code> will be instantiated with the appropriate sign mode by calling <code>txBuilder := txConfig.NewTxBuilder()</code>. <coed>TxConfig</code> will correctly encode the bytes either using <code>SIGN_MODE_DIRECT</code> or <code>SIGN_MODE_LEGACY_AMINO_JSON</code> once <code>TxBuilder</code> is correctly populated with the setters of the fields described previously.
+<br/>
+
+This is a pseudo-code snippet of how to generate and encode a transaction using the <code>TxEncoder()</code> method:
+```go
+txBuilder := txConfig.NewTxBuilder()
+txBuilder.SetMsgs(...) // and other setters on txBuilder
+```
+# Broadcasting the Transaction
+Once the transaction bytes are generated and signed, there are three primary ways of broadcasting the transaction:
+
+- Using the command-line interface (CLI).
+- Using gRPC.
+- Using REST endpoints.
+
+Application developers create entrypoints to the application by creating a command-line interface typically found in the application's <code>./cmd</code> folder, gRPC, and/or REST interface. These interfaces allow users to interact with the application.
 
 
 # References
@@ -333,8 +424,12 @@ TxBuilder interface {
 
 [Protobuf Tx - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx/tx.pb.go#L32-L42)
 
-[Tx Raw](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx/tx.pb.go#L113)
+[Tx Raw - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx/tx.pb.go#L113)
 
 [Standard Sign Doc - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/x/auth/legacy/legacytx/stdsign.go#L24-L32)
 
 [Standard Sign Bytes - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/x/auth/legacy/legacytx/stdsign.go#L35-L58)
+
+ [Standard Tx Builder - Github](https://github.com/cosmos/cosmos-sdk/blob/8fc9f76329dd2433d9b258a867500de419522619/x/auth/migrations/legacytx/stdtx_builder.go#L18-L21)
+
+[Context Struct - Github](https://github.com/cosmos/cosmos-sdk/blob/a72f6a8d4fcb1328ead8f14e212c95c1c0c6d64d/client/context.go#L23) 
