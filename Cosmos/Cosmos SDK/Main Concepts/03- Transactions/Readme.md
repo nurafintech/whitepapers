@@ -234,6 +234,59 @@ type TxRaw struct {
 	Signatures [][]byte `protobuf:"bytes,3,rep,name=signatures,proto3" json:"signatures,omitempty"`
 }
 ```
+- **SIGN_MODE_LEGACY_AMINO_JSON:** the legacy implementation of the <code>Tx interface</code> is the [StdTx](#standard-tx-link) struct from <code>x/auth</code>. The document signed by all signers is [StdSignDoc](#standard-sign-doc-link), which is encoded into [bytes](#standard-sign-bytes-link) using Amino JSON.
+<br/>
+Once all signatures are gathered into StdTx, StdTx is serialized using Amino JSON and these bytes are broadcast over the network. **This method is being deprecated.**
+
+### Standard Sign Doc [(Link)](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/x/auth/legacy/legacytx/stdsign.go#L24-L32)
+```go
+// StdSignDoc is replay-prevention structure.
+// It includes the result of msg.GetSignBytes(),
+// as well as the ChainID (prevent cross chain replay)
+// and the Sequence numbers for each signature (prevent
+// inchain replay and enforce tx ordering per account).
+type StdSignDoc struct {
+	AccountNumber uint64            `json:"account_number" yaml:"account_number"`
+	Sequence      uint64            `json:"sequence" yaml:"sequence"`
+	TimeoutHeight uint64            `json:"timeout_height,omitempty" yaml:"timeout_height"`
+	ChainID       string            `json:"chain_id" yaml:"chain_id"`
+	Memo          string            `json:"memo" yaml:"memo"`
+	Fee           json.RawMessage   `json:"fee" yaml:"fee"`
+	Msgs          []json.RawMessage `json:"msgs" yaml:"msgs"`
+}
+```
+
+### Standard Sign Bytes [(Link)](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/x/auth/legacy/legacytx/stdsign.go#L35-L58)
+```go
+// StdSignBytes returns the bytes to sign for a transaction.
+func StdSignBytes(chainID string, accnum, sequence, timeout uint64, fee StdFee, msgs []sdk.Msg, memo string) []byte {
+	msgsBytes := make([]json.RawMessage, 0, len(msgs))
+	for _, msg := range msgs {
+		// If msg is a legacy Msg, then GetSignBytes is implemented.
+		// If msg is a ServiceMsg, then GetSignBytes has graceful support of
+		// calling GetSignBytes from its underlying Msg.
+		msgsBytes = append(msgsBytes, json.RawMessage(msg.GetSignBytes()))
+	}
+
+	bz, err := legacy.Cdc.MarshalJSON(StdSignDoc{
+		AccountNumber: accnum,
+		ChainID:       chainID,
+		Fee:           json.RawMessage(fee.Bytes()),
+		Memo:          memo,
+		Msgs:          msgsBytes,
+		Sequence:      sequence,
+		TimeoutHeight: timeout,
+	})
+	if err != nil {
+		panic(err)
+	}
+
+	return sdk.MustSortJSON(bz)
+}
+```
+
+# Generating Transactions
+
 
 
 # References
@@ -252,3 +305,7 @@ type TxRaw struct {
 [Protobuf Tx - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx/tx.pb.go#L32-L42)
 
 [Tx Raw](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx/tx.pb.go#L113)
+
+[Standard Sign Doc - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/x/auth/legacy/legacytx/stdsign.go#L24-L32)
+
+[Standard Sign Bytes - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/x/auth/legacy/legacytx/stdsign.go#L35-L58)
