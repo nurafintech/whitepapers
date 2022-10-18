@@ -285,7 +285,37 @@ func StdSignBytes(chainID string, accnum, sequence, timeout uint64, fee StdFee, 
 ```
 
 # Generating Transactions
+The [TxBuilder interface](#tx-builder-interface) contains metadata closely related to the generation of transactions. The end-user can freely set these parameters for the transaction to be generated:
+- **Msgs:** the array of messages included in the transaction.
 
+- **GasLimit:** an option chosen by the users for how to calculate the gas amount they are willing to spend.
+
+- **Memo:** a note or comment to send with the transaction.
+
+- **FeeAmount:** the maximum amount the user is willing to pay in fees.
+
+- **TimeoutHeight:** the block height until which the transaction is valid.
+
+- **Signatures:** the array of signatures from all signers of the transaction.
+
+### Tx Builder Interface
+```go
+// TxBuilder defines an interface which an application-defined concrete transaction
+// type must implement. Namely, it must be able to set messages, generate
+// signatures, and provide canonical bytes to sign over. The transaction must
+// also know how to encode itself.
+TxBuilder interface {
+    GetTx() signing.Tx
+
+    SetMsgs(msgs ...sdk.Msg) error
+    SetSignatures(signatures ...signingtypes.SignatureV2) error
+    SetMemo(memo string)
+    SetFeeAmount(amount sdk.Coins)
+    SetGasLimit(limit uint64)
+    SetTimeoutHeight(height uint64)
+    SetFeeGranter(feeGranter sdk.AccAddress)
+}
+```
 
 
 # References
