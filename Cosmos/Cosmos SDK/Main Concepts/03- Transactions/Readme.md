@@ -167,6 +167,12 @@ This design puts more responsibility on module developers. It allows application
 
 While messages contain the information for the state transition logic, a transaction's other metadata and relevant information are stored in the <code>TxBuilder</code> and <code>Context</code>.
 
+# Singing Transactions
+Every message in a transaction must be signed by the addresses specified by its <code>GetSigners</code>. The Cosmos SDK currently allows signing transactions in two different ways:
+
+- <code>SIGN_MODE_DIRECT</code> (preferred): the most used implementation of the <code>Tx</code> interface is the <code>Protobuf Tx </code>message, which is used in <code>SIGN_MODE_DIRECT</code>. Once signed by all signers, the <code>BodyBytes</code>, <code>AuthInfoBytes</code>, and <code>Signatures</code> are gathered into <code>TxRaw</code>, whose <code>serialized bytes</code> are broadcast over the network.
+
+
 # References
 [Cosmos Academy - Transactions](https://tutorials.cosmos.network/academy/2-cosmos-concepts/3-transactions.html)
 
