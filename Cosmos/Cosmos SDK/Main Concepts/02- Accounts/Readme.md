@@ -101,10 +101,13 @@ The different digital key schemes are implemented in different SDK packages:
 * **secp256r1**, as implemented in the SDK's <code>crypto/keys/secp256r1</code> package.
 * **tm-ed25519**, as implemented in the SDK's <code>crypto/keys/ed25519</code> package: is supported **only for consensus validation.**
 
-## Accounts
+## Accounts [link](https://github.com/cosmos/cosmos-sdk/blob/bf11b1bf1fa0c52fb2cd51e4f4ab0c90a4dd38a0/x/auth/types/auth.pb.go#L31-L36)
 The <code>BaseAccount</code> object provides the basic account implementation that **stores authentication** information.
 
 ```go
+// BaseAccount defines a base account type. It contains all the necessary fields
+// for basic account functionality. Any custom account type should extend this
+// type for additional functionality (e.g. vesting).
 type BaseAccount struct {
 	Address       string     `protobuf:"bytes,1,opt,name=address,proto3" json:"address,omitempty"`
 	PubKey        *types.Any `protobuf:"bytes,2,opt,name=pub_key,json=pubKey,proto3" json:"public_key,omitempty"`
@@ -113,7 +116,7 @@ type BaseAccount struct {
 }
 ```
 
-## Public keys
+## Public keys [link](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/crypto/types/types.go#L9)
 **Public keys are generally not used to reference accounts.** Public keys do exist and they are accessible through the <code>cryptoTypes.PubKey</code> interface. **This facilitates operations which developers** may find useful, such as **signing off-chain messages** or **using a public key for other out-of-band operations.**
 
 ```go
@@ -129,7 +132,58 @@ type PubKey interface {
 }
 ```
 
-## Keyring
+## ADR 028: Public Key Addresses [link](https://github.com/cosmos/cosmos-sdk/blob/main/docs/architecture/adr-028-public-key-addresses.md)
+This ADR defines an address format for all addressable Cosmos SDK accounts. That includes: new public key algorithms, multisig public keys, and module accounts.
+
+**The ADR only defines a process for the generation of address bytes. For end-user interactions with addresses (through the API, or CLI, etc.), we still use bech32 to format these addresses as strings. This ADR doesn't change that. Using Bech32 for string encoding gives us support for checksum error codes and handling of user typos.**
+
+Address
+An address is public information normally used to reference an account. Addresses are derived from public keys using ADR-28 (opens new window). Three types of addresses specify a context when an account is used:
+
+* [AccAddress](https://github.com/cosmos/cosmos-sdk/blob/1dba6735739e9b4556267339f0b67eaec9c609ef/types/address.go#L129) identifies users, which are the sender of a message.
+
+	```go
+	// AccAddress a wrapper around bytes meant to represent an account address.
+	// When marshaled to a string or JSON, it uses Bech32.
+	type AccAddress []byte
+
+	// AccAddressFromHex creates an AccAddress from a hex string.
+	func AccAddressFromHex(address string) (addr AccAddress, err error) {
+		bz, err := addressBytesFromHexString(address)
+		return AccAddress(bz), err
+	}
+	```
+* [ValAddress](https://github.com/cosmos/cosmos-sdk/blob/23e864bc987e61af84763d9a3e531707f9dfbc84/types/address.go#L298) identifies validator operators.
+	```go
+	// ValAddress defines a wrapper around bytes meant to present a validator's
+	// operator. When marshaled to a string or JSON, it uses Bech32.
+	type ValAddress []byte
+
+	// ValAddressFromHex creates a ValAddress from a hex string.
+	func ValAddressFromHex(address string) (addr ValAddress, err error) {
+		bz, err := addressBytesFromHexString(address)
+		return ValAddress(bz), err
+	}
+	```
+* [ConsAddress](https://github.com/cosmos/cosmos-sdk/blob/23e864bc987e61af84763d9a3e531707f9dfbc84/types/address.go#L448) identifies validator nodes that are participating in consensus. Validator nodes are derived using the <b>ed25519</b> curve.
+
+	```go
+	// ConsAddress defines a wrapper around bytes meant to present a consensus node.
+	// When marshaled to a string or JSON, it uses Bech32.
+	type ConsAddress []byte
+
+	// ConsAddressFromHex creates a ConsAddress from a hex string.
+	func ConsAddressFromHex(address string) (addr ConsAddress, err error) {
+		bz, err := addressBytesFromHexString(address)
+		return ConsAddress(bz), err
+	}
+	```
+
+
+
+
+
+## Keyring [link](https://github.com/cosmos/cosmos-sdk/blob/bf11b1bf1fa0c52fb2cd51e4f4ab0c90a4dd38a0/crypto/keyring/keyring.go#L55)
 
 **The keyring object stores and manages multiple accounts.** The keyring object implements the <code>Keyring</code> interface in the Cosmos SDK.
 
@@ -183,8 +237,10 @@ type Keyring interface {
 }
 ```
 
+<br>
 
-<b>
+
+
 
 # References
 
