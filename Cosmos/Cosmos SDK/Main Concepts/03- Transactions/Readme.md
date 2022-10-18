@@ -71,7 +71,7 @@ Tx interface {
 
 For example, the auth module's <code>StdTx</code> <code>ValidateBasic</code> function checks that its transactions are signed by the correct number of signers and that the fees do not exceed the user's maximum.
 
-### StdTx Struct and Validate Basic
+### StdTx Struct
 ```go
 // StdTx is the legacy transaction format for wrapping a Msg with Fee and Signatures.
 // It only works with Amino, please prefer the new protobuf Tx in types/tx.
@@ -84,7 +84,9 @@ type StdTx struct {
 	Memo          string         `json:"memo" yaml:"memo"`
 	TimeoutHeight uint64         `json:"timeout_height" yaml:"timeout_height"`
 }
-
+```
+### Validate Basic
+```go
 // ValidateBasic does a simple and lightweight validation check that doesn't
 // require access to any other information.
 func (tx StdTx) ValidateBasic() error {
@@ -192,7 +194,7 @@ const (
 
 ```
 
-### [Protobuf Tx](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx/tx.pb.go#L32-L42)
+### Protobuf Tx [(Link)](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx/tx.pb.go#L32-L42)
 ```go
 // Tx is the standard type used for broadcasting transactions.
 type Tx struct {
@@ -208,7 +210,7 @@ type Tx struct {
 }
 ```
 
-### [Tx Raw](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx/tx.pb.go#L113)
+### Tx Raw [(Link)](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx/tx.pb.go#L113)
 ```go
 // TxRaw is a variant of Tx that pins the signer's exact binary representation
 // of body and auth_info. This is used for signing, broadcasting and
