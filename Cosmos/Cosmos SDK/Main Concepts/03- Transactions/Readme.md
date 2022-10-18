@@ -71,7 +71,7 @@ Tx interface {
 
 For example, the auth module's <code>StdTx</code> <code>ValidateBasic</code> function checks that its transactions are signed by the correct number of signers and that the fees do not exceed the user's maximum.
 
-### StdTx Struct [(Link)](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/x/auth/legacy/legacytx/stdtx.go#L77-L83)
+### Standard Tx [(Link)](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/x/auth/legacy/legacytx/stdtx.go#L77-L83)
 ```go
 // StdTx is the legacy transaction format for wrapping a Msg with Fee and Signatures.
 // It only works with Amino, please prefer the new protobuf Tx in types/tx.
