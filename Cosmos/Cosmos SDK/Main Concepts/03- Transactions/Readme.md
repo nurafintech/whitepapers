@@ -235,8 +235,7 @@ type TxRaw struct {
 }
 ```
 - **SIGN_MODE_LEGACY_AMINO_JSON:** the legacy implementation of the <code>Tx interface</code> is the [StdTx](#standard-tx-link) struct from <code>x/auth</code>. The document signed by all signers is [StdSignDoc](#standard-sign-doc-link), which is encoded into [bytes](#standard-sign-bytes-link) using Amino JSON.
-<br/>
-Once all signatures are gathered into StdTx, StdTx is serialized using Amino JSON and these bytes are broadcast over the network. **This method is being deprecated.**
+Once all signatures are gathered into [StdTx](#standard-tx-link), <code>StdTx</code> is serialized using Amino JSON and these bytes are broadcast over the network. **This method is being deprecated.**
 
 ### Standard Sign Doc [(Link)](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/x/auth/legacy/legacytx/stdsign.go#L24-L32)
 ```go
