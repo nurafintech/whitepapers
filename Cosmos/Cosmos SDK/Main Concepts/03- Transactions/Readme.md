@@ -172,6 +172,63 @@ Every message in a transaction must be signed by the addresses specified by its 
 
 - <code>SIGN_MODE_DIRECT</code> (preferred): the most used implementation of the <code>Tx</code> interface is the <code>Protobuf Tx </code>message, which is used in <code>SIGN_MODE_DIRECT</code>. Once signed by all signers, the <code>BodyBytes</code>, <code>AuthInfoBytes</code>, and <code>Signatures</code> are gathered into <code>TxRaw</code>, whose <code>serialized bytes</code> are broadcast over the network.
 
+### [Sign Mode Direct](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx/signing/signing.pb.go#L36) 
+```go
+const (
+	// SIGN_MODE_UNSPECIFIED specifies an unknown signing mode and will be
+	// rejected
+	SignMode_SIGN_MODE_UNSPECIFIED SignMode = 0
+	// SIGN_MODE_DIRECT specifies a signing mode which uses SignDoc and is
+	// verified with raw bytes from Tx
+	SignMode_SIGN_MODE_DIRECT SignMode = 1
+	// SIGN_MODE_TEXTUAL is a future signing mode that will verify some
+	// human-readable textual representation on top of the binary representation
+	// from SIGN_MODE_DIRECT
+	SignMode_SIGN_MODE_TEXTUAL SignMode = 2
+	// SIGN_MODE_LEGACY_AMINO_JSON is a backwards compatibility mode which uses
+	// Amino JSON and will be removed in the future
+	SignMode_SIGN_MODE_LEGACY_AMINO_JSON SignMode = 127
+)
+
+```
+
+### [Protobuf Tx](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx/tx.pb.go#L32-L42)
+```go
+// Tx is the standard type used for broadcasting transactions.
+type Tx struct {
+	// body is the processable content of the transaction
+	Body *TxBody `protobuf:"bytes,1,opt,name=body,proto3" json:"body,omitempty"`
+	// auth_info is the authorization related content of the transaction,
+	// specifically signers, signer modes and fee
+	AuthInfo *AuthInfo `protobuf:"bytes,2,opt,name=auth_info,json=authInfo,proto3" json:"auth_info,omitempty"`
+	// signatures is a list of signatures that matches the length and order of
+	// AuthInfo's signer_infos to allow connecting signature meta information like
+	// public key and signing mode by position.
+	Signatures [][]byte `protobuf:"bytes,3,rep,name=signatures,proto3" json:"signatures,omitempty"`
+}
+```
+
+### [Tx Raw](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx/tx.pb.go#L113)
+```go
+// TxRaw is a variant of Tx that pins the signer's exact binary representation
+// of body and auth_info. This is used for signing, broadcasting and
+// verification. The binary `serialize(tx: TxRaw)` is stored in Tendermint and
+// the hash `sha256(serialize(tx: TxRaw))` becomes the "txhash", commonly used
+// as the transaction ID.
+type TxRaw struct {
+	// body_bytes is a protobuf serialization of a TxBody that matches the
+	// representation in SignDoc.
+	BodyBytes []byte `protobuf:"bytes,1,opt,name=body_bytes,json=bodyBytes,proto3" json:"body_bytes,omitempty"`
+	// auth_info_bytes is a protobuf serialization of an AuthInfo that matches the
+	// representation in SignDoc.
+	AuthInfoBytes []byte `protobuf:"bytes,2,opt,name=auth_info_bytes,json=authInfoBytes,proto3" json:"auth_info_bytes,omitempty"`
+	// signatures is a list of signatures that matches the length and order of
+	// AuthInfo's signer_infos to allow connecting signature meta information like
+	// public key and signing mode by position.
+	Signatures [][]byte `protobuf:"bytes,3,rep,name=signatures,proto3" json:"signatures,omitempty"`
+}
+```
+
 
 # References
 [Cosmos Academy - Transactions](https://tutorials.cosmos.network/academy/2-cosmos-concepts/3-transactions.html)
@@ -183,3 +240,9 @@ Every message in a transaction must be signed by the addresses specified by its 
 [Handler - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/handler.go#L8)
 
 [TxConfig - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/client/tx_config.go#L36-L46)
+
+[Sign Mode Direct  - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx/signing/signing.pb.go#L36)
+
+[Protobuf Tx - Github](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx/tx.pb.go#L32-L42)
+
+[Tx Raw](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx/tx.pb.go#L113)
