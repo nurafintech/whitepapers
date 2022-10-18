@@ -459,7 +459,7 @@ CLI commands bundle all the steps of transaction processing into one simple comm
 The principal usage of gRPC is in the context of module query services. The Cosmos SDK also exposes other module-agnostic gRPC services. One of these is the Tx service, which exposes a handful of utility functions such as simulating a transaction or querying a transaction, and also one method to broadcast transactions.
 
 # REST
-Each gRPC method has its corresponding REST endpoint generated using gRPC-gateway. Rather than using gRPC, you can also use HTTP to broadcast the same transaction on the <code>POST</code> /<code>cosmos/tx/v1beta1/txs</code> endpoint.
+Each gRPC method has its corresponding REST endpoint generated using gRPC-gateway. Rather than using gRPC, you can also use HTTP to broadcast the same transaction on the <code>POST</code> <code>/cosmos/tx/v1beta1/txs</code> endpoint.
 
 # Tendermint RPC
 
