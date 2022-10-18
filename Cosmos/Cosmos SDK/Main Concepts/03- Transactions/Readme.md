@@ -154,6 +154,8 @@ TxBuilder interface {
 Transaction messages are not to be confused with ABCI messages, which define interactions between Tendermint and application layers.
 <br/>
 
+## 
+
 Messages or [sdk.Msg](#message-interface) are module-specific objects that trigger state transitions within the scope of the module they belong to.<br/>
 Module developers define module messages by adding methods to the Protobuf <code>Msg</code> service and defining a <code>MsgServer</code>.<br/>
 
