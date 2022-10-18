@@ -379,6 +379,7 @@ type Context struct {
 	GenerateOnly      bool
 	Offline           bool
 	SkipConfirm       bool
+// TxConfig is an app-wide configuration for managing transactions accessible from the context.
 	TxConfig          TxConfig
 	AccountRetriever  AccountRetriever
 	NodeURI           string
@@ -407,6 +408,68 @@ Once the transaction bytes are generated and signed, there are three primary way
 - Using REST endpoints.
 
 Application developers create entrypoints to the application by creating a command-line interface typically found in the application's <code>./cmd</code> folder, gRPC, and/or REST interface. These interfaces allow users to interact with the application.
+
+# CLI
+For the command-line interface (CLI) module developers create subcommands to add as children to the application top-level transaction command <code>TxCmd</code>.
+
+### Tx Cmd [(Link)](https://github.com/cosmos/cosmos-sdk/blob/56ab4e4c934365662162a91bcf35108a0bd78fef/x/bank/client/cli/tx.go#L29-L60)
+```go
+// NewSendTxCmd returns a CLI command handler for creating a MsgSend transaction.
+func NewSendTxCmd() *cobra.Command {
+	cmd := &cobra.Command{
+		Use: "send [from_key_or_address] [to_address] [amount]",
+		Short: `Send funds from one account to another. Note, the'--from' flag is
+ignored as it is implied from [from_key_or_address].`,
+		Args: cobra.ExactArgs(3),
+		RunE: func(cmd *cobra.Command, args []string) error {
+			cmd.Flags().Set(flags.FlagFrom, args[0])
+			clientCtx, err := client.GetClientTxContext(cmd)
+			if err != nil {
+				return err
+			}
+			toAddr, err := sdk.AccAddressFromBech32(args[1])
+			if err != nil {
+				return err
+			}
+
+			coins, err := sdk.ParseCoinsNormalized(args[2])
+			if err != nil {
+				return err
+			}
+
+			msg := types.NewMsgSend(clientCtx.GetFromAddress(), toAddr, coins)
+
+			return tx.GenerateOrBroadcastTxCLI(clientCtx, cmd.Flags(), msg)
+		},
+	}
+
+	flags.AddTxFlagsToCmd(cmd)
+
+	return cmd
+}
+```
+CLI commands bundle all the steps of transaction processing into one simple command:
+
+- Creating messages
+- Generating transactions
+- Signing
+- Broadcasting
+
+# gRPC
+The principal usage of gRPC is in the context of module query services. The Cosmos SDK also exposes other module-agnostic gRPC services. One of these is the Tx service, which exposes a handful of utility functions such as simulating a transaction or querying a transaction, and also one method to broadcast transactions.
+
+# REST
+Each gRPC method has its corresponding REST endpoint generated using gRPC-gateway. Rather than using gRPC, you can also use HTTP to broadcast the same transaction on the <code>POST</code> /<code>cosmos/tx/v1beta1/txs</code> endpoint.
+
+# Tendermint RPC
+
+The three methods presented previously are higher abstractions on the Tendermint RPC <code>/broadcast_tx_{async,sync,commit}</code> endpoints. You can use the [Tendermint RPC endpoints](https://docs.tendermint.com/v0.34/tendermint-core/rpc.html) to directly broadcast the transaction through Tendermint if you wish to.
+<br/>
+Tendermint supports the following RPC protocols:
+
+- URI over HTTP
+- JSONRPC over HTTP
+- JSONRPC over WebSockets
 
 
 # References
