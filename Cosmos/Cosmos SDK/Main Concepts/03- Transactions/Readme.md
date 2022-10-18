@@ -2,7 +2,7 @@
 Transactions are objects created by end-users to trigger state changes in applications.<br/>
  They are comprised of metadata that defines a context, and one or more [sdk.Msg](#message-interface) that trigger state changes within a module through the module’s Protobuf message service.
 
-### Message Interface
+### Message Interface [(Link)](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx_msg.go#L11-L33)
 ```go
 /// sdk.Msg 
 Msg interface {
@@ -53,7 +53,7 @@ Broadcast the signed transaction using one of the available interfaces.
 # Transaction objects
 Transaction objects are Cosmos SDK types that implement the <code>Tx interface</code>. They contain the following methods:
 
-### Transaction Interface
+### Transaction Interface [(Link)](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx_msg.go#L50-L57)
 ```go
 // Tx defines the interface a transaction must fulfill.
 Tx interface {
@@ -71,7 +71,7 @@ Tx interface {
 
 For example, the auth module's <code>StdTx</code> <code>ValidateBasic</code> function checks that its transactions are signed by the correct number of signers and that the fees do not exceed the user's maximum.
 
-### StdTx Struct
+### StdTx Struct [(Link)](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/x/auth/legacy/legacytx/stdtx.go#L77-L83)
 ```go
 // StdTx is the legacy transaction format for wrapping a Msg with Fee and Signatures.
 // It only works with Amino, please prefer the new protobuf Tx in types/tx.
@@ -85,7 +85,7 @@ type StdTx struct {
 	TimeoutHeight uint64         `json:"timeout_height" yaml:"timeout_height"`
 }
 ```
-### Validate Basic
+### Validate Basic [(Link)](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx_msg.go#L56)
 ```go
 // ValidateBasic does a simple and lightweight validation check that doesn't
 // require access to any other information.
@@ -125,7 +125,7 @@ This function is different from the <code>ValidateBasic</code> functions for [sd
 For example, <code>runTX</code> first runs <code>ValidateBasic</code> on each message when it checks a transaction created from the auth module. Then it runs the auth module's [AnteHandler](#ante-handler), which calls <code>ValidateBasic</code> for the transaction itself.
 
 
-### Ante Handler
+### Ante Handler [(Link)](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/handler.go#L8)
 ```go
 // AnteHandler authenticates transactions, before their internal messages are handled.
 // If newCtx.IsZero(), ctx is used instead.
@@ -133,7 +133,7 @@ type AnteHandler func(ctx Context, tx Tx, simulate bool) (newCtx Context, err er
 ```
 You should rarely manipulate a <code>Tx</code> object directly. It is an intermediate type used for transaction generation. Developers usually use the [TxBuilder](#tx-builder) interface.
 
-### Tx Builder
+### Tx Builder [(Link)](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/client/tx_config.go#L36-L46)
 ```go
 // TxBuilder defines an interface which an application-defined concrete transaction
 // type must implement. Namely, it must be able to set messages, generate
@@ -212,6 +212,7 @@ type Tx struct {
 	Signatures [][]byte `protobuf:"bytes,3,rep,name=signatures,proto3" json:"signatures,omitempty"`
 }
 ```
+
 
 ### Tx Raw [(Link)](https://github.com/cosmos/cosmos-sdk/blob/9fd866e3820b3510010ae172b682d71594cd8c14/types/tx/tx.pb.go#L113)
 ```go
